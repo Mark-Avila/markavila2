@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <!--Font awesome-->
+    <script
+      src="https://kit.fontawesome.com/11bf3f6b7d.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!--Google fonts (Roboto, Montserrat, IBM Plex Mono)-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+  </head>
+  <body class="bg-background-200">
+    <nav id="mobile-nav" class="bg-background-100 absolute h-screen right-0 w-72 md:hidden">
+      <ul class="text-gray-300 font-ibm font-bold p-8 text-lg h-full">
+        <li class="mb-8 text-right">
+          <button class="outline-none">
+            <i class="fa-solid fa-xmark fa-2x"></i>
+          </button>
+        </li>
+        <li class="mb-8">
+          <a href="#">About</a>
+        </li>
+        <li class="mb-8">
+          <a href="#">Projects</a>
+        </li>
+        <li class="mb-8">
+          <a href="#">Contact</a>
+        </li>
+        <li class="mb-8 w-full">
+          <a
+            href="#"
+            class="block text-center py-3 h-full w-full text-primary border-2 border-primary"
+            >Resume</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <nav id="desktop-nav" class="hidden md:mx-8 md:flex justify-between items-center lg:mx-40">
+        <div>
+            <a href="#">
+                <img src="./assets/Group 1.svg" class="w-8 text-primary" alt="personal-logo">
+            </a>
+        </div>
+        <ul class="font-ibm text-white font-bold flex flex-row-reverse py-8 items-center">
+            <li class="mx-4">
+                <a href="#" class="opacity-70 text-primary block w-full h-full border-2 border-primary rounded-md p-2 px-4">Resume</a>
+            </li>
+            <li class="mx-4">
+                <a href="#" class="opacity-70">Contact</a>
+            </li>
+            <li class="mx-4">
+                <a href="#" class="opacity-70">Projects</a>
+            </li>
+            <li class="mx-4">
+                <a href="#" class="opacity-70">About</a>
+            </li>
+        </ul>
+    </nav>
+  </body>
+</html>
