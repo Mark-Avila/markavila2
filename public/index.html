@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -21,57 +21,116 @@
     />
 
     <!--jQuery-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
 
     <title>Document</title>
   </head>
-  <body class="bg-background-200">
-    <nav id="mobile-nav" class="bg-background-100 absolute h-screen right-0 w-72 md:hidden">
-      <ul class="text-gray-300 font-ibm font-bold p-8 text-lg h-full">
-        <li class="mb-8 text-right">
-          <button class="outline-none">
-            <i class="fa-solid fa-xmark fa-2x"></i>
-          </button>
+  <body
+    class="relative bg-background-200 min-h-full w-max-full overflow-x-hidden"
+  >
+    <nav
+      class="fixed flex bg-background-200 justify-between px-10 lg:px-20 xl:px-40 py-8 w-full"
+    >
+      <div>
+        <img src="./assets/Group 1.svg" alt="personal-logo" class="w-8" />
+      </div>
+      <div>
+        <button class="text-primary md:hidden">
+          <i class="fa-solid fa-2x fa-list"></i>
+        </button>
+      </div>
+      <ul class="hidden text-white font-ibm font-bold md:flex items-center">
+        <li class="ml-8">
+          <a href="#" class="hover:text-primary transition ease-in-out"
+            >About</a
+          >
         </li>
-        <li class="mb-8">
-          <a href="#">About</a>
+        <li class="ml-8">
+          <a href="#" class="hover:text-primary transition ease-in-out"
+            >Project</a
+          >
         </li>
-        <li class="mb-8">
-          <a href="#">Projects</a>
+        <li class="ml-8">
+          <a href="#" class="hover:text-primary transition ease-in-out"
+            >Contact</a
+          >
         </li>
-        <li class="mb-8">
-          <a href="#">Contact</a>
-        </li>
-        <li class="mb-8 w-full">
+        <li class="ml-8">
           <a
             href="#"
-            class="block text-center py-3 h-full w-full text-primary border-2 border-primary"
+            class="block py-2 px-4 border-2 border-primary text-primary hover:bg-primary hover:text-black rounded-md hover:text-primary transition ease-in-out"
             >Resume</a
           >
         </li>
       </ul>
     </nav>
 
-    <nav id="desktop-nav" class="hidden md:mx-8 md:flex justify-between items-center lg:mx-40">
+    <main class="h-full">
+      <section
+        id="main"
+        class="px-10 xl:px-10 lg:mx-20 xl:mx-40 h-screen flex justify-start items-center"
+      >
         <div>
-            <a href="#">
-                <img src="./assets/Group 1.svg" class="w-8 text-primary" alt="personal-logo">
-            </a>
+          <div class="mb-4">
+            <h3 class="text-primary font-ibm font-bold">Hi! My name is</h3>
+          </div>
+          <div class="mb-2 lg:mb-4">
+            <h1
+              class="font-montserrat text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+            >
+              Mark Christian Avila
+            </h1>
+          </div>
+          <div class="mb-4">
+            <h1
+              class="font-montserrat opacity-80 text-white font-bold text-2xl lg:text-5xl"
+            >
+              Future Front-end developer
+            </h1>
+          </div>
+          <div class="mb-4">
+            <p class="text-sm md:text-base text-white lg:w-1/2 opacity-50">
+              University student aspiring to become a front-end developer. I am
+              currently learning React development, but I am also interested in
+              learning other frameworks such as Vue and Angular
+            </p>
+          </div>
         </div>
-        <ul class="font-ibm text-white font-bold flex flex-row-reverse py-8 items-center">
-            <li class="mx-4">
-                <a href="#" class="opacity-70 text-primary block w-full h-full border-2 border-primary rounded-md p-2 px-4">Resume</a>
-            </li>
-            <li class="mx-4">
-                <a href="#" class="opacity-70">Contact</a>
-            </li>
-            <li class="mx-4">
-                <a href="#" class="opacity-70">Projects</a>
-            </li>
-            <li class="mx-4">
-                <a href="#" class="opacity-70">About</a>
-            </li>
-        </ul>
-    </nav>
+      </section>
+
+      <section class="h-screen flex items-center justify-center px-10">
+        <div class="grid grid-rows-2 gap-8 md:gap-2 grid-cols-1 w-full md:grid-cols-2 md:grid-rows-1 lg:mx-20 xl:mx-40">
+          <div class="flex justify-center">
+            <div class="bg-background-100 rounded-full w-64 h-64 md:w-80 md:h-80"></div>
+          </div>
+          <div class="text-center md:text-left md:flex md:flex-col md:justify-center">
+            <h1
+              class="w-full text-white font-montserrat font-bold text-2xl mb-4 md:text-4xl"
+            >
+              About
+            </h1>
+            <p class="text-white opacity-50 text-sm md:text-base">
+              My name is Mark Christian Avila and I enjoy developing the
+              front-end of websites because I find satisfaction on making stuff
+              visually appeasing and functionally efficient. I discovered
+              programming when I was at 5th grade because young me found it
+              funny changing the contents of websites with inspect element
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
+      integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../src/index.js"></script>
   </body>
 </html>

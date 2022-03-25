@@ -1,7 +1,7 @@
-function toggleMobileNav() {
-    let state = $("#mobile-nav").css('display');
+function openMobileNav() {
+    $('#mobile-nav').css({ translateX: '300px' });
+}
 
-    if (state === 'block'){
-        state.css({"display: none"});
-    }
+function closeMobileNav() {
+    $('#mobile-nav').css({ translateX: '0' });
 }
