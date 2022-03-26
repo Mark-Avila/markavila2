@@ -36,7 +36,7 @@
       class="fixed flex z-50 bg-background-200 justify-between px-10 lg:px-20 xl:px-40 py-8 w-full"
     >
       <div>
-        <img src="./assets/Group 1.svg" alt="personal-logo" class="w-8" />
+        <img src="../src/assets/Group 1.svg" alt="personal-logo" class="w-8" />
       </div>
       <div>
         <button class="text-primary md:hidden">
@@ -50,7 +50,7 @@
           >
         </li>
         <li class="ml-8">
-          <a href="#" class="hover:text-primary transition ease-in-out"
+          <a href="#projects" class="hover:text-primary transition ease-in-out"
             >Project</a
           >
         </li>
@@ -102,12 +102,21 @@
         </div>
       </section>
 
-      <section id="about" class="h-screen flex items-center justify-center px-10">
-        <div class="grid grid-rows-2 gap-8 md:gap-2 grid-cols-1 w-full md:grid-cols-2 md:grid-rows-1 lg:mx-20 xl:mx-40">
+      <section
+        id="about"
+        class="h-screen flex items-center justify-center px-10"
+      >
+        <div
+          class="grid grid-rows-2 gap-8 md:gap-2 grid-cols-1 w-full md:grid-cols-2 md:grid-rows-1 lg:mx-20 xl:mx-40"
+        >
           <div class="flex justify-center">
-            <div class="bg-background-100 rounded-full w-64 h-64 md:w-80 md:h-80"></div>
+            <div
+              class="bg-background-100 rounded-full w-64 h-64 md:w-80 md:h-80"
+            ></div>
           </div>
-          <div class="text-center md:text-left md:flex md:flex-col md:justify-center">
+          <div
+            class="text-center md:text-left md:flex md:flex-col md:justify-center"
+          >
             <div class="md:flex md:items-center mb-4">
               <h1
                 class="md:mr-8 text-white font-montserrat font-bold text-2xl sm:text-3xl md:text-5xl"
@@ -116,16 +125,21 @@
               </h1>
               <div class="hidden lg:block w-full bg-white h-[0.2rem]"></div>
             </div>
-            <p class="text-white opacity-80 mb-4 text-sm md:text-base font-roboto">
-              My name is <span class="text-primary font-bold">Mark Christian Avila</span> and I enjoy developing the
-              front-end of websites because I find satisfaction on making stuff
-              visually appeasing and functionally efficient. I discovered
-              programming when I was at 5th grade because young me found it
-              funny changing the contents of websites with inspect element
+            <p
+              class="text-white opacity-80 mb-4 text-sm md:text-base font-roboto"
+            >
+              My name is
+              <span class="text-primary font-bold">Mark Christian Avila</span>
+              and I enjoy developing the front-end of websites because I find
+              satisfaction on making stuff visually appeasing and functionally
+              efficient. I discovered programming when I was at 5th grade
+              because young me found it funny changing the contents of websites
+              with inspect element
             </p>
             <div class="font-roboto text-white opacity-80">
               <h1 class="mb-4">
-                <span class="text-primary font-bold ">Technologies</span> I am experienced with:
+                <span class="text-primary font-bold">Technologies</span> I am
+                experienced with:
               </h1>
               <ul class="grid grid-cols-5 grid-rows-1">
                 <li>
@@ -149,9 +163,68 @@
         </div>
       </section>
 
-      <section id="projects">
-        <div>
-          <h1>Projects</h1>
+      <section class="min-h-screen pt-40 flex flex-col">
+        <div class="text-center">
+          <h1
+            class="md:mr-8 text-white font-montserrat font-bold text-2xl sm:text-3xl md:text-5xl"
+          >
+            Projects
+          </h1>
+          <div class="hidden lg:block w-full bg-white h-[0.2rem]"></div>
+        </div>
+        <div
+          id="project-list"
+          class="h-full grid grid-cols-1 gap-3 grid-rows-3 px-3 mt-8"
+        >
+          <a href="https://anilista-auth-prod.web.app/" target="_blank" class="block project-item h-72 w-full relative">
+            <div class="w-full h-full">
+              <img src="../src/assets/Anilist.PNG" alt="project-image" class="w-full h-full object-cover"/>
+            </div>
+            <div class="bg-black w-full h-full absolute top-0 opacity-80"></div>
+            <div class="w-full h-full absolute top-0 p-4 flex flex-col">
+              <p class="font-ibm text-primary font-bold mb-2">Feature project</p>
+              <h1 class="font-montserrat text-white text-4xl font-bold mb-2">Anilist</h1>
+              <p class="text-white font-bold p-4 font-roboto opacity-70 text-sm mt-auto bg-background-100" 
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reiciendis quod amet ut. Officia, a animi. Reprehenderit, eligendi
+                laborum quaerat delectus voluptates voluptatem ad molestiae
+                aspernatur quasi porro laboriosam, placeat illum.
+              </p>
+            </div>
+          </a>
+          <a href="https://wordhaven.netlify.app/" target="_blank" class="block project-item h-72 w-full relative">
+            <div class="w-full h-full">
+              <img src="../src/assets/wordhaven.PNG" alt="project-image" class="w-full h-full object-cover"/>
+            </div>
+            <div class="bg-black w-full h-full absolute top-0 opacity-80"></div>
+            <div class="w-full h-full absolute top-0 p-4 flex flex-col">
+              <h1 class="font-montserrat text-white text-4xl font-bold mb-2">WordHaven</h1>
+              <p class="text-white font-bold p-4 font-roboto opacity-70 text-sm mt-auto bg-background-100" 
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reiciendis quod amet ut. Officia, a animi. Reprehenderit, eligendi
+                laborum quaerat delectus voluptates voluptatem ad molestiae
+                aspernatur quasi porro laboriosam, placeat illum.
+              </p>
+            </div>
+          </a>
+          <a href="https://mark-avila.github.io/klima/" target="_blank" class="block project-item h-72 w-full relative">
+            <div class="w-full h-full">
+              <img src="../src/assets/kilma.PNG" alt="project-image" class="w-full h-full object-cover"/>
+            </div>
+            <div class="bg-black w-full h-full absolute top-0 opacity-80"></div>
+            <div class="w-full h-full absolute top-0 p-4 flex flex-col">
+              <h1 class="font-montserrat text-white text-4xl font-bold mb-2">Klima</h1>
+              <p class="text-white font-bold p-4 font-roboto opacity-70 text-sm mt-auto bg-background-100" 
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reiciendis quod amet ut. Officia, a animi. Reprehenderit, eligendi
+                laborum quaerat delectus voluptates voluptatem ad molestiae
+                aspernatur quasi porro laboriosam, placeat illum.
+              </p>
+            </div>
+          </a>
         </div>
       </section>
     </main>
