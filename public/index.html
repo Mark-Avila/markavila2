@@ -51,11 +51,11 @@
         </li>
         <li class="ml-8">
           <a href="#projects" class="transition ease-in-out hover:text-primary"
-            >Project</a
+            >Projects</a
           >
         </li>
         <li class="ml-8">
-          <a href="#" class="transition ease-in-out hover:text-primary"
+          <a href="#contact" class="transition ease-in-out hover:text-primary"
             >Contact</a
           >
         </li>
@@ -267,17 +267,17 @@
 
       <section
         id="projects"
-        class="mx-10 hidden min-h-screen flex-col pt-28 md:flex lg:mx-40"
+        class="mx-10 hidden min-h-screen flex-col pt-28 md:flex lg:mx-32 xl:mx-40"
       >
         <div class="mb-8 flex items-center">
           <div class="h-1 w-full bg-white"></div>
           <h1
-            class="ml-8 font-montserrat text-2xl font-bold text-white sm:text-3xl md:mr-8 md:text-5xl"
+            class="ml-8 font-montserrat text-2xl font-bold text-white sm:text-3xl md:text-5xl"
           >
             Projects
           </h1>
         </div>
-        <div id="project-list">
+        <div id="project-list" class="mt-12">
           <div
             id="anilist"
             class="project-item mb-20 grid h-72 grid-cols-2 gap-8"
@@ -403,8 +403,8 @@
                 It features quick overview of the locations temperature and
                 weather, an 8-day and 10 hour weather forecast, and a map
                 visualizing the locations clouds, pressure, temperature, etc.
-                This was my very first real web application project, it may be
-                a little rough in the edges, but its one I'm still proud of.
+                This was my very first real web application project, it may be a
+                little rough in the edges, but its one I'm still proud of.
               </p>
               <div id="tools-used" class="flex">
                 <div class="mr-2 rounded-full bg-white py-1 px-4">
@@ -442,10 +442,91 @@
               </div>
             </a>
           </div>
+          <div
+            id="klima"
+            class="project-item mb-20 grid h-72 grid-cols-2 gap-8"
+          >
+            <div class="flex flex-col">
+              <p class="mb-2 font-ibm font-bold text-primary">
+                Feature Project
+              </p>
+              <h1 class="mb-4 font-montserrat text-4xl font-bold text-white">
+                T.U.P Main website design concept
+              </h1>
+              <p
+                class="mb-4 font-roboto text-sm text-white opacity-70 lg:text-base"
+              >
+                A redesign concept of the main website of the Technological
+                University of the Philippines. I made this project to learn
+                tailwind CSS, a utility-first CSS framework, that I really like
+                as of right now.
+              </p>
+              <div id="tools-used" class="flex">
+                <div class="mr-2 rounded-full bg-white py-1 px-4">
+                  <p class="font-roboto text-sm font-bold">HTML</p>
+                </div>
+                <div class="mr-2 rounded-full bg-white py-1 px-4">
+                  <p class="font-roboto text-sm font-bold">CSS</p>
+                </div>
+                <div class="mr-2 rounded-full bg-white py-1 px-4">
+                  <p class="font-roboto text-sm font-bold">Javascript</p>
+                </div>
+                <div class="mr-2 rounded-full bg-white py-1 px-4">
+                  <p class="font-roboto text-sm font-bold">Tailwind</p>
+                </div>
+              </div>
+            </div>
+            <a
+              href="https://mark-avila.github.io/tup-concept/"
+              target="_blank"
+              class="group relative block h-full w-full"
+            >
+              <img
+                src="../src/assets/tup.PNG"
+                alt="project-image"
+                class="h-full w-full rounded-md object-cover transition ease-in-out group-hover:brightness-[.25]"
+              />
+              <div
+                class="absolute top-0 hidden h-full w-full items-center justify-center group-hover:flex"
+              >
+                <h1 class="font-ibm text-lg font-bold text-primary">
+                  Visit project
+                </h1>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="flex min-h-screen items-center justify-center"
+      >
+        <div class="flex flex-col items-center w-full px-10 md:w-1/2">
+          <p class="mb-4 font-ibm font-bold text-primary">Get in touch</p>
+          <h1 class="mb-4 font-montserrat text-3xl lg:text-6xl font-bold text-white text-center">
+            Contact Me
+          </h1>
+          <p class="mb-8 text-sm md:text-base text-white font-roboto text-center opacity-70">
+            I am current a university student, which means I am not currently
+            looking for full-time opportunities. However, I am looking for
+            front-end internships so that I can learn the workings of the
+            industry. You can email me if you have a question and I'll try my
+            best to get back to you
+          </p>
+          <div>
+            <a href="mailto:avilamark96@gmail.com" rel="noopener noreferrer" target="_blank" class="block border-2 border-primary text-primary py-4 px-6 rounded-md hover:text-black hover:bg-primary font-bold font-ibm transition ease-in-out">
+              Email Me
+            </a>
+          </div>
         </div>
       </section>
     </main>
 
+    <footer class="text-center pb-4">
+      <p class="font-ibm text-sm text-white">Developed by me, <a href="#" class="text-primary font-bold font-ibm opacity-100">Mark Christian Avila</a></p>
+      
+    </footer>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
       integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
