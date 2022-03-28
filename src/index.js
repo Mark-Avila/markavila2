@@ -1,3 +1,7 @@
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
+
 function toggleNavbar() {
   let mobileNav = $("#mobile-nav");
   let state = mobileNav.css("display");
@@ -111,6 +115,7 @@ window.onload = () => {
 
 window.onscroll = () => {
 
+  //Change navbar background if scroll position is at the very top
   if(document.documentElement.scrollTop < 80){
     $("#navbar").removeClass('bg-background-100').addClass('bg-background-200');
   }
@@ -118,17 +123,12 @@ window.onscroll = () => {
     $("#navbar").removeClass('bg-background-200').addClass('bg-background-100');
   }
 
+  //Hide navbar when scrolling down
   if (this.oldScroll > this.scrollY) {
-    console.log("down");
     $("#navbar").css({ transform: "translateY(0)" });
   } else {
-    console.log("up");
     $("#navbar").css({ transform: "translateY(-100px)" });
   }
 
   this.oldScroll = this.scrollY;
 };
-
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-}
