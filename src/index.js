@@ -43,7 +43,36 @@ function toggleNavbar() {
   }
 }
 
+function staggerNavItems() {
+  anime({
+    targets: '#nav-list .nav-link',
+    opacity: [0, 100],
+    translateY: [-50, 0],
+    easing: 'easeOutQuint',
+    delay: anime.stagger(250),
+  })
+
+  anime({
+    targets: '#main-body .main-item',
+    opacity: [0, 100],
+    translateY: [50, 0],
+    easing: 'easeOutCirc',
+    delay: anime.stagger(400)
+  })
+}
+
+/**
+ * On-load Logo animation
+ */
 window.onload = () => {
+
+  /**
+   * Make logo visible, this code was added to avoid
+   * the logo appearing before the animation
+   */
+  $("#logo-container").css({ display: "block" });
+
+  //Animate Stroke
   anime({
     targets: "#logo-container #line-logo path",
     strokeDashoffset: [anime.setDashoffset, 0],
@@ -53,18 +82,28 @@ window.onload = () => {
       return i * 250;
     },
     complete: () => {
+      
+      //fill strokes
       anime({
         targets: "#filled-logo",
         opacity: "100%",
         complete: () => {
+
+          //Hide logo before opacity animation
           $("#filled-logo").css({ display: "none" });
           $("#line-logo").css({ display: "none" });
 
+          staggerNavItems()
+
+          //Fade container
           anime({
             targets: "#first-load",
+            scale: 2,
             opacity: 0,
+            duration: 500,
             complete: () => {
-              return $("#first-load").css({ display: "none" });
+              //Remove container from the dom
+              $("#first-load").css({ display: "none" });
             },
           });
         },
