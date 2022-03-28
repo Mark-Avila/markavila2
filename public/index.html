@@ -39,8 +39,11 @@
         <img src="../src/assets/Group 1.svg" alt="personal-logo" class="w-8" />
       </a>
       <div>
-        <button class="text-primary md:hidden">
-          <i class="fa-solid fa-2x fa-list"></i>
+        <button
+          onclick="toggleNavbar()"
+          class="relative z-50 text-primary md:hidden"
+        >
+          <i id="fa-icon" class="fa-solid fa-2x fa-bars"></i>
         </button>
       </div>
       <ul class="hidden items-center font-ibm font-bold text-white md:flex">
@@ -67,7 +70,45 @@
           >
         </li>
       </ul>
+      <ul
+        id="mobile-nav"
+        class="absolute top-0 right-0 z-40 hidden h-screen w-64 bg-background-100 p-8 pt-28 font-ibm font-bold text-white"
+      >
+        <li class="mb-8">
+          <a href="" class="transition ease-in-out hover:text-primary">About</a>
+        </li>
+        <li class="mb-8">
+          <a href="" class="transition ease-in-out hover:text-primary"
+            >Projects</a
+          >
+        </li>
+        <li class="mb-8">
+          <a href="" class="transition ease-in-out hover:text-primary"
+            >Contacts</a
+          >
+        </li>
+        <li class="mb-8">
+          <a
+            href=""
+            class="block w-full rounded-md border-2 border-primary py-2 text-center text-primary transition ease-in-out hover:bg-primary hover:text-black"
+            >Resume</a
+          >
+        </li>
+      </ul>
     </nav>
+
+    <div id="first-load" class="bg-background-200 w-full h-screen z-50 fixed flex items-center justify-center">
+      <div id="logo-container" class="relative">
+        <svg id="line-logo" width="128" height="128" viewBox="0 0 361 391" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path id="logo-1" d="M3 388.5H69V217L180 372L292.5 217V388.5H358.5V8L180 263L3 8V388.5Z" stroke="#28DD9C" stroke-width="5"/>
+          <path id="logo-2" d="M277.5 92H81L130.5 161H230.5L277.5 92Z" stroke="#28DD9C" stroke-width="5"/>
+        </svg>  
+        <svg id="filled-logo" class="opacity-0 absolute top-0 transition ease-in-out" width="128" height="128" viewBox="0 0 361 391" fill="#28DD9C" xmlns="http://www.w3.org/2000/svg">
+          <path id="logo-1" d="M3 388.5H69V217L180 372L292.5 217V388.5H358.5V8L180 263L3 8V388.5Z" stroke="#28DD9C" stroke-width="5"/>
+          <path id="logo-2" d="M277.5 92H81L130.5 161H230.5L277.5 92Z" stroke="#28DD9C" stroke-width="5"/>
+        </svg>  
+      </div>
+    </div>
 
     <main class="h-full">
       <section
@@ -502,12 +543,16 @@
         id="contact"
         class="flex min-h-screen items-center justify-center"
       >
-        <div class="flex flex-col items-center w-full px-10 md:w-1/2">
+        <div class="flex w-full flex-col items-center px-10 md:w-1/2">
           <p class="mb-4 font-ibm font-bold text-primary">Get in touch</p>
-          <h1 class="mb-4 font-montserrat text-3xl lg:text-6xl font-bold text-white text-center">
+          <h1
+            class="mb-4 text-center font-montserrat text-3xl font-bold text-white lg:text-6xl"
+          >
             Contact Me
           </h1>
-          <p class="mb-8 text-sm md:text-base text-white font-roboto text-center opacity-70">
+          <p
+            class="mb-8 text-center font-roboto text-sm text-white opacity-70 md:text-base"
+          >
             I am current a university student, which means I am not currently
             looking for full-time opportunities. However, I am looking for
             front-end internships so that I can learn the workings of the
@@ -515,7 +560,12 @@
             best to get back to you
           </p>
           <div>
-            <a href="mailto:avilamark96@gmail.com" rel="noopener noreferrer" target="_blank" class="block border-2 border-primary text-primary py-4 px-6 rounded-md hover:text-black hover:bg-primary font-bold font-ibm transition ease-in-out">
+            <a
+              href="mailto:avilamark96@gmail.com"
+              rel="noopener noreferrer"
+              target="_blank"
+              class="block rounded-md border-2 border-primary py-4 px-6 font-ibm font-bold text-primary transition ease-in-out hover:bg-primary hover:text-black"
+            >
               Email Me
             </a>
           </div>
@@ -523,10 +573,18 @@
       </section>
     </main>
 
-    <footer class="text-center pb-4">
-      <p class="font-ibm text-sm text-white">Developed by me, <a href="#" class="text-primary font-bold font-ibm opacity-100">Mark Christian Avila</a></p>
-      
+    <footer class="pb-4 text-center">
+      <p class="font-ibm text-sm text-white">
+        Developed by me,
+        <a
+          href="https://github.com/Mark-Avila"
+          target="_blank"
+          class="font-ibm font-bold text-primary opacity-100"
+          >Mark Christian Avila</a
+        >
+      </p>
     </footer>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
       integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="
