@@ -716,9 +716,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 2.5rem;
 }
 
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .py-2 {
@@ -899,12 +899,12 @@ Ensure the default browser behavior of the `hidden` attribute.
     display: none;
   }
 
-  .md\:h-80 {
-    height: 20rem;
+  .md\:h-72 {
+    height: 18rem;
   }
 
-  .md\:w-80 {
-    width: 20rem;
+  .md\:w-72 {
+    width: 18rem;
   }
 
   .md\:w-1\/2 {

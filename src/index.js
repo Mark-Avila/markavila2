@@ -45,27 +45,26 @@ function toggleNavbar() {
 
 function staggerNavItems() {
   anime({
-    targets: '#nav-list .nav-link',
+    targets: "#nav-list .nav-link",
     opacity: [0, 100],
     translateY: [-50, 0],
-    easing: 'easeOutQuint',
+    easing: "easeOutQuint",
     delay: anime.stagger(250),
-  })
+  });
 
   anime({
-    targets: '#main-body .main-item',
+    targets: "#main-body .main-item",
     opacity: [0, 100],
     translateY: [50, 0],
-    easing: 'easeOutCirc',
-    delay: anime.stagger(400)
-  })
+    easing: "easeOutCirc",
+    delay: anime.stagger(400),
+  });
 }
 
 /**
  * On-load Logo animation
  */
 window.onload = () => {
-
   /**
    * Make logo visible, this code was added to avoid
    * the logo appearing before the animation
@@ -82,18 +81,16 @@ window.onload = () => {
       return i * 250;
     },
     complete: () => {
-      
       //fill strokes
       anime({
         targets: "#filled-logo",
         opacity: "100%",
         complete: () => {
-
           //Hide logo before opacity animation
           $("#filled-logo").css({ display: "none" });
           $("#line-logo").css({ display: "none" });
 
-          staggerNavItems()
+          staggerNavItems();
 
           //Fade container
           anime({
@@ -111,3 +108,27 @@ window.onload = () => {
     },
   });
 };
+
+window.onscroll = () => {
+
+  if(document.documentElement.scrollTop < 80){
+    $("#navbar").removeClass('bg-background-100').addClass('bg-background-200');
+  }
+  else {
+    $("#navbar").removeClass('bg-background-200').addClass('bg-background-100');
+  }
+
+  if (this.oldScroll > this.scrollY) {
+    console.log("down");
+    $("#navbar").css({ transform: "translateY(0)" });
+  } else {
+    console.log("up");
+    $("#navbar").css({ transform: "translateY(-100px)" });
+  }
+
+  this.oldScroll = this.scrollY;
+};
+
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}
