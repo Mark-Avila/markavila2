@@ -13,7 +13,8 @@ function toggleNavbar() {
     anime({
       targets: "#fa-icon",
       rotate: -180,
-      easing: "spring(1, 80, 10, 0)",
+      easing: "linear",
+      duration: 300
     });
 
     anime({
@@ -34,7 +35,8 @@ function toggleNavbar() {
     anime({
       targets: "#fa-icon",
       rotate: 180,
-      easing: "spring(1, 80, 10, 0)",
+      easing: "linear",
+      duration: 300
     });
 
     anime({

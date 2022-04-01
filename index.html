@@ -174,13 +174,11 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            id="logo-1"
             d="M3 388.5H69V217L180 372L292.5 217V388.5H358.5V8L180 263L3 8V388.5Z"
             stroke="#28DD9C"
             stroke-width="5"
           />
           <path
-            id="logo-2"
             d="M277.5 92H81L130.5 161H230.5L277.5 92Z"
             stroke="#28DD9C"
             stroke-width="5"
@@ -274,7 +272,7 @@
                 <span class="font-bold text-primary">Technologies</span> I am
                 experienced with:
               </h1>
-              <ul class="grid grid-cols-5 grid-rows-1">
+              <ul class="grid grid-cols-6 grid-rows-1">
                 <li>
                   <i class="fa-brands fa-3x fa-html5"></i>
                 </li>
@@ -289,6 +287,13 @@
                 </li>
                 <li>
                   <i class="fa-brands fa-3x fa-git-alt"></i>
+                </li>
+                <li>
+                  <img
+                    src="./src/assets/tw-logo.svg"
+                    alt="tw-logo"
+                    class="text-white"
+                  />
                 </li>
               </ul>
             </div>
@@ -309,8 +314,7 @@
           <div class="hidden h-[0.2rem] w-full bg-white lg:block"></div>
         </div>
         <div
-          id="project-list"
-          class="mt-8 grid h-full grid-cols-1 grid-rows-3 gap-3"
+          class="project-list mt-8 grid h-full grid-cols-1 grid-rows-3 gap-3"
         >
           <a
             href="https://anilista-auth-prod.web.app/"
@@ -334,15 +338,12 @@
                 Anilist
               </h1>
               <p
-                class="mt-auto bg-background-100 p-4 font-roboto text-sm font-bold text-white opacity-70"
+                class="mt-auto bg-background-100 p-4 font-roboto text-sm text-white opacity-70 md:font-bold"
               >
                 Anime ang Manga information/watchlist tracker web application.
                 My first real react project that started as just a way to
                 practice handling and fetching data from API's, but decided to
-                become a full web app due to my interest in anime. It was also
-                recently I discovered that a similar website with a super
-                similar name also exists, so I plan on not only rebranding, but
-                also remaking it entirely.
+                become a full web app due to my interest in anime.
               </p>
             </div>
           </a>
@@ -369,9 +370,7 @@
               >
                 A dictionary site that displays a word's part of speech,
                 definitions, and uses. This project was a way for me to practice
-                simplistic visual appeal and smooth animations. This project is
-                also the first time I used styled components, which has become
-                my go-to way of styling in React
+                simplistic visual appeal and smooth animations.
               </p>
             </div>
           </a>
@@ -400,8 +399,6 @@
                 It features quick overview of the locations temperature and
                 weather, an 8-day and 10 hour weather forecast, and a map
                 visualizing the locations clouds, pressure, temperature, etc.
-                This was my very first real web application project, it may be a
-                little rough in the edges, but its one I'm still proud of.
               </p>
             </div>
           </a>
@@ -421,7 +418,7 @@
             Projects
           </h1>
         </div>
-        <div id="project-list" class="mt-12">
+        <div class="project-list mt-12">
           <div
             id="anilist"
             data-aos="fade-up"
@@ -445,7 +442,7 @@
                 similar name also exists, so I plan on not only rebranding, but
                 also remaking it entirely.
               </p>
-              <div id="tools-used" class="flex">
+              <div class="tools-used flex">
                 <div class="mr-2 rounded-full bg-white py-1 px-4">
                   <p class="font-roboto text-sm font-bold">React</p>
                 </div>
@@ -500,7 +497,7 @@
                 also the first time I used styled components, which has become
                 my go-to way of styling in React
               </p>
-              <div id="tools-used" class="flex">
+              <div class="tools-used flex">
                 <div class="mr-2 rounded-full bg-white py-1 px-4">
                   <p class="font-roboto text-sm font-bold">React</p>
                 </div>
@@ -553,7 +550,7 @@
                 This was my very first real web application project, it may be a
                 little rough in the edges, but its one I'm still proud of.
               </p>
-              <div id="tools-used" class="flex">
+              <div class="tools-used flex">
                 <div class="mr-2 rounded-full bg-white py-1 px-4">
                   <p class="font-roboto text-sm font-bold">HTML</p>
                 </div>
@@ -610,7 +607,7 @@
                 tailwind CSS, a utility-first CSS framework, that I really like
                 as of right now.
               </p>
-              <div id="tools-used" class="flex">
+              <div class="tools-used flex">
                 <div class="mr-2 rounded-full bg-white py-1 px-4">
                   <p class="font-roboto text-sm font-bold">HTML</p>
                 </div>
@@ -670,7 +667,7 @@
           </p>
           <div>
             <a
-              href="mailto:avilamark96@gmail.com"
+              href="mailto:markavila.dev@gmail.com"
               rel="noopener noreferrer"
               target="_blank"
               class="block rounded-md border-2 border-primary py-4 px-6 font-ibm font-bold text-primary transition ease-in-out hover:bg-primary hover:text-black"
