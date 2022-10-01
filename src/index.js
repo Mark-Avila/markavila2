@@ -75,44 +75,44 @@ window.onload = () => {
    * Make logo visible, this code was added to avoid
    * the logo appearing before the animation
    */
-  $("#logo-container").css({ display: "block" });
+  // $("#logo-container").css({ display: "block" });
 
-  //Animate Stroke
-  anime({
-    targets: "#logo-container #line-logo path",
-    strokeDashoffset: [anime.setDashoffset, 0],
-    easing: "easeInOutSine",
-    duration: 1500,
-    delay: function (el, i) {
-      return i * 250;
-    },
-    complete: () => {
-      //fill strokes
-      anime({
-        targets: "#filled-logo",
-        opacity: "100%",
-        complete: () => {
-          //Hide logo before opacity animation
-          $("#filled-logo").css({ display: "none" });
-          $("#line-logo").css({ display: "none" });
+  // //Animate Stroke
+  // anime({
+  //   targets: "#logo-container #line-logo path",
+  //   strokeDashoffset: [anime.setDashoffset, 0],
+  //   easing: "easeInOutSine",
+  //   duration: 1500,
+  //   delay: function (el, i) {
+  //     return i * 250;
+  //   },
+  //   complete: () => {
+  //     //fill strokes
+  //     anime({
+  //       targets: "#filled-logo",
+  //       opacity: "100%",
+  //       complete: () => {
+  //         //Hide logo before opacity animation
+  //         $("#filled-logo").css({ display: "none" });
+  //         $("#line-logo").css({ display: "none" });
 
-          staggerNavItems();
+  //         staggerNavItems();
 
-          //Fade container
-          anime({
-            targets: "#first-load",
-            scale: 2,
-            opacity: 0,
-            duration: 500,
-            complete: () => {
-              //Remove container from the dom
-              $("#first-load").css({ display: "none" });
-            },
-          });
-        },
-      });
-    },
-  });
+  //         //Fade container
+  //         anime({
+  //           targets: "#first-load",
+  //           scale: 2,
+  //           opacity: 0,
+  //           duration: 500,
+  //           complete: () => {
+  //             //Remove container from the dom
+  //             $("#first-load").css({ display: "none" });
+  //           },
+  //         });
+  //       },
+  //     });
+  //   },
+  // });
 };
 
 window.onscroll = () => {

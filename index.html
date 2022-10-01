@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Montserrat:wght@500;700&family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -38,10 +38,12 @@
       id="navbar"
       class="fixed z-50 flex w-full items-center justify-between bg-background-200 px-10 py-6 transition ease-in-out lg:px-8 xl:px-16"
     >
-      <a href="#" class="block" id="nav-desktop-logo">
-        <img src="./src/assets/Group 1.svg" alt="personal-logo" class="w-8" />
-      </a>
-      <div>
+      <div class="w-24">
+        <a href="#" class="block" id="nav-desktop-logo">
+          <img src="./src/assets/Group 1.svg" alt="personal-logo" class="w-8" />
+        </a>
+      </div>
+      <!-- <div>
         <button
           id="nav-resume"
           onclick="toggleNavbar()"
@@ -49,36 +51,49 @@
         >
           <i id="fa-icon" class="fa-solid fa-2x fa-bars"></i>
         </button>
-      </div>
+      </div> -->
       <ul
         id="nav-list"
-        class="hidden items-center font-ibm font-bold text-white md:flex"
+        class="hidden items-center font-montserrat text-sm font-normal text-white md:flex"
       >
         <li class="nav-link ml-8">
-          <a href="#about" class="transition ease-in-out hover:text-primary"
+          <a
+            href="#about"
+            class="opacity-50 transition ease-in-out hover:text-primary hover:opacity-100"
             >About</a
           >
         </li>
         <li class="nav-link ml-8">
-          <a href="#projects" class="transition ease-in-out hover:text-primary"
-            >Projects</a
-          >
-        </li>
-        <li class="nav-link ml-8">
-          <a href="#contact" class="transition ease-in-out hover:text-primary"
-            >Contact</a
+          <a
+            href="#projects"
+            class="opacity-50 transition ease-in-out hover:text-primary hover:opacity-100"
+            >Tech</a
           >
         </li>
         <li class="nav-link ml-8">
           <a
-            href="https://docs.google.com/document/d/1CinSU38olclH3P7gcn1No0sYKrw0L5A2b-M53X0eqi0/edit?usp=sharing"
-            rel="noreferrer"
-            target="_blank"
-            class="transition border-2 block py-3 px-5 border-primary ease-in-out hover:bg-primary hover:text-black rounded-lg"
-            >Resume</a
+            href="#contact"
+            class="opacity-50 transition ease-in-out hover:text-primary hover:opacity-100"
+            >Projects</a
+          >
+        </li>
+        <li class="nav-link ml-8">
+          <a
+            href="#contact"
+            class="opacity-50 transition ease-in-out hover:text-primary hover:opacity-100"
+            >Contact</a
           >
         </li>
       </ul>
+      <div class="nav-link">
+        <a
+          href="https://docs.google.com/document/d/1CinSU38olclH3P7gcn1No0sYKrw0L5A2b-M53X0eqi0/edit?usp=sharing"
+          rel="noreferrer"
+          target="_blank"
+          class="hover:bg-primary-gradient block w-24 rounded-lg border-2 border-primary py-3 px-5 text-primary transition ease-in-out hover:border-white hover:text-blue-900"
+          >Resume</a
+        >
+      </div>
       <ul
         id="mobile-nav"
         class="absolute top-0 right-0 z-40 hidden h-screen w-64 bg-background-100 p-8 pt-28 font-ibm font-bold text-white"
@@ -101,7 +116,7 @@
             href="https://docs.google.com/document/d/1CinSU38olclH3P7gcn1No0sYKrw0L5A2b-M53X0eqi0/edit?usp=sharing"
             rel="noreferrer"
             target="_blank"
-            class="transition border-2 block py-3 px-5 border-primary ease-in-out text-center hover:bg-primary hover:text-black active:bg-primary rounded-lg"
+            class="block rounded-lg border-2 border-primary py-3 px-5 text-center transition ease-in-out hover:bg-primary hover:text-black active:bg-primary"
             >Resume</a
           >
         </li>
@@ -111,6 +126,7 @@
     <div
       id="links"
       class="fixed bottom-0 z-50 ml-8 hidden h-1/2 lg:block xl:ml-16"
+      style="display: none"
     >
       <ul class="flex h-full flex-col items-center justify-end text-white">
         <li>
@@ -148,6 +164,7 @@
     <div
       id="first-load"
       class="fixed z-50 flex h-screen w-full items-center justify-center bg-background-200"
+      style="display: none"
     >
       <div id="logo-container" class="relative hidden">
         <svg
@@ -201,32 +218,70 @@
       >
         <div id="main-body">
           <div class="main-item mb-4">
-            <h3 class="font-ibm font-bold text-primary opacity-0">
-              Hi! You can call me
+            <h3 class="font-montserrat font-normal text-slate-400 lg:text-sm">
+              What's up! My name is
             </h3>
           </div>
-          <div class="main-item mb-2 opacity-0 lg:mb-4">
+          <div class="main-item mb-2 lg:mb-4">
             <h1
-              class="font-montserrat text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl"
+              class="text-primary-gradient font-montserrat text-4xl font-bold text-white sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              <span class="text-primary">M</span>ark
-              <span class="text-primary">A</span>vila
+              Mark Avila
             </h1>
           </div>
-          <div class="main-item mb-4 opacity-0">
+          <div class="main-item mb-4">
             <h1
-              class="font-montserrat text-2xl font-bold text-white opacity-80 lg:text-5xl"
+              class="font-montserrat text-2xl font-bold text-white lg:text-6xl"
             >
-              Future Front-end developer
+              I like making websites
             </h1>
           </div>
-          <div class="main-item mb-4 opacity-0">
-            <p class="text-sm text-white opacity-50 md:text-base lg:w-1/2">
-              University student aspiring to become a front-end developer. I am
-              currently learning React development, but I am also interested in
-              learning other frameworks such as Vue and Angular
+          <div class="main-item mb-4">
+            <p
+              class="lg:text-md font-montserrat text-sm text-slate-400 opacity-50 md:font-normal lg:w-1/2"
+            >
+              Computer Science student aspiring to become a web developer.
+              Welcome to my portfolio
             </p>
           </div>
+          <ul class="flex items-center">
+            <li class="mr-6">
+              <a
+                href="https://www.facebook.com/profile.php?id=100076620788296"
+                target="_blank"
+                class="text-lg text-white transition ease-in-out hover:text-sky-600"
+              >
+                <i class="fa-brands fa-facebook fa-lg"></i>
+              </a>
+            </li>
+            <li class="mr-6">
+              <a
+                href="https://www.facebook.com/profile.php?id=100076620788296"
+                target="_blank"
+                class="text-lg text-white transition ease-in-out hover:text-sky-600"
+              >
+                <i class="fa-brands fa-twitter fa-lg"></i>
+              </a>
+            </li>
+            <li class="mr-6">
+              <a
+                href="https://www.facebook.com/profile.php?id=100076620788296"
+                target="_blank"
+                class="text-lg text-white transition ease-in-out hover:text-sky-600"
+              >
+                <i class="fa-brands fa-github fa-lg"></i>
+              </a>
+            </li>
+            <li class="mr-6">
+              <a
+                href="https://www.facebook.com/profile.php?id=100076620788296"
+                target="_blank"
+                class="text-lg text-white transition ease-in-out hover:text-sky-600"
+              >
+                <i class="fa-brands fa-linkedin fa-lg"></i>
+              </a>
+            </li>
+          </ul>
         </div>
       </section>
 

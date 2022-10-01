@@ -468,6 +468,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.text-primary-gradient {
+  background: #121FCF;
+  background: linear-gradient(to right, #1B74FA 0%, #03E5D7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .fixed {
   position: fixed;
 }
@@ -527,6 +534,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.mr-6 {
+  margin-right: 1.5rem;
 }
 
 .mt-8 {
@@ -613,6 +624,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.w-24 {
+  width: 6rem;
+}
+
 .w-8 {
   width: 2rem;
 }
@@ -689,6 +704,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   scroll-behavior: smooth;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -697,17 +716,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.375rem;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
 .border-2 {
   border-width: 2px;
 }
 
 .border-primary {
   --tw-border-opacity: 1;
-  border-color: rgb(40 221 156 / var(--tw-border-opacity));
+  border-color: rgb(3 155 229 / var(--tw-border-opacity));
 }
 
 .bg-background-200 {
@@ -804,16 +819,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-align: center;
 }
 
-.font-ibm {
-  font-family: 'IBM Plex Mono', monospace;
-}
-
 .font-montserrat {
   font-family: 'Montserrat', sans-serif;
 }
 
+.font-ibm {
+  font-family: 'IBM Plex Mono', monospace;
+}
+
 .font-roboto {
   font-family: 'Roboto', sans-serif;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-4xl {
@@ -826,11 +846,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -841,18 +856,31 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2.25rem;
 }
 
+.font-normal {
+  font-weight: 400;
+}
+
 .font-bold {
   font-weight: 700;
 }
 
 .text-primary {
   --tw-text-opacity: 1;
-  color: rgb(40 221 156 / var(--tw-text-opacity));
+  color: rgb(3 155 229 / var(--tw-text-opacity));
 }
 
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.text-slate-400 {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .opacity-0 {
@@ -861,10 +889,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .opacity-80 {
   opacity: 0.8;
-}
-
-.opacity-50 {
-  opacity: 0.5;
 }
 
 .opacity-70 {
@@ -887,19 +911,32 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hover\:bg-primary:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(40 221 156 / var(--tw-bg-opacity));
+.hover\:bg-primary-gradient:hover {
+  background: #121FCF;
+  background: linear-gradient(to right, #1B74FA 0%, #03E5D7 100%);
 }
 
-.hover\:bg-white:hover {
+.hover\:border-0:hover {
+  border-width: 0px;
+}
+
+.hover\:border-transparent:hover {
+  border-color: transparent;
+}
+
+.hover\:border-white:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.hover\:bg-primary:hover {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(3 155 229 / var(--tw-bg-opacity));
 }
 
 .hover\:text-primary:hover {
   --tw-text-opacity: 1;
-  color: rgb(40 221 156 / var(--tw-text-opacity));
+  color: rgb(3 155 229 / var(--tw-text-opacity));
 }
 
 .hover\:text-black:hover {
@@ -907,9 +944,33 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
+.hover\:text-sky-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(2 132 199 / var(--tw-text-opacity));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-sky-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(12 74 110 / var(--tw-text-opacity));
+}
+
+.hover\:text-blue-900:hover {
+  --tw-text-opacity: 1;
+  color: rgb(30 58 138 / var(--tw-text-opacity));
+}
+
+.hover\:opacity-100:hover {
+  opacity: 1;
+}
+
 .active\:bg-primary:active {
   --tw-bg-opacity: 1;
-  background-color: rgb(40 221 156 / var(--tw-bg-opacity));
+  background-color: rgb(3 155 229 / var(--tw-bg-opacity));
 }
 
 .group:hover .group-hover\:flex {
@@ -991,14 +1052,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     line-height: 1;
   }
 
+  .md\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
   }
 
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
+  .md\:font-normal {
+    font-weight: 400;
   }
 
   .md\:font-bold {
@@ -1034,24 +1099,24 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 2rem;
   }
 
+  .lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
   .lg\:text-7xl {
     font-size: 4.5rem;
     line-height: 1;
   }
 
-  .lg\:text-5xl {
-    font-size: 3rem;
+  .lg\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
 
   .lg\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
-  }
-
-  .lg\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
   }
 }
 
