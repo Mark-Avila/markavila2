@@ -1,9 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    html {
-        background-color: black;
+  html {
+    height: 100%;
+  }
+
+  body > #root {
+    height: 100vh;
+    background-color: black;
+  }
+
+  *,
+  *::before,
+  *::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+  }
+
+  .nav-hover {
+    background: linear-gradient(180deg, rgba(27,116,250,1) 49%, rgba(3,229,215,1) 100%) calc(100% - var(--p,0%)) / var(--p,0%) no-repeat;
+    transition: .4s, background-position 0s;
+  }
+  .nav-hover:hover {
+    --p: 100%;
+    color: white !important;
+  }
+
+  @keyframes navItemClick {
+    0% {
+      scale: 1;
     }
+    50% {
+      scale: 0.9;
+    }
+    100% {
+      scale: 1;
+    }
+  }
+
+  .nav-onclick {
+    animation-name: navItemClick;
+    animation-duration: 300ms;
+    background: linear-gradient(180deg, rgba(27,116,250,1) 49%, rgba(3,229,215,1) 100%);
+    color: white !important;
+  }
+
+
+
+  .resume {
+    display: inline-block;
+    transform: perspective(1px) translateZ(0);
+    position: relative;
+    transition: color 0.3s;
+  }
+  .resume:before {
+    content: "";
+    position: absolute;
+    border-radius: 0.375rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-out;
+  }
+  .resume:hover {
+    color: black;
+  }
+  .resume:hover:before {
+    transform: scaleX(1);
+  }
 }
