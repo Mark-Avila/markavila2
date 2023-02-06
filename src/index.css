@@ -77,4 +77,8 @@
   .resume:hover:before {
     transform: scaleX(1);
   }
+
+  .logo-transition {
+    transition: .2s ease-in-out;
+  }
 }

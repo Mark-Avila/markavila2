@@ -3,8 +3,6 @@ import Header from "./components/Header";
 
 function App() {
 
-    const [isMobileOpen, setMobileOpen] = useState(false);
-
     const [activePage, setActivePage] = useState({
         Home: true,
         About: false,
@@ -25,13 +23,9 @@ function App() {
         return setActivePage({...initialState, [key]: true});
     }
 
-    const toggleMobileOpen = () => {
-        setMobileOpen(!isMobileOpen)
-    }
-
     return (
         <div className="min-h-full">
-            <Header items={activePage} toggleMobileOpen={toggleMobileOpen} isMobileOpen={isMobileOpen} onItemClick={onNavItemClick}/>
+            <Header items={activePage} onItemClick={onNavItemClick}/>
         </div>
     );
 }
