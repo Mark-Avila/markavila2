@@ -53,7 +53,7 @@ function Header(props: HeaderProps) {
   }
 
   return (
-    <nav className="h-fit bg-[rgb(07,07,07)] border-b border-b-gray-700 md:bg-transparent pb-4 md:border-none md:py-4">
+    <nav className="z-10 h-fit bg-[rgb(07,07,07)] border-b border-b-gray-700 md:bg-transparent pb-4 md:border-none md:py-4">
       <ul className="flex h-full flex-col items-start justify-center px-6 text-white md:flex-row md:items-center md:justify-between">
         <li className="mt-4 flex w-full items-center justify-between md:mt-0 md:w-20">
           <button className="w-fit">

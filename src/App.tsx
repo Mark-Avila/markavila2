@@ -41,7 +41,7 @@ function App() {
   frozenParticlesJson.particles.move.enable = false;
 
   return (
-    <div className="flex min-h-full flex-col">
+    <div className="flex min-h-full flex-col z-10">
       <Particles
         className="z-0"
         id="tsparticles"
