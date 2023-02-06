@@ -51,8 +51,8 @@ function InitialLogo() {
           y2="558"
           gradientUnits="userSpaceOnUse"
         >
-          <stop className="logo-transition" stop-color={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stop-color={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
+          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
+          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
         </linearGradient>
         <linearGradient
           id="paint1_linear_405_39"
@@ -62,8 +62,8 @@ function InitialLogo() {
           y2="558"
           gradientUnits="userSpaceOnUse"
         >
-          <stop className="logo-transition" stop-color={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stop-color={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
+          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
+          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
         </linearGradient>
         <linearGradient
           id="paint2_linear_405_39"
@@ -73,8 +73,8 @@ function InitialLogo() {
           y2="558"
           gradientUnits="userSpaceOnUse"
         >
-          <stop className="logo-transition" stop-color={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stop-color={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
+          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
+          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
         </linearGradient>
         <linearGradient
           id="paint3_linear_405_39"
@@ -84,8 +84,8 @@ function InitialLogo() {
           y2="558"
           gradientUnits="userSpaceOnUse"
         >
-          <stop className="logo-transition" stop-color={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stop-color={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
+          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
+          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
         </linearGradient>
         <linearGradient
           id="paint4_linear_405_39"
@@ -95,8 +95,8 @@ function InitialLogo() {
           y2="558"
           gradientUnits="userSpaceOnUse"
         >
-          <stop className="logo-transition" stop-color={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stop-color={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
+          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
+          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
         </linearGradient>
         <linearGradient
           id="paint5_linear_405_39"
@@ -106,8 +106,8 @@ function InitialLogo() {
           y2="558"
           gradientUnits="userSpaceOnUse"
         >
-          <stop className="logo-transition" stop-color={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stop-color={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
+          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
+          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
         </linearGradient>
       </defs>
     </svg>
