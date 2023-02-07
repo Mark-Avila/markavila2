@@ -8,7 +8,7 @@ function Contact() {
         <p className="mt-4 font-montserrat text-2xl font-bold text-white lg:text-center">
           Get in touch with me
         </p>
-        <p className="mt-4 text-gray-500 md:text-sm lg:text-center xl:px-20">
+        <p className="mt-4 text-gray-500 md:text-sm lg:text-center xl:px-20 font-roboto">
           I am current a university student, which means I am not currently
           looking for full-time opportunities. However, I am looking for
           front-end internships so that I can learn the workings of the

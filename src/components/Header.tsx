@@ -58,6 +58,8 @@ function Header(props: HeaderProps) {
     }
   }
 
+  //
+
   return (
     <nav className="fixed w-full z-20 h-fit bg-[rgb(07,07,07)] border-b border-b-gray-700 md:bg-transparent pb-4 md:border-none md:py-4">
       <ul className="flex h-full flex-col items-start justify-center px-6 text-white md:flex-row md:items-center md:justify-between">
