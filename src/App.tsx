@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import { About, Home } from "./screens";
+import { About, Contact, Home } from "./screens";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { Engine } from "tsparticles-engine";
@@ -61,6 +61,11 @@ function App() {
           {activePage.About && (
             <motion.span className="w-full flex-1 box-border">
               <About />
+            </motion.span>
+          )}
+          {activePage.Contact && (
+            <motion.span className="w-full flex-1 box-border">
+              <Contact />
             </motion.span>
           )}
         </main>

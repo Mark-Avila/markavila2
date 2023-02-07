@@ -38,7 +38,7 @@ const AboutCardVariants: Variants = {
 function AboutCard({ title, body }: AboutCardProps) {
   return (
     <motion.span className="w-full h-full" variants={AboutCardVariants} initial="hidden" animate="show">
-      <motion.h1 variants={AboutCardItemVariants} className="custom-gradient-purple font-montserrat text-2xl font-bold">
+      <motion.h1 variants={AboutCardItemVariants} className="custom-gradient-purple-text font-montserrat text-2xl font-bold">
         { title }
       </motion.h1>
       <motion.p variants={AboutCardItemVariants} className="sm:w-3/4 md:w-full mt-2 text-gray-300">
