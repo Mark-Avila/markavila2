@@ -7,12 +7,15 @@
 @layer base {
   html {
     height: 100%;
+    min-height: 100%;
   }
 
   body > #root {
     height: 100vh;
+    min-height: 100%;
     background-color: black;
   }
+
 
   *,
   *::before,
@@ -85,12 +88,39 @@
     transition: 0.2s ease-in-out;
   }
 
-  .custom-gradient {
+  .custom-gradient-blue {
     background: #1b74fa;
     background: -webkit-linear-gradient(to right, #1b74fa 0%, #03e5d7 100%);
     background: -moz-linear-gradient(to right, #1b74fa 0%, #03e5d7 100%);
     background: linear-gradient(to right, #1b74fa 0%, #03e5d7 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  .custom-gradient-purple {
+    background: #605DFE;
+    background: -webkit-linear-gradient(to right, #605DFE 0%, #0342E5 100%);
+    background: -moz-linear-gradient(to right, #605DFE 0%, #0342E5 100%);
+    background: linear-gradient(to right, #605DFE 0%, #0342E5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .purple-border {
+    border: 2px solid transparent;
+    background: 
+      linear-gradient(to right, black, black), 
+      linear-gradient(to right, #605DFE, #0342E5); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
+  }
+
+  .purple-border--active {
+    border: 2px solid transparent;
+    background: 
+      linear-gradient(to right, #605DFE, #0342E5),
+      linear-gradient(to right, #605DFE, #0342E5); 
+    background-clip: padding-box, border-box;
+    background-origin: padding-box, border-box;
   }
 }
