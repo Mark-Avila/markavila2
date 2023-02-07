@@ -52,7 +52,7 @@ function App() {
       <Header items={activePage} onItemClick={onNavItemClick} />
 
       <AnimatePresence>
-        <main className="z-10 mt-20 flex h-full w-full flex-grow overflow-y-scroll">
+        <main className="z-10 mt-20 flex h-full w-full flex-grow overflow-y-auto">
           {activePage.Home && (
             <motion.span className="w-full flex-1 box-border">
               <Home />

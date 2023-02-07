@@ -2,7 +2,7 @@ import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 function Home() {
   return (
-    <div className="flex w-full h-full flex-col justify-start p-8 md:pl-24 md:pt-24">
+    <div className="flex w-full h-full flex-col justify-start p-8 md:pl-24 md:pt-24 lg:pl-48">
       <h5 className="font-montserrat text-sm text-gray-400 md:text-base lg:text-xl">
         What's up! I am
       </h5>

@@ -1,18 +1,50 @@
+import { Variants, motion } from "framer-motion";
+
 interface AboutCardProps {
     title: string;
     body: string;
 }
 
+const AboutCardItemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -10,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "linear"
+    }
+  },
+  exit: {
+    opacity: 1,
+    x: -10,
+  }
+}
+
+const AboutCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+  },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2
+    }
+  },
+}
+
 function AboutCard({ title, body }: AboutCardProps) {
   return (
-    <>
-      <h1 className="custom-gradient-purple font-montserrat text-2xl font-bold">
+    <motion.span className="w-full h-full" variants={AboutCardVariants} initial="hidden" animate="show">
+      <motion.h1 variants={AboutCardItemVariants} className="custom-gradient-purple font-montserrat text-2xl font-bold">
         { title }
-      </h1>
-      <p className="mt-2 text-gray-300">
+      </motion.h1>
+      <motion.p variants={AboutCardItemVariants} className="sm:w-3/4 md:w-full mt-2 text-gray-300">
         {body}
-      </p>
-    </>
+      </motion.p>
+    </motion.span>
   );
 }
 
