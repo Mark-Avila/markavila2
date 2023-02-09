@@ -5,6 +5,7 @@ import wordhaven from "../assets/wordhaven.png";
 import { ProjectItem } from "../components";
 import { useSwipeable } from "react-swipeable";
 import { AnimatePresence } from "framer-motion";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 interface ProjectItem {
   id: number;
@@ -35,22 +36,35 @@ const items: ProjectItem[] = [
 ];
 
 function Projects() {
-
   return (
-    <div className="flex h-full w-full flex-col p-8 md:flex md:items-start md:justify-center lg:items-center">
-      <h1 className="custom-gradient-blue h-16 text-5xl font-bold">Projects</h1>
-      <p className="font-montserrat text-gray-500">Swipe for more</p>
-        <div className="flex container-snap overflow-x-auto snap-x snap-mandatory mt-12 gap-4">
-          {items.map((item) => (
-            <ProjectItem
-              key={item.id}
-              image={item.image}
-              title={item.title}
-              body={item.body}
-              tech={item.tech}
-            />
-          ))}
+    <div className="h-full p-8 lg:flex lg:h-fit lg:items-center lg:justify-center xl:h-full">
+      <div className="flex h-full w-full flex-col lg:w-3/4">
+        <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-7xl">
+          Projects
+        </h1>
+        <p className="font-montserrat text-gray-500">Swipe for more</p>
+        <div className="h-full lg:mt-8 lg:flex lg:items-center lg:justify-between">
+          <button className="hidden lg:block text-4xl text-white transition ease-in-out active:-translate-x-2 xl:text-6xl">
+            <FaAngleLeft />
+          </button>
+          <div className=" container-snap flex h-full xl:h-full snap-x snap-mandatory gap-4 overflow-x-auto lg:items-center">
+            {items.map((item) => (
+              <div className="h-full w-full shrink-0 snap-center overflow-visible lg:flex lg:h-fit lg:items-center lg:justify-center">
+                <ProjectItem
+                  key={item.id}
+                  image={item.image}
+                  title={item.title}
+                  body={item.body}
+                  tech={item.tech}
+                />
+              </div>
+            ))}
+          </div>
+          <button className="hidden lg:block text-4xl text-white transition ease-in-out active:translate-x-2 active:scale-90 xl:text-6xl">
+            <FaAngleRight />
+          </button>
         </div>
+      </div>
     </div>
   );
 }
