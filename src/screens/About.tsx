@@ -26,7 +26,7 @@ function About() {
   return (
     <div className="h-full w-full md:flex md:items-start md:justify-center lg:items-center">
       <div className="flex flex-col p-8 lg:w-3/4 xl:w-1/2">
-        <h1 className="custom-gradient-blue font-montserrat text-5xl font-bold text-white md:text-7xl">
+        <h1 className="custom-gradient-blue font-montserrat text-5xl font-bold text-white md:text-6xl xl:text-8xl">
           About me
         </h1>
         <p className="mt-4 border-l-2 pl-6 font-roboto text-gray-400 md:mt-8">

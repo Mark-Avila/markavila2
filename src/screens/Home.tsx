@@ -6,13 +6,13 @@ function Home() {
       <h5 className="font-montserrat text-sm text-gray-400 md:text-base lg:text-xl">
         What's up! I am
       </h5>
-      <h1 className="custom-gradient-blue mt-2 font-montserrat text-5xl font-bold text-white md:text-6xl lg:text-8xl">
+      <h1 className="custom-gradient-blue mt-2 font-montserrat text-5xl font-bold text-white md:text-6xl xl:text-8xl">
         Mark Avila
       </h1>
-      <h2 className="mt-2 font-montserrat text-xl font-bold text-white md:text-3xl lg:text-6xl">
+      <h2 className="mt-2 font-montserrat text-xl font-bold text-white md:text-3xl xl:text-6xl">
         I like making websites
       </h2>
-      <p className="mt-4 font-roboto text-sm text-gray-500 md:text-base lg:w-1/4">
+      <p className="mt-4 font-roboto text-sm text-gray-500 md:text-base lg:w-1/2 xl:w-3/4 xl:text-xl">
         Computer Science student aspiring to become a web developer. Welcome to
         my portfolio
       </p>
