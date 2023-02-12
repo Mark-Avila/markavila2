@@ -4,7 +4,7 @@ import kikoo from "../assets/klima.png";
 import wordhaven from "../assets/wordhaven.png";
 import { ProjectItem } from "../components";
 import { useSwipeable } from "react-swipeable";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 interface ProjectItem {
@@ -18,82 +18,100 @@ interface ProjectItem {
 const lorem =
   "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo, obcaecati vel dolor tempora soluta quia nemo distinctio ratione eaque, laborum, libero mollitia excepturi deserunt beatae illo odit. Quos, animi sapiente?";
 
-const items: ProjectItem[] = [
-  {
-    id: 8624,
-    image: wordhaven,
-    title: "Wordhaven",
-    body: lorem,
-    tech: ["React", "Styled Components", "Framer Motion"],
-  },
-  {
-    id: 9566,
-    image: kikoo,
-    title: "Kikoo",
-    body: lorem,
-    tech: ["Vue", "ParticleJS", "OpenWeatherMap API"],
-  },
-  {
-    id: 5192,
-    image: anilist,
-    title: "Anilist",
-    body: lorem,
-    tech: ["React", "Firebase", "Kitsu API"],
-  },
-];
-
 function Projects() {
+  const [currItemIndex, setcurrItemIndex] = useState(0);
+  const [swipeDirection, setSwipeDirection] = useState("right");
+
+  const handleRightClick = () => {
+    setSwipeDirection("right");
+
+    setTimeout(() => {
+      setcurrItemIndex((prev) => (prev < items.length - 1 ? prev + 1 : prev));
+    }, 20);
+  };
+  const handleLeftClick = () => {
+    setSwipeDirection("left");
+    
+    setTimeout(() => {
+      setcurrItemIndex((prev) => (prev > 0 ? prev - 1 : prev));
+    }, 20);
+  };
+
+  const items: ProjectItem[] = [
+    {
+      id: 8624,
+      image: wordhaven,
+      title: "Wordhaven",
+      body: lorem,
+      tech: ["React", "Styled Components", "Framer Motion"],
+    },
+    {
+      id: 9566,
+      image: kikoo,
+      title: "Kikoo",
+      body: lorem,
+      tech: ["Vue", "ParticleJS", "OpenWeatherMap API"],
+    },
+    {
+      id: 5192,
+      image: anilist,
+      title: "Anilist",
+      body: lorem,
+      tech: ["React", "Firebase", "Kitsu API"],
+    },
+  ];
+
   return (
-    <div className="h-full w-full p-8">
-      <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-6xl xl:text-8xl">
-        My Projects
-      </h1>
+    <div className="h-full w-full p-8 xl:flex xl:flex-col xl:items-center xl:justify-start">
+      <div className="xl:max-w-8xl lg:flex lg:items-center lg:justify-between lg:px-12 xl:w-9/12">
+        <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-6xl xl:text-8xl">
+          My Projects
+        </h1>
+        <div className="hidden lg:block">
+          <button
+            onClick={handleLeftClick}
+            className="mr-8 text-3xl text-gray-500 transition ease-in-out hover:text-white active:-translate-x-1"
+          >
+            <FaAngleLeft />
+          </button>
+          <button
+            onClick={handleRightClick}
+            className="text-3xl text-gray-500 transition ease-in-out hover:text-white active:translate-x-1"
+          >
+            <FaAngleRight />
+          </button>
+        </div>
+      </div>
       <p className="font-montserrat text-gray-500 lg:hidden">Swipe for more</p>
-      <div className="container-snap mt-8 flex w-full snap-x snap-mandatory gap-4 overflow-x-auto">
+      <div className="container-snap mt-8 flex w-full snap-x snap-mandatory gap-4 overflow-visible overflow-x-auto lg:hidden">
         {items.map((item) => (
-          <div key={item.id} className="w-full min-w-full snap-center">
+          <div
+            key={item.id}
+            className="w-full min-w-full snap-center overflow-visible"
+          >
             <ProjectItem
               image={item.image}
               title={item.title}
               body={item.body}
               tech={item.tech}
             />
-            <p className="mt-8 text-gray-400">{item.body}</p>
+            <p className="mt-8 text-gray-400 lg:hidden">{item.body}</p>
           </div>
         ))}
       </div>
+      <div className="container-snap mt-8 hidden w-full gap-4 overflow-hidden lg:flex lg:justify-center">
+        <AnimatePresence mode="wait" initial={false}>
+          <ProjectItem
+            image={items[currItemIndex].image}
+            title={items[currItemIndex].title}
+            body={items[currItemIndex].body}
+            tech={items[currItemIndex].tech}
+            direction={swipeDirection}
+            key={currItemIndex}
+          />
+        </AnimatePresence>
+      </div>
     </div>
-    // <div className="h-full p-8 lg:flex lg:h-fit lg:items-center lg:justify-center xl:h-full">
-    //   <div className="flex h-full w-full flex-col lg:w-3/4 xl:w-10/12">
-    //     <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-7xl">
-    //       Projects
-    //     </h1>
-    //     <p className="font-montserrat text-gray-500 lg:hidden">
-    //       Swipe for more
-    //     </p>
-    //     <div className="h-full lg:mt-8 lg:flex lg:items-center lg:justify-between">
-    //       <button className="hidden text-4xl text-white transition ease-in-out active:-translate-x-2 lg:block xl:text-6xl">
-    //         <FaAngleLeft />
-    //       </button>
-    //       <div className=" container-snap flex h-full snap-x snap-mandatory gap-4 overflow-x-auto lg:items-center xl:h-full">
-    //         {items.map((item) => (
-    //           <div className="h-full w-full shrink-0 snap-center overflow-visible lg:flex lg:h-fit lg:items-center lg:justify-center">
-    //             <ProjectItem
-    //               key={item.id}
-    //               image={item.image}
-    //               title={item.title}
-    //               body={item.body}
-    //               tech={item.tech}
-    //             />
-    //           </div>
-    //         ))}
-    //       </div>
-    //       <button className="hidden text-4xl text-white transition ease-in-out active:translate-x-2 active:scale-90 lg:block xl:text-6xl">
-    //         <FaAngleRight />
-    //       </button>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 

@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         roboto: ["'Roboto'", 'sans-serif'],
         montserrat: ["'Montserrat'", 'sans-serif']
+      },
+      boxShadow: {
+        thick: '5px 5px 5px 0px rgba(25,25,25,0.4)'
       }
     },
   },

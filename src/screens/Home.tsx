@@ -6,7 +6,7 @@ function Home() {
       <h5 className="font-montserrat text-sm text-gray-400 md:text-base lg:text-xl">
         What's up! I am
       </h5>
-      <h1 className="custom-gradient-blue mt-2 font-montserrat text-5xl font-bold text-white md:text-6xl xl:text-8xl">
+      <h1 className="custom-gradient-blue mt-2 font-montserrat text-5xl font-bold text-white md:text-7xl lg:text-8xl">
         Mark Avila
       </h1>
       <h2 className="mt-2 font-montserrat text-xl font-bold text-white md:text-3xl xl:text-6xl">

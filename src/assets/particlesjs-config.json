@@ -54,7 +54,7 @@
     },
     "move": {
       "enable": true,
-      "speed": 0.5,
+      "speed": 0.2,
       "direction": "none",
       "random": true,
       "straight": false,
@@ -67,6 +67,7 @@
       }
     }
   },
+  "fpsLimit": 8,
   "interactivity": {
     "detect_on": "canvas",
     "events": {

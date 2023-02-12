@@ -44,6 +44,7 @@ function App() {
   return (
     <div className="z-10 flex min-h-full flex-col flex-1">
       <Particles
+        
         className="z-0"
         id="tsparticles"
         options={mobileScreen ? normalParticlesJson : frozenParticlesJson}
