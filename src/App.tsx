@@ -42,7 +42,7 @@ function App() {
   frozenParticlesJson.particles.move.enable = false;
 
   return (
-    <div className="z-10 flex min-h-full flex-col flex-1">
+    <div className="z-10 flex min-h-full max-h-full flex-col flex-1">
       <Particles
         
         className="z-0"
