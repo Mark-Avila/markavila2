@@ -115,7 +115,7 @@ function Header(props: HeaderProps) {
             <li key={index + 10} className="box-border w-full md:w-20">
               <button
                 onClick={() => handleItemClick(item)}
-                className={`nav-hover h-8 w-full rounded-sm px-1 text-center text-sm text-gray-400 outline-none font-montserrat hover:border-b-gray-400 lg:w-16 lg:text-xs ${
+                className={`nav-hover h-8 w-full rounded-sm px-1 text-center text-xs text-gray-400 outline-none font-montserrat hover:border-b-gray-400 lg:w-16 lg:text-xs ${
                   items[item] ? "md:nav-onclick" : ""
                 }`}
                 key={index}
@@ -126,7 +126,7 @@ function Header(props: HeaderProps) {
           ))}
         </ul>
         <li className="hidden w-20 md:block">
-          <button className="border-1 resume h-10 w-full rounded-md border border-white bg-transparent font-roboto text-sm transition ease-in before:active:bg-slate-300">
+          <button className="border-1 resume h-10 w-full rounded-md border text-xs border-white bg-transparent font-roboto transition ease-in before:active:bg-slate-300">
             Resume
           </button>
         </li>
