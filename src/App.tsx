@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Header from "./components/Header";
-import { About, Contact, Home, Projects } from "./screens";
+import { About, Contact, Home, Projects, Tech } from "./screens";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { Engine } from "tsparticles-engine";
@@ -72,6 +72,11 @@ function App() {
           {activePage.Project && (
             <motion.span className="w-full flex-1 box-border">
               <Projects />
+            </motion.span>
+          )}
+          {activePage.Tech && (
+            <motion.span className="w-full flex-1 box-border">
+              <Tech />
             </motion.span>
           )}
         </main>

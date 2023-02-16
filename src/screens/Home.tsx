@@ -12,9 +12,8 @@ function Home() {
       <h2 className="mt-2 font-montserrat text-xl font-bold text-white md:text-3xl xl:text-6xl">
         I like making websites
       </h2>
-      <p className="mt-4 font-roboto text-sm text-gray-500 md:text-base lg:w-1/2 xl:w-3/4 xl:text-xl">
-        Computer Science student aspiring to become a web developer. Welcome to
-        my portfolio
+      <p className="mt-4 font-roboto text-sm text-gray-500 md:text-base lg:w-1/2 xl:w-1/3 xl:text-base">
+        Student aspiring to be a guy that develops websites. Welcome to my portfolio
       </p>
       <div className="mt-8 flex">
         <a
