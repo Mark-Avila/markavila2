@@ -3,5 +3,6 @@ import InitialLogo from "./InitialLogo";
 import AboutCard from "./AboutCard";
 import ProjectItem from "./ProjectItem";
 import TechTabs from "./TechTabs";
+import TechItem from "./TechItem";
 
-export { Header, TechTabs, ProjectItem, InitialLogo, AboutCard };
+export { Header, TechItem, TechTabs, ProjectItem, InitialLogo, AboutCard };

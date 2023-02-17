@@ -64,7 +64,7 @@ function Projects() {
   return (
     <div className="h-full w-full p-8 xl:flex xl:flex-col xl:items-center xl:justify-start">
       <div className="xl:max-w-8xl lg:flex lg:items-center lg:justify-between lg:px-12 xl:w-9/12">
-        <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-6xl xl:text-8xl">
+        <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-6xl xl:text-7xl">
           My Projects
         </h1>
         <div className="hidden lg:block">

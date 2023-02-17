@@ -24,7 +24,7 @@ function TechTabs({ onClick, activeTab }: TechTabsProps) {
         onClick={() => onClick("lang")}
         className={`${
           activeTab.lang
-            ? "purple-border--active text-white"
+          ? "purple-border--active text-white"
             : "purple-border text-gray-400"
         } h-14 md:h-10 md:text-xs w-full font-roboto text-[0.8rem] font-bold `}
       >

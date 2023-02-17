@@ -28,10 +28,10 @@ function ProjectItem(props: ProjectItemProps) {
         transition={{ type: "linear", delay: 0.1 }}
         className="z-50 mt-8 md:mt-0 lg:-mr-14 lg:pl-14"
       >
-        <h1 className="font-montserrat text-2xl font-bold text-white md:text-4xl">
+        <h1 className="font-montserrat text-2xl font-bold text-white md:text-3xl">
           {title}
         </h1>
-        <p className="mt-3 font-roboto text-xs text-gray-500 md:hidden lg:block lg:rounded-xl lg:bg-gray-900 lg:p-4 lg:text-sm lg:text-gray-400 lg:shadow-thick">
+        <p className="mt-3 font-roboto text-xs text-gray-500 md:hidden lg:block lg:rounded-xl lg:bg-gray-900 lg:p-4 lg:text-gray-400 lg:shadow-thick">
           {body}
         </p>
         <p className="mt-4 font-roboto font-bold text-gray-300 md:text-xs">
@@ -41,14 +41,14 @@ function ProjectItem(props: ProjectItemProps) {
           {tech.map((item) => (
             <div
               key={item}
-              className="lg rounded-md bg-white p-4 py-1 transition ease-in-out lg:border-2 lg:border-gray-400 lg:bg-black lg:text-gray-400 lg:hover:cursor-pointer lg:hover:border-white lg:hover:text-white lg:active:scale-95"
+              className="lg rounded-md bg-white text-sm p-4 py-1 transition ease-in-out lg:border-2 lg:border-gray-400 lg:bg-black lg:text-gray-400 lg:hover:cursor-pointer lg:hover:border-white lg:hover:text-white lg:active:scale-95"
             >
               <p className="font-roboto font-bold md:text-xs">{item}</p>
             </div>
           ))}
         </div>
       </motion.div>
-      <div className="relative h-48 md:hidden lg:block lg:h-72 xl:h-80">
+      <div className="relative h-48 md:hidden lg:block lg:h-56 xl:h-80">
         <motion.div
           initial={{ x: direction === "right" ? 100 : -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}

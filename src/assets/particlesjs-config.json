@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 120,
+      "value": 80,
       "density": {
         "enable": true,
         "value_area": 800
@@ -67,7 +67,7 @@
       }
     }
   },
-  "fpsLimit": 8,
+  "fpsLimit": 12,
   "interactivity": {
     "detect_on": "canvas",
     "events": {

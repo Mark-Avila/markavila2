@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaCss3, FaHtml5, FaReact } from "react-icons/fa";
 import { DiJavascript, DiJavascript1 } from "react-icons/di";
 import { SiJavascript } from "react-icons/si";
 import { ProjectIcon, expIcons, usedIcons } from "../utils";
-import { TechTabs } from "../components";
+import { TechItem, TechTabs } from "../components";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Tech() {
   const [activeTab, setActiveTab] = useState({
@@ -11,6 +12,8 @@ function Tech() {
     lang: false,
     tools: false,
   });
+
+  const listItem = useRef(null);
 
   const handleTab = (key: string) => {
     const initialState: typeof activeTab = {
@@ -23,106 +26,97 @@ function Tech() {
   };
 
   return (
-    <div className="flex-grow h-full w-full p-8 md:flex md:flex-col md:items-center lg:items-start lg:grid lg:grid-cols-2">
-      <header className="h-full snap-start">
-        <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-6xl xl:text-8xl">
+    <div className="flex h-full w-full flex-grow flex-col p-8 md:flex lg:px-24 xl:px-0 md:items-center lg:flex-row lg:items-start lg:justify-between xl:mx-auto xl:w-9/12 xl:max-w-[1200px]">
+      <header className="h-fit snap-start lg:w-full md:pb-8">
+        <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-6xl xl:text-7xl">
           Stuff I know
         </h1>
-        <div className="w-full md:w-96">
+        <div className="w-full md:w-96 lg:w-72 xl:mt-8">
           <TechTabs activeTab={activeTab} onClick={handleTab} />
         </div>
       </header>
 
-      <main className="flex-grow snap-y max-h-full snap-mandatory overflow-auto">
-        <div className="mt-8 md:mt-16 md:w-full h-full snap-start">
-          <h4 className="font-montserrat text-white md:mb-14 md:text-center md:text-xl md:font-bold">
+      <div className="flex h-full w-full flex-col overflow-auto md:mt-0 lg:px-8 xl:min-h-full">
+        <section className="mt-8 flex-none snap-start md:mt-16 md:w-full lg:mt-0">
+          <h4 className="font-montserrat text-white md:mb-14 md:text-center md:text-xl lg:text-left md:font-bold">
             Most used
           </h4>
-          <ul className="mt-4 grid w-full grid-cols-4 gap-4 lg:grid-cols-5">
-            {activeTab.lang &&
-              usedIcons
-                .filter((item) => item.type === "lang")
-                .map((item: ProjectIcon) => (
-                  <li key={item.id} className="text-center text-white">
-                    <i className="flex items-center justify-center text-5xl lg:text-3xl">
-                      {item.icon}
-                    </i>
-                    <p className="mt-4 font-roboto text-sm text-gray-400">
-                      {item.title}
-                    </p>
-                  </li>
-                ))}
-            {activeTab.tools &&
-              usedIcons
-                .filter((item) => item.type === "tool")
-                .map((item: ProjectIcon) => (
-                  <li key={item.id} className="text-center text-white">
-                    <i className="flex items-center justify-center text-5xl lg:text-3xl">
-                      {item.icon}
-                    </i>
-                    <p className="mt-4 font-roboto text-sm text-gray-400">
-                      {item.title}
-                    </p>
-                  </li>
-                ))}
-            {activeTab.all &&
-              usedIcons.map((item: ProjectIcon) => (
-                <li key={item.id} className="text-center text-white">
-                  <i className="flex items-center justify-center text-5xl lg:text-3xl">
-                    {item.icon}
-                  </i>
-                  <p className="mt-4 font-roboto text-sm text-gray-400">
-                    {item.title}
-                  </p>
-                </li>
-              ))}
+          <ul className="mt-8 grid w-full grid-cols-4 grid-rows-2 gap-4 md:grid-cols-5 md:grid-rows-1 lg:mt-0 xl:grid-cols-8">
+            <AnimatePresence>
+              {usedIcons.map((item) =>
+                activeTab.all ? (
+                  <TechItem
+                    ref={listItem}
+                    key={item.id}
+                    title={item.title}
+                    icon={item.icon}
+                    active={true}
+                  />
+                ) : activeTab.lang && item.type === "lang" ? (
+                  <TechItem
+                    ref={listItem}
+                    key={item.id}
+                    title={item.title}
+                    icon={item.icon}
+                    active={true}
+                  />
+                ) : (
+                  activeTab.tools &&
+                  item.type === "tool" && (
+                    <TechItem
+                      ref={listItem}
+                      key={item.id}
+                      title={item.title}
+                      icon={item.icon}
+                      active={true}
+                    />
+                  )
+                )
+              )}
+            </AnimatePresence>
           </ul>
-        </div>
-        <div className="mt-8 md:mt-16 md:w-full snap-start">
-          <h4 className="font-montserrat text-white md:mb-14 md:text-center md:text-xl md:font-bold">
+        </section>
+        <section className="mt-8 flex-1 snap-start md:mt-16 md:w-full">
+          <h4 className="font-montserrat text-white md:mb-14 md:text-center md:text-xl md:font-bold lg:text-left">
             Experienced
           </h4>
-          <ul className="mt-4 grid w-full grid-cols-4 gap-4 lg:grid-cols-5">
-            {activeTab.lang &&
-              expIcons
-                .filter((item) => item.type === "lang")
-                .map((item: ProjectIcon) => (
-                  <li key={item.id} className="text-center text-white">
-                    <i className="flex items-center justify-center text-5xl lg:text-3xl">
-                      {item.icon}
-                    </i>
-                    <p className="mt-4 font-roboto text-sm text-gray-400">
-                      {item.title}
-                    </p>
-                  </li>
-                ))}
-            {activeTab.tools &&
-              expIcons
-                .filter((item) => item.type === "tool")
-                .map((item: ProjectIcon) => (
-                  <li key={item.id} className="text-center text-white">
-                    <i className="flex items-center justify-center text-5xl lg:text-3xl">
-                      {item.icon}
-                    </i>
-                    <p className="mt-4 font-roboto text-sm text-gray-400">
-                      {item.title}
-                    </p>
-                  </li>
-                ))}
-            {activeTab.all &&
-              expIcons.map((item: ProjectIcon) => (
-                <li key={item.id} className="text-center text-white">
-                  <i className="flex items-center justify-center text-5xl lg:text-3xl">
-                    {item.icon}
-                  </i>
-                  <p className="mt-4 font-roboto text-sm text-gray-400">
-                    {item.title}
-                  </p>
-                </li>
-              ))}
+          <ul className="mt-8 grid w-full grid-cols-4 gap-4 md:grid-cols-5 lg:mt-0 xl:grid-cols-8">
+            {/*What is the abomination in the active prop you ask? it just prevents the entire list from re-rendering*/}
+            <AnimatePresence mode="popLayout">
+              {expIcons.map((item) =>
+                activeTab.all ? (
+                  <TechItem
+                    ref={listItem}
+                    key={item.id}
+                    title={item.title}
+                    icon={item.icon}
+                    active={true}
+                  />
+                ) : activeTab.lang && item.type === "lang" ? (
+                  <TechItem
+                    ref={listItem}
+                    key={item.id}
+                    title={item.title}
+                    icon={item.icon}
+                    active={true}
+                  />
+                ) : (
+                  activeTab.tools &&
+                  item.type === "tool" && (
+                    <TechItem
+                      ref={listItem}
+                      key={item.id}
+                      title={item.title}
+                      icon={item.icon}
+                      active={true}
+                    />
+                  )
+                )
+              )}
+            </AnimatePresence>
           </ul>
-        </div>
-      </main>
+        </section>
+      </div>
     </div>
   );
 }
