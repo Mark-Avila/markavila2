@@ -2,7 +2,8 @@ import { useState } from "react";
 import { FaLightbulb, FaPalette } from "react-icons/fa";
 import { MdDevices, MdShutterSpeed } from "react-icons/md";
 import { AboutCard } from "../components";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 
 function About() {
   const [activeInfo, setActiveInfo] = useState({
@@ -23,25 +24,87 @@ function About() {
     setActiveInfo({ ...initialState, [key]: true });
   };
 
+  const headerVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      y: "200%",
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.455, 0.03, 0.515, 0.955],
+        duration: 0.85,
+        delay: 0.6,
+      },
+    },
+  };
+
+  const pVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      x: -300,
+    },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { ease: [0, 0.9, 0, 0.9], duration: 0.7, delay: 0.5 },
+    },
+  };
+
+  const btnVariants: Variants = {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+    },
+  };
+
   return (
     <div className="h-full w-full md:flex md:items-start md:justify-center lg:items-center">
       <div className="flex flex-col p-8 lg:w-3/4 xl:w-1/2">
-        <h1 className="custom-gradient-blue font-montserrat text-5xl font-bold text-white md:text-6xl xl:text-7xl">
-          About me
-        </h1>
-        <p className="mt-4 border-l-2 pl-6 font-roboto text-gray-400 md:mt-8">
-          I am a dedicated and creative student with a focus on{" "}
-          <span className="font-bold text-white">React development</span>. I
-          have hands-on experience building dynamic user interfaces using{" "}
-          <span className="font-bold text-white">React</span> and{" "}
-          <span className="font-bold text-white">Redux</span>, and I am
-          knowledgeable in modern front-end development tools and methodologies.
-          I am eager to apply my skills and continue learning in a immersive and
-          collaborative work environment.
-        </p>
+        <header className="overflow-hidden">
+          <motion.h1
+            variants={headerVariants}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+            className="custom-gradient-blue font-montserrat text-5xl font-bold text-white md:text-6xl xl:text-7xl"
+          >
+            About me
+          </motion.h1>
+        </header>
+        <span
+          className="mt-4 flex h-full overflow-hidden md:mt-8"
+        >
+          <motion.div initial={{ height: 0 }} animate={{ height: "initial" }} transition={{ type: "linear" }} className="w-4 mr-6 rounded-full bg-gray-200"></motion.div>
+          <motion.p
+            variants={pVariants}
+            initial="hidden"
+            animate="show"
+            exit="exit"
+            className="text-clip font-roboto text-gray-400"
+          >
+            I am a dedicated and creative student with a focus on{" "}
+            <span className="font-bold text-white">React development</span>. I
+            have hands-on experience building dynamic user interfaces using{" "}
+            <span className="font-bold text-white">React</span> and{" "}
+            <span className="font-bold text-white">Redux</span>, and I am
+            knowledgeable in modern front-end development tools and
+            methodologies. I am eager to apply my skills and continue learning
+            in a immersive and collaborative work environment.
+          </motion.p>
+        </span>
+
         <div className="mt-8 sm:w-1/2 md:flex md:w-full">
           <div className="md grid w-full grid-cols-4 gap-2 md:w-56 md:grid-cols-2 md:grid-rows-2">
-            <button
+            <motion.button
+              variants={btnVariants}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+              transition={{ type: "spring", delay: 0.7 }}
               onClick={() => handleInfoClick("responsive")}
               className={`${
                 activeInfo.responsive
@@ -50,8 +113,13 @@ function About() {
               } flex w-full items-center justify-center rounded-l-xl p-4 text-4xl text-white md:rounded-l-none md:rounded-tl-xl`}
             >
               <MdDevices />
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              variants={btnVariants}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+              transition={{ type: "spring", delay: 0.9 }}
               onClick={() => handleInfoClick("experience")}
               className={`${
                 activeInfo.experience
@@ -60,16 +128,26 @@ function About() {
               } flex w-full items-center justify-center p-4 text-4xl text-white md:rounded-tr-xl`}
             >
               <FaLightbulb />
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              variants={btnVariants}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+              transition={{ type: "spring", delay: 1.2 }}
               onClick={() => handleInfoClick("design")}
               className={`${
                 activeInfo.design ? "purple-border--active" : "purple-border"
               } flex w-full items-center justify-center p-4 text-4xl text-white md:rounded-bl-xl`}
             >
               <FaPalette />
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              variants={btnVariants}
+              initial="hidden"
+              animate="show"
+              exit="exit"
+              transition={{ type: "spring", delay: 1.4 }}
               onClick={() => handleInfoClick("performance")}
               className={`${
                 activeInfo.performance
@@ -78,10 +156,16 @@ function About() {
               } flex w-full items-center justify-center rounded-r-xl p-4 text-4xl text-white md:rounded-r-none md:rounded-br-xl`}
             >
               <MdShutterSpeed />
-            </button>
+            </motion.button>
           </div>
           <AnimatePresence>
-            <div className="mt-8 md:mt-0 md:ml-12 md:w-1/2">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 1.5 }}
+              className="mt-8 md:mt-0 md:ml-12 md:w-1/2"
+            >
               {activeInfo.responsive && (
                 <AboutCard
                   title="Responsive"
@@ -106,7 +190,7 @@ function About() {
                   body="Make sure websites are optimized for fast loading times and efficient use of resources, which can impact the user experience and search engine optimization"
                 />
               )}
-            </div>
+            </motion.div>
           </AnimatePresence>
         </div>
       </div>
