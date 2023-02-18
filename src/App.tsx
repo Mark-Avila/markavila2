@@ -9,14 +9,23 @@ import particlesJson from "./assets/particlesjs-config.json";
 import { useMediaQuery } from "./hooks";
 import { AnimatePresence, motion } from "framer-motion";
 
+export interface InitAnimProps {
+  initAnim: boolean;
+  onAnimDone: () => void;
+}
+
+type ProjectPages = "about" | "texh" | "home" | "project" | "contact";
+
 function App() {
   const [activePage, setActivePage] = useState({
-    About: false,
-    Tech: false,
-    Home: true,
-    Project: false,
-    Contact: false
+    about: false,
+    tech: false,
+    home: true,
+    project: false,
+    contact: false
   });
+
+  const [prevPage, setPrevPage] = useState<ProjectPages>("home");
 
   const [hasVisited, setVisited] = useState({
     about: false,
@@ -26,9 +35,7 @@ function App() {
     contact: false
   });
 
-  const handleVisited = (
-    key: "about" | "tech" | "home" | "project" | "contact"
-  ) => {
+  const handleVisited = (key: ProjectPages) => {
     if (!hasVisited[key as keyof typeof hasVisited]) {
       setVisited((prev) => ({ ...prev, [key]: true }));
     }
@@ -38,12 +45,18 @@ function App() {
 
   const onNavItemClick = (key: string) => {
     const initialState: typeof activePage = {
-      About: false,
-      Tech: false,
-      Home: false,
-      Project: false,
-      Contact: false
+      about: false,
+      tech: false,
+      home: false,
+      project: false,
+      contact: false
     };
+
+    const newPrevPage = Object.keys(activePage).find(
+      (key) => activePage[key as keyof typeof activePage]
+    );
+
+    setPrevPage(newPrevPage as ProjectPages);
 
     return setActivePage({ ...initialState, [key]: true });
   };
@@ -67,38 +80,46 @@ function App() {
       />
       <Header items={activePage} onItemClick={onNavItemClick} />
 
-      <main className="z-10 mt-20 flex h-full w-full flex-grow overflow-y-auto overflow-x-hidden">
+      <main className="z-10 mt-20 flex h-full min-h-full w-full flex-grow flex-col overflow-y-auto overflow-x-hidden">
         <AnimatePresence mode="wait">
-          {activePage.Home && (
-            <motion.span className="box-border w-full flex-1">
-              <Home />
+          {activePage.home && (
+            <motion.span
+              key={712837}
+              className="box-border w-full flex-1 overflow-hidden"
+            >
+              <Home
+                onAnimDone={() => handleVisited("home")}
+                initAnim={hasVisited.home}
+              />
             </motion.span>
           )}
-          {activePage.About && (
+          {activePage.about && (
             <motion.span
-              initial={
-                hasVisited.about && notMobileScreen
-                  ? { x: "-10%", opacity: 0 }
-                  : {}
-              }
-              animate={
-                hasVisited.about && notMobileScreen
-                  ? {
-                      x: 0,
-                      opacity: 1,
-                      transition: { type: "spring", duration: 0.5 }
-                    }
-                  : {}
-              }
-              exit={
-                hasVisited.about && notMobileScreen
-                  ? {
-                      x: "-10%",
-                      opacity: 0,
-                      transition: { type: "spring", duration: 0.5 }
-                    }
-                  : {}
-              }
+              initial="hidden"
+              animate="show"
+              exit="exit"
+              variants={{
+                hidden:
+                  hasVisited.about && notMobileScreen
+                    ? { x: "-10%", opacity: 0 }
+                    : {},
+                show:
+                  hasVisited.about && notMobileScreen
+                    ? {
+                        x: 0,
+                        opacity: 1,
+                        transition: { type: "spring", duration: 0.5 }
+                      }
+                    : {},
+                exit:
+                  hasVisited.about && notMobileScreen
+                    ? {
+                        x: "-10%",
+                        opacity: 0,
+                        transition: { type: "spring", duration: 0.5 }
+                      }
+                    : {}
+              }}
               key={868686}
               className="box-border w-full flex-1"
             >
@@ -108,17 +129,17 @@ function App() {
               />
             </motion.span>
           )}
-          {activePage.Contact && (
+          {activePage.contact && (
             <motion.span className="box-border w-full flex-1">
               <Contact />
             </motion.span>
           )}
-          {activePage.Project && (
+          {activePage.project && (
             <motion.span className="box-border w-full flex-1">
               <Projects />
             </motion.span>
           )}
-          {activePage.Tech && (
+          {activePage.tech && (
             <motion.span className="box-border w-full flex-1">
               <Tech />
             </motion.span>

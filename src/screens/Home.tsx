@@ -1,11 +1,40 @@
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { InitAnimProps } from "../App";
+import { useEffect } from "react";
+import { motion } from "framer-motion";
 
-function Home() {
+function Home({ initAnim, onAnimDone }: InitAnimProps) {
+  useEffect(() => {
+    setTimeout(onAnimDone, 3000);
+  }, []);
+
   return (
-    <div className="flex w-full h-full flex-col justify-start p-8 md:pl-12 md:pt-24 lg:pl-24 xl:pl-48">
-      <h5 className="font-montserrat text-sm text-gray-400 md:text-base lg:text-xl">
+    <motion.div
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      variants={
+        initAnim
+          ? {
+              hidden: { y: "10%", opacity: 0 },
+              show: {
+                y: "0%",
+                opacity: 1,
+                transition: { ease: "easeInOut" }
+              },
+              exit: {
+                x: "-10%",
+                opacity: 0,
+                transition: { ease: "easeInOut" }
+              }
+            }
+          : {}
+      }
+      className="flex h-full w-full flex-col justify-start p-8 md:pl-12 md:pt-24 lg:pl-24 xl:pl-48"
+    >
+      <motion.h5 className="font-montserrat text-sm text-gray-400 md:text-base lg:text-xl">
         What's up! I am
-      </h5>
+      </motion.h5>
       <h1 className="custom-gradient-blue mt-2 font-montserrat text-5xl font-bold text-white md:text-6xl lg:text-7xl xl:text-8xl">
         Mark Avila
       </h1>
@@ -13,7 +42,8 @@ function Home() {
         I like making websites
       </h2>
       <p className="mt-4 font-roboto text-sm text-gray-500 md:w-1/2 xl:w-1/3 xl:text-base">
-        Student aspiring to be a guy that develops websites. Welcome to my portfolio
+        Student aspiring to be a guy that develops websites. Welcome to my
+        portfolio
       </p>
       <div className="mt-8 flex">
         <a
@@ -45,7 +75,7 @@ function Home() {
           <FaLinkedin />
         </a>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
