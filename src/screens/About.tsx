@@ -1,16 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaLightbulb, FaPalette } from "react-icons/fa";
 import { MdDevices, MdShutterSpeed } from "react-icons/md";
 import { AboutCard } from "../components";
 import { AnimatePresence, Variants } from "framer-motion";
 import { motion } from "framer-motion";
 
-function About() {
+interface AboutProps {
+  initAnim: boolean;
+  onAnimDone: () => void;
+}
+
+function About({ initAnim, onAnimDone }: AboutProps) {
+  useEffect(() => {
+    setTimeout(onAnimDone, 3000);
+  }, []);
+
   const [activeInfo, setActiveInfo] = useState({
     responsive: true,
     experience: false,
     design: false,
-    performance: false,
+    performance: false
   });
 
   const handleInfoClick = (key: string) => {
@@ -18,7 +27,7 @@ function About() {
       responsive: false,
       experience: false,
       design: false,
-      performance: false,
+      performance: false
     };
 
     setActiveInfo({ ...initialState, [key]: true });
@@ -27,7 +36,7 @@ function About() {
   const headerVariants: Variants = {
     hidden: {
       opacity: 0,
-      y: "200%",
+      y: "200%"
     },
     show: {
       opacity: 1,
@@ -35,30 +44,30 @@ function About() {
       transition: {
         ease: [0.455, 0.03, 0.515, 0.955],
         duration: 0.85,
-        delay: 0.6,
-      },
-    },
+        delay: 0.6
+      }
+    }
   };
 
   const pVariants: Variants = {
     hidden: {
       opacity: 0,
-      x: -300,
+      x: -300
     },
     show: {
       opacity: 1,
       x: 0,
-      transition: { ease: [0, 0.9, 0, 0.9], duration: 0.7, delay: 0.5 },
-    },
+      transition: { ease: [0, 0.9, 0, 0.9], duration: 0.7, delay: 0.5 }
+    }
   };
 
   const btnVariants: Variants = {
     hidden: {
-      opacity: 0,
+      opacity: 0
     },
     show: {
-      opacity: 1,
-    },
+      opacity: 1
+    }
   };
 
   return (
@@ -66,7 +75,7 @@ function About() {
       <div className="flex flex-col p-8 lg:w-3/4 xl:w-1/2">
         <header className="overflow-hidden">
           <motion.h1
-            variants={headerVariants}
+            variants={initAnim ? {} : headerVariants}
             initial="hidden"
             animate="show"
             exit="exit"
@@ -75,12 +84,15 @@ function About() {
             About me
           </motion.h1>
         </header>
-        <span
-          className="mt-4 flex h-full overflow-hidden md:mt-8"
-        >
-          <motion.div initial={{ height: 0 }} animate={{ height: "initial" }} transition={{ type: "linear" }} className="w-4 mr-6 rounded-full bg-gray-200"></motion.div>
+        <span className="mt-4 flex h-full overflow-hidden md:mt-8">
+          <motion.div
+            initial={initAnim ? {} : { height: 0 }}
+            animate={initAnim ? {} : { height: "initial" }}
+            transition={{ ease: [0.455, 0.03, 0.515, 0.955] }}
+            className="mr-6 w-4 rounded-full bg-gray-200"
+          ></motion.div>
           <motion.p
-            variants={pVariants}
+            variants={initAnim ? {} : pVariants}
             initial="hidden"
             animate="show"
             exit="exit"
@@ -100,7 +112,7 @@ function About() {
         <div className="mt-8 sm:w-1/2 md:flex md:w-full">
           <div className="md grid w-full grid-cols-4 gap-2 md:w-56 md:grid-cols-2 md:grid-rows-2">
             <motion.button
-              variants={btnVariants}
+              variants={initAnim ? {} : btnVariants}
               initial="hidden"
               animate="show"
               exit="exit"
@@ -115,7 +127,7 @@ function About() {
               <MdDevices />
             </motion.button>
             <motion.button
-              variants={btnVariants}
+              variants={initAnim ? {} : btnVariants}
               initial="hidden"
               animate="show"
               exit="exit"
@@ -130,7 +142,7 @@ function About() {
               <FaLightbulb />
             </motion.button>
             <motion.button
-              variants={btnVariants}
+              variants={initAnim ? {} : btnVariants}
               initial="hidden"
               animate="show"
               exit="exit"
@@ -143,7 +155,7 @@ function About() {
               <FaPalette />
             </motion.button>
             <motion.button
-              variants={btnVariants}
+              variants={initAnim ? {} : btnVariants}
               initial="hidden"
               animate="show"
               exit="exit"
@@ -160,9 +172,9 @@ function About() {
           </div>
           <AnimatePresence>
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+              initial={initAnim ? {} : { opacity: 0 }}
+              animate={initAnim ? {} : { opacity: 1 }}
+              exit={initAnim ? {} : { opacity: 0 }}
               transition={{ delay: 1.5 }}
               className="mt-8 md:mt-0 md:ml-12 md:w-1/2"
             >
