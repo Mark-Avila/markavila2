@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { global, techVariants } from "../variants";
+
 interface TechTabsProps {
   onClick: (key: string) => void;
   activeTab: {
@@ -5,42 +8,59 @@ interface TechTabsProps {
     lang: boolean;
     tools: boolean;
   };
+  initAnim: boolean;
 }
 
-function TechTabs({ onClick, activeTab }: TechTabsProps) {
+function TechTabs({ initAnim, onClick, activeTab }: TechTabsProps) {
+  //Prevents from fading out after initAnim change
+  const prvnFadeOut = {
+    hidden: {
+      opacity: 1
+    },
+    show: {
+      opacity: 1
+    }
+  };
+
   return (
-    <div className="flex gap-2 w-full">
-      <button
+    <motion.div
+      variants={initAnim ? prvnFadeOut : techVariants.techTabsStagger}
+      className="flex w-full gap-2"
+    >
+      <motion.button
+        variants={global.fadeIn}
         onClick={() => onClick("all")}
         className={`${
           activeTab.all
             ? "purple-border--active text-white"
             : "purple-border text-gray-400"
-        } h-14 md:h-10 md:text-xs  w-full rounded-l-xl font-roboto text-[0.8rem] font-bold `}
+        } h-14 w-full rounded-l-xl  font-roboto text-[0.8rem] font-bold md:h-10 md:text-xs `}
       >
         ALL
-      </button>
-      <button
+      </motion.button>
+      <motion.button
+        variants={global.fadeIn}
         onClick={() => onClick("lang")}
         className={`${
           activeTab.lang
-          ? "purple-border--active text-white"
+            ? "purple-border--active text-white"
             : "purple-border text-gray-400"
-        } h-14 md:h-10 md:text-xs w-full font-roboto text-[0.8rem] font-bold `}
+        } h-14 w-full font-roboto text-[0.8rem] font-bold md:h-10 md:text-xs `}
       >
         LANGUAGES
-      </button>
-      <button
+      </motion.button>
+      <motion.button
+        variants={global.fadeIn}
         onClick={() => onClick("tools")}
         className={`${
           activeTab.tools
             ? "purple-border--active text-white"
             : "purple-border text-gray-400"
-        } h-14 md:h-10 md:text-xs w-full rounded-r-xl font-roboto text-[0.8rem] font-bold `}
+        } h-14 w-full rounded-r-xl font-roboto text-[0.8rem] font-bold md:h-10 md:text-xs `}
       >
         TOOLS
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   );
 }
 

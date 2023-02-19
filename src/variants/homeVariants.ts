@@ -28,24 +28,6 @@ const textPop: Variants = {
   }
 };
 
-const letterSlideUp: Variants = {
-  hidden: {
-    y: "100%"
-  },
-  show: {
-    y: 0
-  }
-};
-
-const letterFadeIn: Variants = {
-  hidden: {
-    opacity: 0
-  },
-  show: {
-    opacity: 1
-  }
-};
-
 const iconStagger: Variants = {
   hidden: {
     opacity: 0
@@ -79,9 +61,7 @@ const iconSlideLeft: Variants = {
 };
 
 export const homeVariants = {
-  letterSlideUp,
   h1Stagger,
-  letterFadeIn,
   textPop,
   iconPop,
   iconStagger,

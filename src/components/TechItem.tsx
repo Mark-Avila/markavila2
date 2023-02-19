@@ -1,6 +1,7 @@
 import { AnimatePresence, Variants, motion } from "framer-motion";
 import React from "react";
 import { useState } from "react";
+import { global } from "../variants";
 
 interface TechItemProps {
   icon: JSX.Element;
@@ -33,7 +34,12 @@ const TechItem = React.forwardRef<HTMLLIElement, TechItemProps>(
     };
 
     return (
-      <motion.li ref={ref} layout className="w-full text-center ">
+      <motion.li
+        variants={global.popScale}
+        ref={ref}
+        layout
+        className="w-full text-center "
+      >
         <motion.i
           variants={variants}
           initial="hidden"

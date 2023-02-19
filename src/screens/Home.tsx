@@ -36,7 +36,8 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
       >
         {lettersDone || initAnim ? (
           <motion.span
-            variants={homeVariants.letterFadeIn}
+            key={123523}
+            variants={global.fadeIn}
             className="custom-gradient-blue"
           >
             Mark Avila
@@ -46,9 +47,9 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
             <motion.span
               key={78274 + index}
               className="inline-block text-gray-500"
-              variants={initAnim ? {} : homeVariants.letterSlideUp}
+              variants={global.letterSlideUp}
               transition={{
-                ease: "easeInOut"
+                ease: global.eases.slideUp
               }}
             >
               {letter === "k" ? "k\u00A0" : letter}
@@ -60,8 +61,8 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
         <motion.span
           initial="hidden"
           animate="show"
-          variants={initAnim ? {} : homeVariants.letterSlideUp}
-          transition={{ delay: 2.5 }}
+          variants={initAnim ? {} : global.letterSlideUp}
+          transition={{ delay: 2.5, ease: global.eases.slideUp }}
           className="inline-block"
         >
           I like making websites
@@ -72,9 +73,10 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           initial="hidden"
           animate="show"
           className="inline-block"
-          variants={initAnim ? {} : homeVariants.letterSlideUp}
+          variants={initAnim ? {} : global.letterSlideUp}
           transition={{
-            delay: 3
+            delay: 3,
+            ease: global.eases.slideUp
           }}
         >
           Student aspiring to be a guy that develops websites. Welcome to my

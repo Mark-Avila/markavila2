@@ -46,11 +46,11 @@ function Contact({ onAnimDone, initAnim }: InitAnimProps) {
       <div className="px-4 lg:w-1/2">
         <div className="overflow-hidden px-0 lg:flex lg:justify-center">
           <motion.h1
-            variants={initAnim ? {} : slideUpVariant}
+            variants={initAnim ? {} : global.letterSlideUp}
             initial="hidden"
             animate="show"
             transition={{
-              ease: [0.65, 0, 0.35, 1],
+              ease: global.eases.slideUp,
               duration: 0.5,
               delay: 0.5
             }}
@@ -61,11 +61,11 @@ function Contact({ onAnimDone, initAnim }: InitAnimProps) {
         </div>
         <div className="overflow-hidden px-0  lg:justify-center">
           <motion.p
-            variants={initAnim ? {} : slideUpVariant}
+            variants={initAnim ? {} : global.letterSlideUp}
             initial="hidden"
             animate="show"
             transition={{
-              ease: [0.65, 0, 0.35, 1],
+              ease: global.eases.slideUp,
               duration: 0.5,
               delay: 0.3
             }}
@@ -77,9 +77,9 @@ function Contact({ onAnimDone, initAnim }: InitAnimProps) {
         <motion.p
           initial="hidden"
           animate="show"
-          variants={initAnim ? {} : fadeInVariant}
+          variants={initAnim ? {} : global.fadeIn}
           transition={{
-            ease: [0.65, 0, 0.35, 1],
+            ease: global.eases.slideUp,
             duration: 0.5
           }}
           className="mt-4 font-roboto text-gray-500 md:text-sm lg:text-center xl:px-20"
@@ -93,13 +93,13 @@ function Contact({ onAnimDone, initAnim }: InitAnimProps) {
         <motion.div
           initial="hidden"
           animate="show"
-          variants={initAnim ? {} : popVariant}
+          variants={initAnim ? {} : global.popScale}
           transition={{
             type: "spring",
             duration: 0.5,
             delay: 0.9
           }}
-          className="mt-8 bg-black py-8 px-12 md:mt-4 md:w-48 md:px-0 lg:m-0 lg:flex lg:w-full lg:justify-center"
+          className="mt-8 py-8 px-12 md:mt-4 md:w-48 md:px-0 lg:m-0 lg:flex lg:w-full lg:justify-center"
         >
           <a
             href="mailto: markavila.dev@gmail.com"
