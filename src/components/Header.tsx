@@ -34,28 +34,28 @@ function Header(props: HeaderProps) {
       height: 0,
       opacity: 0,
       transition: {
-        delay: 0.3,
-      },
+        delay: 0.3
+      }
     },
     show: {
       height: 500,
       opacity: 1,
       transition: {
         when: "beforeChildren",
-        duration: 0.3,
-      },
-    },
+        duration: 0.3
+      }
+    }
   };
 
   const itemVariant: Variants = {
     hidden: {
       width: 0,
-      opacity: 0,
+      opacity: 0
     },
     show: {
       width: "100%",
-      opacity: 1,
-    },
+      opacity: 1
+    }
   };
 
   //
@@ -95,7 +95,7 @@ function Header(props: HeaderProps) {
                       items[item] ? "nav-onclick" : ""
                     }`}
                   >
-                    {item}
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
                   </button>
                 </motion.li>
               ))}
@@ -115,18 +115,18 @@ function Header(props: HeaderProps) {
             <li key={index + 10} className="box-border w-full md:w-20">
               <button
                 onClick={() => handleItemClick(item)}
-                className={`nav-hover h-8 w-full rounded-sm px-1 text-center text-xs text-gray-400 outline-none font-montserrat hover:border-b-gray-400 lg:w-16 lg:text-xs ${
+                className={`nav-hover h-8 w-full rounded-sm px-1 text-center font-montserrat text-xs text-gray-400 outline-none hover:border-b-gray-400 lg:w-16 lg:text-xs ${
                   items[item] ? "md:nav-onclick" : ""
                 }`}
                 key={index}
               >
-                {item}
+                {item.charAt(0).toUpperCase() + item.slice(1)}
               </button>
             </li>
           ))}
         </ul>
         <li className="hidden w-20 md:block">
-          <button className="border-1 resume h-10 w-full rounded-md border text-xs border-white bg-transparent font-roboto transition ease-in before:active:bg-slate-300">
+          <button className="border-1 resume h-10 w-full rounded-md border border-white bg-transparent font-roboto text-xs transition ease-in before:active:bg-slate-300">
             Resume
           </button>
         </li>

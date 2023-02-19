@@ -7,14 +7,15 @@ import { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import particlesJson from "./assets/particlesjs-config.json";
 import { useMediaQuery } from "./hooks";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 export interface InitAnimProps {
   initAnim: boolean;
+  isMobileScreen?: boolean;
   onAnimDone: () => void;
 }
 
-type ProjectPages = "about" | "texh" | "home" | "project" | "contact";
+type ProjectPages = "about" | "tech" | "home" | "project" | "contact";
 
 function App() {
   const [activePage, setActivePage] = useState({
@@ -25,8 +26,6 @@ function App() {
     contact: false
   });
 
-  const [prevPage, setPrevPage] = useState<ProjectPages>("home");
-
   const [hasVisited, setVisited] = useState({
     about: false,
     tech: false,
@@ -34,6 +33,8 @@ function App() {
     project: false,
     contact: false
   });
+
+  const [prevPage, setPrevPage] = useState<ProjectPages>("home");
 
   const handleVisited = (key: ProjectPages) => {
     if (!hasVisited[key as keyof typeof hasVisited]) {
@@ -71,7 +72,7 @@ function App() {
   frozenParticlesJson.particles.move.enable = false;
 
   return (
-    <div className="z-10 flex max-h-full min-h-full flex-1 flex-col">
+    <div className="h-aut z-10 flex max-h-full min-h-full flex-1 flex-col">
       <Particles
         className="z-0"
         id="tsparticles"
@@ -83,45 +84,21 @@ function App() {
       <main className="z-10 mt-20 flex h-full min-h-full w-full flex-grow flex-col overflow-y-auto overflow-x-hidden">
         <AnimatePresence mode="wait">
           {activePage.home && (
-            <motion.span
+            <motion.div
               key={712837}
-              className="box-border w-full flex-1 overflow-hidden"
+              className="box-border grid flex-1 grid-cols-1 overflow-hidden"
             >
               <Home
                 onAnimDone={() => handleVisited("home")}
                 initAnim={hasVisited.home}
+                isMobileScreen={!notMobileScreen}
               />
-            </motion.span>
+            </motion.div>
           )}
           {activePage.about && (
             <motion.span
-              initial="hidden"
-              animate="show"
-              exit="exit"
-              variants={{
-                hidden:
-                  hasVisited.about && notMobileScreen
-                    ? { x: "-10%", opacity: 0 }
-                    : {},
-                show:
-                  hasVisited.about && notMobileScreen
-                    ? {
-                        x: 0,
-                        opacity: 1,
-                        transition: { type: "spring", duration: 0.5 }
-                      }
-                    : {},
-                exit:
-                  hasVisited.about && notMobileScreen
-                    ? {
-                        x: "-10%",
-                        opacity: 0,
-                        transition: { type: "spring", duration: 0.5 }
-                      }
-                    : {}
-              }}
               key={868686}
-              className="box-border w-full flex-1"
+              className="box-border flex w-full flex-1 lg:items-center lg:justify-center"
             >
               <About
                 initAnim={hasVisited.about}
@@ -130,19 +107,32 @@ function App() {
             </motion.span>
           )}
           {activePage.contact && (
-            <motion.span className="box-border w-full flex-1">
-              <Contact />
+            <motion.span
+              key={716238}
+              className="box-border flex w-full flex-1 lg:items-center lg:justify-center"
+            >
+              <Contact
+                initAnim={hasVisited.contact}
+                onAnimDone={() => handleVisited("contact")}
+              />
             </motion.span>
           )}
           {activePage.project && (
-            <motion.span className="box-border w-full flex-1">
+            <motion.span className="box-border w-full flex-1 lg:grid lg:grid-cols-1">
               <Projects />
             </motion.span>
           )}
+          {/*The grid here makes it */}
           {activePage.tech && (
-            <motion.span className="box-border w-full flex-1">
-              <Tech />
-            </motion.span>
+            <motion.div
+              key={378268}
+              className="box-border flex w-full flex-1 lg:items-stretch lg:justify-center xl:overflow-hidden"
+            >
+              <Tech
+                initAnim={hasVisited.tech}
+                onAnimDone={() => handleVisited("tech")}
+              />
+            </motion.div>
           )}
         </AnimatePresence>
       </main>

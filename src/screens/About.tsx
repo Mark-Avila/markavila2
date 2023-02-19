@@ -5,11 +5,15 @@ import { AboutCard } from "../components";
 import { AnimatePresence, Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import { InitAnimProps } from "../App";
+import { useMediaQuery } from "../hooks";
+import { global } from "../variants";
 
 function About({ initAnim, onAnimDone }: InitAnimProps) {
   useEffect(() => {
     setTimeout(onAnimDone, 3000);
   }, []);
+
+  const notMobileScreen = useMediaQuery("(min-width: 768px)");
 
   const [activeInfo, setActiveInfo] = useState({
     responsive: true,
@@ -66,8 +70,34 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
     }
   };
 
+  const containerVariants: Variants = {
+    hidden: initAnim && notMobileScreen ? { x: "-10%", opacity: 0 } : {},
+    show:
+      initAnim && notMobileScreen
+        ? {
+            x: 0,
+            opacity: 1,
+            transition: { type: "spring", duration: 0.5 }
+          }
+        : {},
+    exit:
+      initAnim && notMobileScreen
+        ? {
+            x: "-10%",
+            opacity: 0,
+            transition: { type: "spring", duration: 0.5 }
+          }
+        : {}
+  };
+
   return (
-    <div className="h-full w-full md:flex md:items-start md:justify-center lg:items-center">
+    <motion.div
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      variants={global.pageTransitions}
+      className="h-full w-full md:flex md:items-start md:justify-center lg:items-center"
+    >
       <div className="flex flex-col p-8 lg:w-3/4 xl:w-1/2">
         <header className="overflow-hidden">
           <motion.h1
@@ -202,7 +232,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
           </AnimatePresence>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

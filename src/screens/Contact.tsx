@@ -1,27 +1,115 @@
-function Contact() {
+import { Variants, delay, motion } from "framer-motion";
+import { InitAnimProps } from "../App";
+import { useEffect } from "react";
+import { global } from "../variants";
+
+function Contact({ onAnimDone, initAnim }: InitAnimProps) {
+  useEffect(() => {
+    setTimeout(onAnimDone, 1000);
+  }, []);
+
+  const slideUpVariant: Variants = {
+    hidden: {
+      y: "200%"
+    },
+    show: {
+      y: 0
+    }
+  };
+
+  const fadeInVariant: Variants = {
+    hidden: {
+      opacity: 0
+    },
+    show: {
+      opacity: 1
+    }
+  };
+
+  const popVariant: Variants = {
+    hidden: {
+      scale: 0
+    },
+    show: {
+      scale: 1
+    }
+  };
+
   return (
-    <div className="h-full w-full flex items-start p-8 justify-center lg:items-center">
+    <motion.div
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      variants={initAnim ? global.pageTransitions : {}}
+      className="flex h-full w-full items-start justify-center p-8 lg:items-center"
+    >
       <div className="px-4 lg:w-1/2">
-        <h1 className="custom-gradient-blue font-montserrat text-5xl font-bold md:text-6xl lg:text-center">
-          Contact
-        </h1>
-        <p className="mt-4 font-montserrat text-2xl font-bold text-white lg:text-center">
-          Get in touch with me
-        </p>
-        <p className="mt-4 text-gray-500 md:text-sm lg:text-center xl:px-20 font-roboto">
+        <div className="overflow-hidden px-0 lg:flex lg:justify-center">
+          <motion.h1
+            variants={initAnim ? {} : slideUpVariant}
+            initial="hidden"
+            animate="show"
+            transition={{
+              ease: [0.65, 0, 0.35, 1],
+              duration: 0.5,
+              delay: 0.5
+            }}
+            className="custom-gradient-blue font-montserrat text-5xl font-bold md:text-6xl lg:text-center"
+          >
+            Contact
+          </motion.h1>
+        </div>
+        <div className="overflow-hidden px-0  lg:justify-center">
+          <motion.p
+            variants={initAnim ? {} : slideUpVariant}
+            initial="hidden"
+            animate="show"
+            transition={{
+              ease: [0.65, 0, 0.35, 1],
+              duration: 0.5,
+              delay: 0.3
+            }}
+            className="mt-4 font-montserrat text-2xl font-bold text-white lg:text-center"
+          >
+            Get in touch with me
+          </motion.p>
+        </div>
+        <motion.p
+          initial="hidden"
+          animate="show"
+          variants={initAnim ? {} : fadeInVariant}
+          transition={{
+            ease: [0.65, 0, 0.35, 1],
+            duration: 0.5
+          }}
+          className="mt-4 font-roboto text-gray-500 md:text-sm lg:text-center xl:px-20"
+        >
           I am current a university student, which means I am not currently
           looking for full-time opportunities. However, I am looking for
           front-end internships so that I can learn the workings of the
           industry. You can email me if you have a question and I'll try my best
           to get back to you
-        </p>
-        <div className="py-8 px-12 mt-8 md:px-0 md:w-48 md:mt-4 lg:w-full lg:m-0 lg:flex lg:justify-center">
-          <a href="mailto: markavila.dev@gmail.com" className="flex items-center justify-center before:custom-gradient-purple-bg lg:w-48 active:scale-95 resume purple-shadow h-16 w-full rounded-xl border-2 border-purple-700 font-montserrat text-lg text-white transition ease-in-out hover:text-white">
+        </motion.p>
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={initAnim ? {} : popVariant}
+          transition={{
+            type: "spring",
+            duration: 0.5,
+            delay: 0.9
+          }}
+          className="mt-8 bg-black py-8 px-12 md:mt-4 md:w-48 md:px-0 lg:m-0 lg:flex lg:w-full lg:justify-center"
+        >
+          <a
+            href="mailto: markavila.dev@gmail.com"
+            className="before:custom-gradient-purple-bg resume purple-shadow flex h-16 w-full items-center justify-center rounded-xl border-2 border-purple-700 font-montserrat text-lg text-white transition ease-in-out hover:text-white active:scale-95 lg:w-48"
+          >
             Email me
           </a>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -31,7 +31,7 @@ function Projects() {
   };
   const handleLeftClick = () => {
     setSwipeDirection("left");
-    
+
     setTimeout(() => {
       setcurrItemIndex((prev) => (prev > 0 ? prev - 1 : prev));
     }, 20);
@@ -43,26 +43,26 @@ function Projects() {
       image: wordhaven,
       title: "Wordhaven",
       body: lorem,
-      tech: ["React", "Styled Components", "Framer Motion"],
+      tech: ["React", "Styled Components", "Framer Motion"]
     },
     {
       id: 9566,
       image: kikoo,
       title: "Kikoo",
       body: lorem,
-      tech: ["Vue", "ParticleJS", "OpenWeatherMap API"],
+      tech: ["Vue", "ParticleJS", "OpenWeatherMap API"]
     },
     {
       id: 5192,
       image: anilist,
       title: "Anilist",
       body: lorem,
-      tech: ["React", "Firebase", "Kitsu API"],
-    },
+      tech: ["React", "Firebase", "Kitsu API"]
+    }
   ];
 
   return (
-    <div className="h-full w-full p-8 xl:flex xl:flex-col xl:items-center xl:justify-start">
+    <motion.div className="h-full w-full p-8 xl:flex xl:flex-col xl:items-center xl:justify-start">
       <div className="xl:max-w-8xl lg:flex lg:items-center lg:justify-between lg:px-12 xl:w-9/12">
         <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-6xl xl:text-7xl">
           My Projects
@@ -111,7 +111,7 @@ function Projects() {
           />
         </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

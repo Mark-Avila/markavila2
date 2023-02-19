@@ -1,13 +1,20 @@
 import { useRef, useState } from "react";
 import { expIcons, usedIcons } from "../utils";
 import { TechItem, TechTabs } from "../components";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { InitAnimProps } from "../App";
+import { useEffect } from "react";
+import { global } from "../variants";
 
-function Tech() {
+function Tech({ onAnimDone, initAnim }: InitAnimProps) {
+  useEffect(() => {
+    setTimeout(onAnimDone, 1000);
+  }, []);
+
   const [activeTab, setActiveTab] = useState({
     all: true,
     lang: false,
-    tools: false,
+    tools: false
   });
 
   const listItem = useRef(null);
@@ -16,19 +23,25 @@ function Tech() {
     const initialState: typeof activeTab = {
       all: false,
       lang: false,
-      tools: false,
+      tools: false
     };
 
     setActiveTab({ ...initialState, [key]: true });
   };
 
   return (
-    <div className="flex h-full w-full flex-grow flex-col p-8 md:flex md:items-center lg:flex-row lg:items-start lg:justify-between lg:px-24 xl:mx-auto xl:w-9/12 xl:max-w-[1200px] xl:px-0">
+    <motion.div
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      variants={initAnim ? global.pageTransitions : {}}
+      className="flex h-full w-full flex-grow flex-col p-8 md:flex md:items-center lg:h-[initial] lg:flex-row lg:items-stretch lg:justify-between lg:px-24 xl:mx-auto xl:w-9/12 xl:max-w-[1200px] xl:px-0"
+    >
       <header className="h-fit snap-start md:pb-8 lg:w-full">
-        <h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-6xl xl:text-7xl">
+        <motion.h1 className="custom-gradient-blue pb-4 text-5xl font-bold md:text-6xl xl:text-7xl">
           Stuff I know
-        </h1>
-        <p className="text-gray-400 font-roboto text-sm w-3/4">
+        </motion.h1>
+        <p className="hidden w-3/4 font-roboto text-sm text-gray-400 lg:block">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur
           necessitatibus est veritatis sequi debitis quibusdam, iure iusto.
           Optio laudantium omnis excepturi, ipsum dolor eum mollitia maxime
@@ -39,7 +52,7 @@ function Tech() {
         </div>
       </header>
 
-      <div className="flex h-full w-full flex-col overflow-auto md:mt-0 lg:px-8 xl:min-h-full">
+      <div className="flex min-h-full w-full flex-col overflow-auto md:mt-0 lg:px-8 xl:min-h-full">
         <section className="mt-8 flex-none snap-start md:mt-16 md:w-full lg:mt-0">
           <h4 className="font-montserrat text-white md:mb-14 md:text-center md:text-xl md:font-bold lg:text-left">
             Most used
@@ -50,28 +63,28 @@ function Tech() {
                 activeTab.all ? (
                   <TechItem
                     ref={listItem}
+                    color={item.color}
                     key={item.id}
                     title={item.title}
                     icon={item.icon}
-                    active={true}
                   />
                 ) : activeTab.lang && item.type === "lang" ? (
                   <TechItem
                     ref={listItem}
+                    color={item.color}
                     key={item.id}
                     title={item.title}
                     icon={item.icon}
-                    active={true}
                   />
                 ) : (
                   activeTab.tools &&
                   item.type === "tool" && (
                     <TechItem
                       ref={listItem}
+                      color={item.color}
                       key={item.id}
                       title={item.title}
                       icon={item.icon}
-                      active={true}
                     />
                   )
                 )
@@ -90,28 +103,28 @@ function Tech() {
                 activeTab.all ? (
                   <TechItem
                     ref={listItem}
+                    color={item.color}
                     key={item.id}
                     title={item.title}
                     icon={item.icon}
-                    active={true}
                   />
                 ) : activeTab.lang && item.type === "lang" ? (
                   <TechItem
                     ref={listItem}
+                    color={item.color}
                     key={item.id}
                     title={item.title}
                     icon={item.icon}
-                    active={true}
                   />
                 ) : (
                   activeTab.tools &&
                   item.type === "tool" && (
                     <TechItem
                       ref={listItem}
+                      color={item.color}
                       key={item.id}
                       title={item.title}
                       icon={item.icon}
-                      active={true}
                     />
                   )
                 )
@@ -120,7 +133,7 @@ function Tech() {
           </ul>
         </section>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
