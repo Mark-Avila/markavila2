@@ -24,6 +24,17 @@ const letterSlideUp: Variants = {
   }
 };
 
+const letterSlideRight: Variants = {
+  hidden: {
+    opacity: 0,
+    x: "-20%"
+  },
+  show: {
+    opacity: 1,
+    x: 0
+  }
+};
+
 const fadeIn: Variants = {
   hidden: {
     opacity: 0
@@ -35,9 +46,11 @@ const fadeIn: Variants = {
 
 const popScale: Variants = {
   hidden: {
+    opacity: 0,
     scale: 0
   },
   show: {
+    opacity: 1,
     scale: 1
   }
 };
@@ -50,6 +63,7 @@ export const global = {
   fadeIn,
   pageTransitions,
   letterSlideUp,
+  letterSlideRight,
   popScale,
   eases
 };

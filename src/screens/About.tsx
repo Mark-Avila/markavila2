@@ -61,35 +61,6 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
     }
   };
 
-  const btnVariants: Variants = {
-    hidden: {
-      opacity: 0
-    },
-    show: {
-      opacity: 1
-    }
-  };
-
-  const containerVariants: Variants = {
-    hidden: initAnim && notMobileScreen ? { x: "-10%", opacity: 0 } : {},
-    show:
-      initAnim && notMobileScreen
-        ? {
-            x: 0,
-            opacity: 1,
-            transition: { type: "spring", duration: 0.5 }
-          }
-        : {},
-    exit:
-      initAnim && notMobileScreen
-        ? {
-            x: "-10%",
-            opacity: 0,
-            transition: { type: "spring", duration: 0.5 }
-          }
-        : {}
-  };
-
   return (
     <motion.div
       initial="hidden"
@@ -105,6 +76,11 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
             initial="hidden"
             animate="show"
             exit="exit"
+            transition={{
+              ease: [0.455, 0.03, 0.515, 0.955],
+              duration: 0.85,
+              delay: 0.6
+            }}
             className="custom-gradient-blue font-montserrat text-5xl font-bold text-white md:text-6xl xl:text-7xl"
           >
             About me
@@ -138,7 +114,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
         <div className="mt-8 sm:w-1/2 md:flex md:w-full">
           <div className="md grid w-full grid-cols-4 gap-2 md:w-56 md:grid-cols-2 md:grid-rows-2">
             <motion.button
-              variants={initAnim ? {} : btnVariants}
+              variants={initAnim ? {} : global.fadeIn}
               initial="hidden"
               animate="show"
               exit="exit"
@@ -153,7 +129,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
               <MdDevices />
             </motion.button>
             <motion.button
-              variants={initAnim ? {} : btnVariants}
+              variants={initAnim ? {} : global.fadeIn}
               initial="hidden"
               animate="show"
               exit="exit"
@@ -168,7 +144,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
               <FaLightbulb />
             </motion.button>
             <motion.button
-              variants={initAnim ? {} : btnVariants}
+              variants={initAnim ? {} : global.fadeIn}
               initial="hidden"
               animate="show"
               exit="exit"
@@ -181,7 +157,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
               <FaPalette />
             </motion.button>
             <motion.button
-              variants={initAnim ? {} : btnVariants}
+              variants={initAnim ? {} : global.fadeIn}
               initial="hidden"
               animate="show"
               exit="exit"

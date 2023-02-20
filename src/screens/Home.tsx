@@ -6,7 +6,7 @@ import { global, homeVariants } from "../variants";
 
 function Home({ initAnim, onAnimDone }: InitAnimProps) {
   useEffect(() => {
-    setTimeout(onAnimDone, 5000);
+    setTimeout(onAnimDone, 4000);
   }, []);
 
   const [lettersDone, setLettersDone] = useState(false);

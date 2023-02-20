@@ -118,8 +118,14 @@ function App() {
             </motion.span>
           )}
           {activePage.project && (
-            <motion.span className="box-border w-full flex-1 lg:grid lg:grid-cols-1">
-              <Projects />
+            <motion.span
+              key={7123681}
+              className="ex w-full flex-1 lg:items-stretch lg:justify-center xl:overflow-hidden"
+            >
+              <Projects
+                initAnim={hasVisited.project}
+                onAnimDone={() => handleVisited("project")}
+              />
             </motion.span>
           )}
           {/*The grid here makes it */}
