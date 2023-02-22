@@ -6,7 +6,7 @@ import { AnimatePresence, Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import { InitAnimProps } from "../App";
 import { useMediaQuery } from "../hooks";
-import { global } from "../variants";
+import { global, aboutVariants as vars } from "../variants";
 
 function About({ initAnim, onAnimDone }: InitAnimProps) {
   useEffect(() => {
@@ -33,34 +33,6 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
     setActiveInfo({ ...initialState, [key]: true });
   };
 
-  const headerVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      y: "200%"
-    },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        ease: [0.455, 0.03, 0.515, 0.955],
-        duration: 0.85,
-        delay: 0.6
-      }
-    }
-  };
-
-  const pVariants: Variants = {
-    hidden: {
-      opacity: 0,
-      x: -300
-    },
-    show: {
-      opacity: 1,
-      x: 0,
-      transition: { ease: [0, 0.9, 0, 0.9], duration: 0.7, delay: 0.5 }
-    }
-  };
-
   return (
     <motion.div
       initial="hidden"
@@ -72,7 +44,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
       <div className="flex flex-col p-8 lg:w-3/4 xl:w-1/2">
         <header className="overflow-hidden">
           <motion.h1
-            variants={initAnim ? {} : headerVariants}
+            variants={initAnim ? {} : vars.headerSlideUp}
             initial="hidden"
             animate="show"
             exit="exit"
@@ -94,7 +66,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
             className="mr-6 w-4 rounded-full bg-gray-200"
           ></motion.div>
           <motion.p
-            variants={initAnim ? {} : pVariants}
+            variants={initAnim ? {} : vars.textSlide}
             initial="hidden"
             animate="show"
             exit="exit"
