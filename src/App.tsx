@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import { About, Contact, Home, Projects, Tech } from "./screens";
 import { useCallback } from "react";
@@ -37,7 +37,9 @@ function App() {
   const [prevPage, setPrevPage] = useState<ProjectPages>("home");
 
   const handleVisited = (key: ProjectPages) => {
-    if (!hasVisited[key as keyof typeof hasVisited]) {
+    const hasNotVisited = !hasVisited[key as keyof typeof hasVisited];
+
+    if (hasNotVisited) {
       setVisited((prev) => ({ ...prev, [key]: true }));
     }
   };
@@ -79,7 +81,9 @@ function App() {
         options={notMobileScreen ? normalParticlesJson : frozenParticlesJson}
         init={particlesInit}
       />
-      <Header items={activePage} onItemClick={onNavItemClick} />
+      {hasVisited.home && (
+        <Header items={activePage} onItemClick={onNavItemClick} />
+      )}
 
       <main className="z-10 mt-20 flex h-full min-h-full w-full flex-grow flex-col overflow-y-auto overflow-x-hidden">
         <AnimatePresence mode="wait">
