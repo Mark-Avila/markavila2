@@ -1,4 +1,5 @@
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FiGithub, FiFacebook, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { InitAnimProps } from "../App";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -98,33 +99,33 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           variants={initAnim ? prevReset : vars.iconPop}
           target="_blank"
           href="https://github.com/Mark-Avila"
-          className="mb-10 text-4xl text-gray-700 hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
+          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
         >
-          <FaGithub />
+          <FiGithub />
         </motion.a>
         <motion.a
           variants={initAnim ? prevReset : vars.iconPop}
           target="_blank"
           href="https://www.facebook.com/profile.php?id=100076620788296"
-          className="mb-10 text-4xl text-gray-700 hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
+          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
         >
-          <FaFacebook />
+          <FiFacebook />
         </motion.a>
         <motion.a
           variants={initAnim ? prevReset : vars.iconPop}
           target="_blank"
           href="https://twitter.com/itsmarkavila"
-          className="mb-10 text-4xl text-gray-700 hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
+          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
         >
-          <FaTwitter />
+          <FiTwitter />
         </motion.a>
         <motion.a
           variants={initAnim ? prevReset : vars.iconPop}
           target="_blank"
           href="https://www.linkedin.com/in/avilamark/"
-          className="mb-10 text-4xl text-gray-700 hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
+          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
         >
-          <FaLinkedin />
+          <FiLinkedin />
         </motion.a>
       </motion.div>
     </motion.div>
