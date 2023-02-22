@@ -1,8 +1,8 @@
 import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { InitAnimProps } from "../App";
 import { useEffect, useState } from "react";
-import { Variants, motion } from "framer-motion";
-import { global, homeVariants } from "../variants";
+import { motion } from "framer-motion";
+import { global, homeVariants as vars } from "../variants";
 
 function Home({ initAnim, onAnimDone }: InitAnimProps) {
   useEffect(() => {
@@ -10,6 +10,10 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
   }, []);
 
   const [lettersDone, setLettersDone] = useState(false);
+
+  //Used to prevent the animation of staggered elements from resetting
+  //idk why it does this
+  const prevReset = { show: { scale: 1 } };
 
   return (
     <motion.div
@@ -22,7 +26,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
       <motion.h5
         initial="hidden"
         animate="show"
-        variants={initAnim ? {} : homeVariants.textPop}
+        variants={initAnim ? {} : vars.textPop}
         className="font-montserrat text-sm text-gray-400 md:text-base lg:text-xl"
       >
         What's up! I am
@@ -30,7 +34,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
       <motion.h1
         initial="hidden"
         animate="show"
-        variants={initAnim ? {} : homeVariants.h1Stagger}
+        variants={initAnim ? {} : vars.h1Stagger}
         onAnimationComplete={() => setLettersDone(true)}
         className=" mt-2 overflow-hidden font-montserrat text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl"
       >
@@ -86,12 +90,12 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
       <motion.div
         initial="hidden"
         animate="show"
-        variants={initAnim ? {} : homeVariants.iconStagger}
+        variants={initAnim ? {} : vars.iconStagger}
         transition={{ delay: 3.2 }}
         className="mt-8 flex flex-1 flex-col items-start justify-end lg:flex-none lg:flex-row lg:items-center lg:justify-start"
       >
         <motion.a
-          variants={initAnim ? { show: { scale: 1 } } : homeVariants.iconPop}
+          variants={initAnim ? prevReset : vars.iconPop}
           target="_blank"
           href="https://github.com/Mark-Avila"
           className="mb-10 text-4xl text-gray-700 hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
@@ -99,7 +103,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           <FaGithub />
         </motion.a>
         <motion.a
-          variants={initAnim ? { show: { scale: 1 } } : homeVariants.iconPop}
+          variants={initAnim ? prevReset : vars.iconPop}
           target="_blank"
           href="https://www.facebook.com/profile.php?id=100076620788296"
           className="mb-10 text-4xl text-gray-700 hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
@@ -107,7 +111,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           <FaFacebook />
         </motion.a>
         <motion.a
-          variants={initAnim ? { show: { scale: 1 } } : homeVariants.iconPop}
+          variants={initAnim ? prevReset : vars.iconPop}
           target="_blank"
           href="https://twitter.com/itsmarkavila"
           className="mb-10 text-4xl text-gray-700 hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
@@ -115,7 +119,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           <FaTwitter />
         </motion.a>
         <motion.a
-          variants={initAnim ? { show: { scale: 1 } } : homeVariants.iconPop}
+          variants={initAnim ? prevReset : vars.iconPop}
           target="_blank"
           href="https://www.linkedin.com/in/avilamark/"
           className="mb-10 text-4xl text-gray-700 hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"

@@ -1,4 +1,4 @@
-import { Variants, delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { InitAnimProps } from "../App";
 import { useEffect } from "react";
 import { global } from "../variants";
@@ -7,33 +7,6 @@ function Contact({ onAnimDone, initAnim }: InitAnimProps) {
   useEffect(() => {
     setTimeout(onAnimDone, 1000);
   }, []);
-
-  const slideUpVariant: Variants = {
-    hidden: {
-      y: "200%"
-    },
-    show: {
-      y: 0
-    }
-  };
-
-  const fadeInVariant: Variants = {
-    hidden: {
-      opacity: 0
-    },
-    show: {
-      opacity: 1
-    }
-  };
-
-  const popVariant: Variants = {
-    hidden: {
-      scale: 0
-    },
-    show: {
-      scale: 1
-    }
-  };
 
   return (
     <motion.div

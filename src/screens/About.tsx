@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { FaLightbulb, FaPalette } from "react-icons/fa";
 import { MdDevices, MdShutterSpeed } from "react-icons/md";
 import { AboutCard } from "../components";
-import { AnimatePresence, Variants } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import { InitAnimProps } from "../App";
 import { useMediaQuery } from "../hooks";
