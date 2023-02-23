@@ -1,4 +1,4 @@
-import { Variants, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { projectVariants } from "../variants/projectVariants";
 import { global } from "../variants";
 
@@ -13,6 +13,17 @@ interface ProjectItemProps {
 
 function ProjectItem(props: ProjectItemProps) {
   const { image, title, body, tech, direction, initAnim } = props;
+
+  const prevReset = {
+    hidden: {
+      opacity: 1,
+      scale: 1
+    },
+    show: {
+      opacity: 1,
+      scale: 1
+    }
+  };
 
   return (
     <motion.div className="xl:max-w-8xl flex w-full flex-col-reverse md:flex md:flex-row md:justify-start md:gap-4 lg:w-10/12 lg:max-w-5xl">
@@ -31,7 +42,7 @@ function ProjectItem(props: ProjectItemProps) {
           delay: initAnim ? 0 : 1
         }}
         variants={initAnim ? projectVariants.imageSlide(direction) : {}}
-        className="z-50 mt-8 md:mt-0 lg:-mr-14 lg:pl-14"
+        className="z-50 mt-8 box-border md:mt-0 lg:-mr-14 lg:pl-14"
       >
         <motion.h1
           initial="hidden"
@@ -55,7 +66,7 @@ function ProjectItem(props: ProjectItemProps) {
             duration: 0.8,
             delay: 1.4
           }}
-          className="mt-3 font-roboto text-xs text-gray-500 md:hidden lg:block lg:rounded-xl lg:bg-gray-900 lg:p-4 lg:text-gray-400 lg:shadow-thick"
+          className="mt-3 hidden font-roboto text-xs text-gray-500 md:hidden lg:block lg:rounded-xl lg:bg-gray-900 lg:p-4 lg:text-gray-400 lg:shadow-thick"
         >
           {body}
         </motion.p>
@@ -81,20 +92,7 @@ function ProjectItem(props: ProjectItemProps) {
           {tech.map((item) => (
             <motion.div
               key={item}
-              variants={
-                initAnim
-                  ? {
-                      hidden: {
-                        opacity: 1,
-                        scale: 1
-                      },
-                      show: {
-                        opacity: 1,
-                        scale: 1
-                      }
-                    }
-                  : global.popScale
-              }
+              variants={initAnim ? prevReset : global.popScale}
               transition={{
                 duration: 0.4
               }}

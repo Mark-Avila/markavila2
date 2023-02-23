@@ -73,7 +73,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
       animate="show"
       exit="exit"
       variants={initAnim ? global.pageTransitions : {}}
-      className="h-full w-full p-8 xl:flex xl:flex-col xl:items-center xl:justify-start"
+      className="box-border h-full w-full p-8 xl:flex xl:flex-col xl:items-center xl:justify-start"
     >
       <div className="xl:max-w-8xl lg:flex lg:items-center lg:justify-between lg:px-12 xl:w-9/12">
         <header className="overflow-hidden">
@@ -122,9 +122,10 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
       <p className="font-montserrat text-gray-500 lg:hidden">Swipe for more</p>
       <div className="container-snap mt-8 flex w-full snap-x snap-mandatory gap-4 overflow-visible overflow-x-auto lg:hidden">
         {items.map((item) => (
+          //TODO: Fix this
           <div
             key={item.id}
-            className="w-full min-w-full snap-center overflow-visible"
+            className="box-border w-full snap-center overflow-visible"
           >
             <ProjectItem
               initAnim={initAnim}
@@ -133,7 +134,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
               body={item.body}
               tech={item.tech}
             />
-            <p className="mt-8 text-gray-400 lg:hidden">{item.body}</p>
+            <p className="mt-8  text-gray-400 lg:hidden">{item.body}</p>
           </div>
         ))}
       </div>

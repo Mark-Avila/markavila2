@@ -1,4 +1,3 @@
-import { FaFacebook, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { FiGithub, FiFacebook, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { InitAnimProps } from "../App";
 import { useEffect, useState } from "react";
