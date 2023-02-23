@@ -125,7 +125,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
           //TODO: Fix this
           <div
             key={item.id}
-            className="box-border w-full snap-center overflow-visible"
+            className="box-border min-w-full snap-center overflow-visible"
           >
             <ProjectItem
               initAnim={initAnim}

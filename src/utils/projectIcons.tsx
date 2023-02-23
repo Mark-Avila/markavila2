@@ -120,7 +120,7 @@ export const expIcons: ProjectIcon[] = [
     id: 65252,
     title: "Vue",
     icon: <SiVuedotjs />,
-    type: "lang",
+    type: "tool",
     color: "#2dfc79"
   },
   {
