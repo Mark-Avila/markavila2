@@ -34,7 +34,7 @@ const techItemStagger1: Variants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.05,
       delayChildren: 1.4
     }
   }
@@ -47,8 +47,8 @@ const techItemStagger2: Variants = {
   show: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
-      delayChildren: 2.2
+      staggerChildren: 0.05,
+      delayChildren: 1.9
     }
   }
 };

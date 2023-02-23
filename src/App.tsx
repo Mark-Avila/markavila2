@@ -85,7 +85,7 @@ function App() {
         <Header items={activePage} onItemClick={onNavItemClick} />
       )}
 
-      <main className="z-10 mt-20 flex h-full min-h-full w-full flex-grow flex-col overflow-y-auto overflow-x-hidden xl:mt-24">
+      <main className="z-10 mt-14 flex w-full flex-1 flex-grow flex-col overflow-y-auto overflow-x-hidden md:mt-24">
         <AnimatePresence mode="wait">
           {activePage.home && (
             <motion.div
