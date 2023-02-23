@@ -45,13 +45,13 @@ function AboutCard({ title, body }: AboutCardProps) {
     >
       <motion.h1
         variants={AboutCardItemVariants}
-        className="custom-gradient-purple-text font-montserrat text-2xl font-bold"
+        className="custom-gradient-purple-text font-montserrat text-xl font-bold"
       >
         {title}
       </motion.h1>
       <motion.p
         variants={AboutCardItemVariants}
-        className="mt-2 text-gray-300 sm:w-3/4 md:w-full"
+        className="mt-2 text-sm text-gray-300 sm:w-3/4 md:w-full"
       >
         {body}
       </motion.p>

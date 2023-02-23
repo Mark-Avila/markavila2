@@ -1,17 +1,19 @@
 import { Variants } from "framer-motion";
 
-const h1Stagger: Variants = {
-  hidden: {
-    opacity: 0
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-      delayChildren: 1,
-      delay: 1
+const h1Stagger = (stagger: number, delayC: number, delay: number) => {
+  return {
+    hidden: {
+      opacity: 0
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: stagger,
+        delayChildren: delayC,
+        delay: delay
+      }
     }
-  }
+  };
 };
 
 const textPop: Variants = {
@@ -28,25 +30,30 @@ const textPop: Variants = {
   }
 };
 
-const iconStagger: Variants = {
-  hidden: {
-    opacity: 0
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 3.2,
-      delay: 3.2
+const iconStagger = (stagger: number, delayC: number) => {
+  const vars: Variants = {
+    hidden: {
+      opacity: 1
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: delayC,
+        staggerChildren: stagger
+      }
     }
-  }
+  };
+
+  return vars;
 };
 
 const iconPop: Variants = {
   hidden: {
+    opacity: 0,
     scale: 0
   },
   show: {
+    opacity: 1,
     scale: 1
   }
 };

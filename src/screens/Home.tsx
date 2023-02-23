@@ -6,14 +6,22 @@ import { global, homeVariants as vars } from "../variants";
 
 function Home({ initAnim, onAnimDone }: InitAnimProps) {
   useEffect(() => {
-    setTimeout(onAnimDone, 4000);
+    setTimeout(onAnimDone, 3100);
   }, []);
 
   const [lettersDone, setLettersDone] = useState(false);
 
   //Used to prevent the animation of staggered elements from resetting
   //idk why it does this
-  const prevReset = { show: { scale: 1 } };
+  const prevReset = { show: { opacity: 1, scale: 1 } };
+
+  const delays = {
+    top: 0,
+    main: 1,
+    subt: 2.4,
+    parag: 2.8,
+    icons: 3.1
+  };
 
   return (
     <motion.div
@@ -34,7 +42,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
       <motion.h1
         initial="hidden"
         animate="show"
-        variants={initAnim ? {} : vars.h1Stagger}
+        variants={initAnim ? {} : vars.h1Stagger(0.1, delays.main, delays.main)}
         onAnimationComplete={() => setLettersDone(true)}
         className=" mt-2 overflow-hidden font-montserrat text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl"
       >
@@ -66,7 +74,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           initial="hidden"
           animate="show"
           variants={initAnim ? {} : global.letterSlideUp}
-          transition={{ delay: 2.5, ease: global.eases.slideUp }}
+          transition={{ delay: delays.subt, ease: global.eases.slideUp }}
           className="inline-block"
         >
           I like making websites
@@ -79,7 +87,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           className="inline-block"
           variants={initAnim ? {} : global.letterSlideUp}
           transition={{
-            delay: 3,
+            delay: delays.parag,
             ease: global.eases.slideUp
           }}
         >
@@ -90,39 +98,38 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
       <motion.div
         initial="hidden"
         animate="show"
-        variants={initAnim ? {} : vars.iconStagger}
-        transition={{ delay: 3.2 }}
-        className="mt-8 flex flex-1 flex-col items-start justify-end lg:flex-none lg:flex-row lg:items-center lg:justify-start"
+        variants={initAnim ? {} : vars.iconStagger(0.2, delays.icons)}
+        className="mt-8 flex flex-1 flex-col items-start justify-end md:flex-none md:flex-row md:items-center md:justify-start"
       >
         <motion.a
-          variants={initAnim ? prevReset : vars.iconPop}
+          variants={initAnim ? prevReset : global.fadeIn}
           target="_blank"
           href="https://github.com/Mark-Avila"
-          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
+          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white md:mb-0 md:mr-8 md:text-2xl"
         >
           <FiGithub />
         </motion.a>
         <motion.a
-          variants={initAnim ? prevReset : vars.iconPop}
+          variants={initAnim ? prevReset : global.fadeIn}
           target="_blank"
           href="https://www.facebook.com/profile.php?id=100076620788296"
-          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
+          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white md:mb-0 md:mr-8 md:text-2xl"
         >
           <FiFacebook />
         </motion.a>
         <motion.a
-          variants={initAnim ? prevReset : vars.iconPop}
+          variants={initAnim ? prevReset : global.fadeIn}
           target="_blank"
           href="https://twitter.com/itsmarkavila"
-          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
+          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white md:mb-0 md:mr-8 md:text-2xl"
         >
           <FiTwitter />
         </motion.a>
         <motion.a
-          variants={initAnim ? prevReset : vars.iconPop}
+          variants={initAnim ? prevReset : global.fadeIn}
           target="_blank"
           href="https://www.linkedin.com/in/avilamark/"
-          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white lg:mb-0 lg:mr-8 lg:text-2xl"
+          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white md:mb-0 md:mr-8 md:text-2xl"
         >
           <FiLinkedin />
         </motion.a>

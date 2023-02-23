@@ -53,7 +53,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
               duration: 0.85,
               delay: 0.6
             }}
-            className="custom-gradient-blue font-montserrat text-5xl font-bold text-white md:text-6xl xl:text-7xl"
+            className="custom-gradient-blue font-montserrat text-5xl font-bold text-white xl:text-7xl"
           >
             About me
           </motion.h1>
@@ -70,7 +70,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
             initial="hidden"
             animate="show"
             exit="exit"
-            className="text-clip font-roboto text-gray-400"
+            className="text-clip font-roboto text-gray-400 md:text-sm xl:text-base"
           >
             I am a dedicated and creative student with a focus on{" "}
             <span className="font-bold text-white">React development</span>. I
@@ -84,7 +84,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
         </span>
 
         <div className="mt-8 sm:w-1/2 md:flex md:w-full">
-          <div className="md grid w-full grid-cols-4 gap-2 md:w-56 md:grid-cols-2 md:grid-rows-2">
+          <div className=" grid w-full grid-cols-4 gap-2 md:w-44 md:grid-cols-2 md:grid-rows-2">
             <motion.button
               variants={initAnim ? {} : global.fadeIn}
               initial="hidden"
@@ -96,7 +96,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
                 activeInfo.responsive
                   ? "purple-border--active"
                   : "purple-border"
-              } flex w-full items-center justify-center rounded-l-xl p-4 text-4xl text-white md:rounded-l-none md:rounded-tl-xl`}
+              } flex w-full items-center justify-center rounded-l-xl p-4 text-2xl text-white md:rounded-l-none md:rounded-tl-xl`}
             >
               <MdDevices />
             </motion.button>
@@ -111,7 +111,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
                 activeInfo.experience
                   ? "purple-border--active"
                   : "purple-border"
-              } flex w-full items-center justify-center p-4 text-4xl text-white md:rounded-tr-xl`}
+              } flex w-full items-center justify-center p-4 text-2xl text-white md:rounded-tr-xl`}
             >
               <FaLightbulb />
             </motion.button>
@@ -124,7 +124,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
               onClick={() => handleInfoClick("design")}
               className={`${
                 activeInfo.design ? "purple-border--active" : "purple-border"
-              } flex w-full items-center justify-center p-4 text-4xl text-white md:rounded-bl-xl`}
+              } flex w-full items-center justify-center p-4 text-2xl text-white md:rounded-bl-xl`}
             >
               <FaPalette />
             </motion.button>
@@ -139,7 +139,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
                 activeInfo.performance
                   ? "purple-border--active"
                   : "purple-border"
-              } flex w-full items-center justify-center rounded-r-xl p-4 text-4xl text-white md:rounded-r-none md:rounded-br-xl`}
+              } flex w-full items-center justify-center rounded-r-xl p-4 text-2xl text-white md:rounded-r-none md:rounded-br-xl`}
             >
               <MdShutterSpeed />
             </motion.button>
