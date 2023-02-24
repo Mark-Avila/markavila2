@@ -5,6 +5,7 @@ import { CgClose } from "react-icons/cg";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import InitialLogo from "./InitialLogo";
 import { global, headerVariants } from "../variants";
+import ToggleSwitch from "./ToggleSwitch";
 
 interface HeaderItems {
   [item: string]: boolean;
@@ -13,12 +14,14 @@ interface HeaderItems {
 interface HeaderProps {
   items: HeaderItems;
   onItemClick: (key: string) => void;
+  particles: boolean;
+  handleParticles: () => void;
 }
 
 function Header(props: HeaderProps) {
   const [isMobileOpen, setMobileOpen] = useState(false);
 
-  const { items, onItemClick } = props;
+  const { items, onItemClick, handleParticles } = props;
 
   const toggleMobileItems = () => {
     setMobileOpen(!isMobileOpen);
@@ -33,12 +36,13 @@ function Header(props: HeaderProps) {
   return (
     <nav className="fixed z-20 box-border h-fit w-full border-b border-b-gray-700 bg-[rgb(07,07,07)] pb-4 md:border-none md:bg-transparent md:py-4">
       <ul className="flex h-full flex-col items-start justify-center px-6 text-white md:flex-row md:items-center md:justify-between">
-        <li className="mt-4 flex w-full items-center justify-between md:mt-0 md:w-20">
+        <li className="mt-4 flex w-full items-center justify-between md:mt-0 md:w-48">
           <motion.button
             initial="hidden"
             animate="show"
             variants={global.popScale}
-            className="w-fit"
+            className="flex w-fit items-center justify-center"
+            onClick={() => handleItemClick("home")}
           >
             <InitialLogo />
           </motion.button>
@@ -96,30 +100,32 @@ function Header(props: HeaderProps) {
             variants={headerVariants.linkStagger}
             className="flex overflow-hidden md:w-fit md:items-center md:justify-between"
           >
-            {Object.keys(items).map((item: string, index) => (
-              <motion.li
-                variants={global.letterSlideUp}
-                transition={{
-                  ease: global.eases.slideUp,
-                  duration: 0.5
-                }}
-                key={index + 10}
-                className="box-border w-full md:w-20"
-              >
-                <button
-                  onClick={() => handleItemClick(item)}
-                  className={`nav-hover h-8 w-full rounded-sm px-1 text-center font-montserrat text-xs text-gray-400 outline-none hover:border-b-gray-400 lg:w-16 lg:text-xs ${
-                    items[item] ? "md:nav-onclick" : ""
-                  }`}
-                  key={index}
-                >
-                  {item.charAt(0).toUpperCase() + item.slice(1)}
-                </button>
-              </motion.li>
-            ))}
+            {Object.keys(items).map(
+              (item: string, index) =>
+                item !== "home" && (
+                  <motion.li
+                    variants={global.letterSlideUp}
+                    transition={{
+                      ease: global.eases.slideUp,
+                      duration: 0.5
+                    }}
+                    key={index + 10}
+                    className="box-border w-full md:w-20"
+                  >
+                    <button
+                      onClick={() => handleItemClick(item)}
+                      className={`nav-hover h-8 w-full rounded-sm px-1 text-center font-montserrat text-xs text-gray-400 outline-none hover:border-b-gray-400 lg:w-16 lg:text-xs ${
+                        items[item] ? "md:nav-onclick" : ""
+                      }`}
+                      key={index}
+                    >
+                      {item.charAt(0).toUpperCase() + item.slice(1)}
+                    </button>
+                  </motion.li>
+                )
+            )}
           </motion.ul>
         </li>
-
         <motion.li
           initial="hidden"
           animate="show"
@@ -127,13 +133,11 @@ function Header(props: HeaderProps) {
           transition={{
             delay: 0.8
           }}
-          className="hidden w-20 md:block"
-        > 
-          <button>
-            
-          </button>
+          className="hidden w-48 md:flex md:items-center md:justify-end lg:justify-between"
+        >
+          <ToggleSwitch onChange={handleParticles} />
 
-          <button className="border-1 resume h-10 w-full rounded-md border border-white bg-transparent font-montserrat text-xs transition ease-in before:active:bg-slate-300">
+          <button className="border-1 resume h-10 w-20 rounded-md border border-white bg-transparent font-montserrat text-xs transition ease-in before:active:bg-slate-300">
             Resume
           </button>
         </motion.li>

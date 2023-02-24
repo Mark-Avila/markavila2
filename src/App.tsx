@@ -8,6 +8,7 @@ import { loadFull } from "tsparticles";
 import particlesJson from "./assets/particlesjs-config.json";
 import { useMediaQuery } from "./hooks";
 import { AnimatePresence, motion, Variants } from "framer-motion";
+import { StaticBackground } from "./components";
 
 export interface InitAnimProps {
   initAnim: boolean;
@@ -34,7 +35,7 @@ function App() {
     contact: false
   });
 
-  const [prevPage, setPrevPage] = useState<ProjectPages>("home");
+  const [particles, setParticles] = useState(true);
 
   const handleVisited = (key: ProjectPages) => {
     const hasNotVisited = !hasVisited[key as keyof typeof hasVisited];
@@ -55,14 +56,10 @@ function App() {
       contact: false
     };
 
-    const newPrevPage = Object.keys(activePage).find(
-      (key) => activePage[key as keyof typeof activePage]
-    );
-
-    setPrevPage(newPrevPage as ProjectPages);
-
     return setActivePage({ ...initialState, [key]: true });
   };
+
+  const handleParticles = () => setParticles(!particles);
 
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
@@ -75,14 +72,28 @@ function App() {
 
   return (
     <div className="h-aut z-10 flex max-h-full min-h-full flex-1 flex-col">
-      <Particles
-        className="z-0"
-        id="tsparticles"
-        options={notMobileScreen ? normalParticlesJson : frozenParticlesJson}
-        init={particlesInit}
-      />
+      {notMobileScreen ? (
+        particles ? (
+          <Particles
+            className="z-0"
+            id="tsparticles"
+            options={normalParticlesJson}
+            init={particlesInit}
+          />
+        ) : (
+          <StaticBackground />
+        )
+      ) : (
+        <StaticBackground />
+      )}
+
       {hasVisited.home && (
-        <Header items={activePage} onItemClick={onNavItemClick} />
+        <Header
+          particles={particles}
+          handleParticles={handleParticles}
+          items={activePage}
+          onItemClick={onNavItemClick}
+        />
       )}
 
       <main className="z-10 mt-14 flex w-full flex-1 flex-grow flex-col overflow-y-auto overflow-x-hidden md:mt-24">
@@ -132,7 +143,6 @@ function App() {
               />
             </motion.span>
           )}
-          {/*The grid here makes it */}
           {activePage.tech && (
             <motion.div
               key={378268}
