@@ -31,7 +31,7 @@ function Header(props: HeaderProps) {
   };
 
   return (
-    <nav className="fixed z-20 box-border h-fit w-full border-b border-b-gray-700 bg-[rgb(07,07,07)] pb-4 md:border-none md:bg-transparent md:py-4 xl:p-6">
+    <nav className="fixed z-20 box-border h-fit w-full border-b border-b-gray-700 bg-[rgb(07,07,07)] pb-4 md:border-none md:bg-transparent md:py-4">
       <ul className="flex h-full flex-col items-start justify-center px-6 text-white md:flex-row md:items-center md:justify-between">
         <li className="mt-4 flex w-full items-center justify-between md:mt-0 md:w-20">
           <motion.button
@@ -128,7 +128,11 @@ function Header(props: HeaderProps) {
             delay: 0.8
           }}
           className="hidden w-20 md:block"
-        >
+        > 
+          <button>
+            
+          </button>
+
           <button className="border-1 resume h-10 w-full rounded-md border border-white bg-transparent font-montserrat text-xs transition ease-in before:active:bg-slate-300">
             Resume
           </button>

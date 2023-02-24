@@ -4,8 +4,8 @@ function InitialLogo() {
   const [isHovering, setHovering] = useState(false);
 
   const toggleHovering = () => {
-    setHovering(!isHovering)
-  } 
+    setHovering(!isHovering);
+  };
 
   return (
     <svg
@@ -14,100 +14,54 @@ function InitialLogo() {
       viewBox="0 0 559 558"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-8 w-8 active:scale-90 transition ease-in-out"
+      className="h-12 w-12 transition ease-in-out active:scale-90"
       onMouseEnter={toggleHovering}
       onMouseLeave={toggleHovering}
     >
       <path
-        d="M0 0L104.429 141.465V558H0V0Z"
-        fill="url(#paint0_linear_405_39)"
+        d="M0 400H74.4473L74.4473 226.5L199.654 382.654L326.553 226.5L326.553 400H401V0L199.654 268.068L0 0V400Z"
+        fill="url(#paint0_linear_495_44)"
       />
       <path
-        d="M559 0L454.063 141.465L454.571 558H559V0Z"
-        fill="url(#paint1_linear_405_39)"
-      />
-      <path
-        d="M123.881 125.746L199.642 225.95H278.476V125.746H123.881Z"
-        fill="url(#paint2_linear_405_39)"
-      />
-      <path
-        d="M433.071 125.746L357.309 225.95H278.476V125.746H433.071Z"
-        fill="url(#paint3_linear_405_39)"
-      />
-      <path
-        d="M104.429 285.392L104.184 141.465L280.016 376.257V535.262L104.429 285.392Z"
-        fill="url(#paint4_linear_405_39)"
-      />
-      <path
-        d="M454.571 315.12L454.063 141.465L278.232 376.257V535.262L454.571 315.12Z"
-        fill="url(#paint5_linear_405_39)"
+        d="M309.633 88.3049H87.9831L143.819 160.841H256.617L309.633 88.3049Z"
+        fill="url(#paint1_linear_495_44)"
       />
       <defs>
         <linearGradient
-          id="paint0_linear_405_39"
-          x1="279.5"
+          id="paint0_linear_495_44"
+          x1="200.5"
           y1="0"
-          x2="279.5"
-          y2="558"
+          x2="200.5"
+          y2="400"
           gradientUnits="userSpaceOnUse"
         >
-          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
+          <stop
+            className="logo-transition"
+            stopColor={`${isHovering ? "#0342E5" : "#03CAE5"}`}
+          />
+          <stop
+            className="logo-transition"
+            offset="1"
+            stopColor={`${isHovering ? "#03CAE5" : "#0342E5"}`}
+          />
         </linearGradient>
         <linearGradient
-          id="paint1_linear_405_39"
-          x1="279.5"
+          id="paint1_linear_495_44"
+          x1="200.5"
           y1="0"
-          x2="279.5"
-          y2="558"
+          x2="200.5"
+          y2="400"
           gradientUnits="userSpaceOnUse"
         >
-          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
-        </linearGradient>
-        <linearGradient
-          id="paint2_linear_405_39"
-          x1="279.5"
-          y1="0"
-          x2="279.5"
-          y2="558"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
-        </linearGradient>
-        <linearGradient
-          id="paint3_linear_405_39"
-          x1="279.5"
-          y1="0"
-          x2="279.5"
-          y2="558"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
-        </linearGradient>
-        <linearGradient
-          id="paint4_linear_405_39"
-          x1="279.5"
-          y1="0"
-          x2="279.5"
-          y2="558"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
-        </linearGradient>
-        <linearGradient
-          id="paint5_linear_405_39"
-          x1="279.5"
-          y1="0"
-          x2="279.5"
-          y2="558"
-          gradientUnits="userSpaceOnUse"
-        >
-          <stop className="logo-transition" stopColor={`${isHovering ? '#0342E5' : '#03CAE5'}`} />
-          <stop className="logo-transition" offset="1" stopColor={`${isHovering ? '#03CAE5' : '#0342E5'}`}/>
+          <stop
+            className="logo-transition"
+            stopColor={`${isHovering ? "#0342E5" : "#03CAE5"}`}
+          />
+          <stop
+            className="logo-transition"
+            offset="1"
+            stopColor={`${isHovering ? "#03CAE5" : "#0342E5"}`}
+          />
         </linearGradient>
       </defs>
     </svg>
