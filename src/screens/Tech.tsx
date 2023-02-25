@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { expIcons, usedIcons } from "../utils";
 import { TechItem, TechTabs } from "../components";
-import { AnimatePresence, Variants, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { InitAnimProps } from "../App";
 import { useEffect } from "react";
 import { global, techVariants } from "../variants";
@@ -16,10 +16,6 @@ function Tech({ onAnimDone, initAnim }: InitAnimProps) {
     lang: false,
     tools: false
   });
-
-  const [headerDone, setHeaderDone] = useState(false);
-
-  const handleHeaderDone = () => setHeaderDone(true);
 
   const listItem = useRef(null);
 
@@ -73,14 +69,16 @@ function Tech({ onAnimDone, initAnim }: InitAnimProps) {
             exit="exit"
             className="w-3/4 text-clip font-roboto text-sm text-gray-400"
           >
-            I am a dedicated and creative student with a focus on{" "}
-            <span className="font-bold text-white">React development</span>. I
-            have hands-on experience building dynamic user interfaces using{" "}
-            <span className="font-bold text-white">React</span> and{" "}
-            <span className="font-bold text-white">Redux</span>, and I am
-            knowledgeable in modern front-end development tools and
-            methodologies. I am eager to apply my skills and continue learning
-            in a immersive and collaborative work environment.
+            I started learning code back when
+            <span className="font-bold text-white"> I was 16</span>, my first
+            language being{" "}
+            <span className="font-bold text-white">JavaScript</span>. I
+            remembered making an anime website when I first started, it was very
+            clunkly, bloated, and littered with useless animations, but I found
+            that fun, so I pursued to get better at it. Now I know quite a lot
+            of languages and tools, but my focus is{" "}
+            <span className="font-bold text-white">front-end development</span>,
+            preferably with <span className="font-bold text-white">React</span>
           </motion.p>
         </span>
         {/* <p className="hidden w-3/4 font-roboto text-sm text-gray-400 lg:block">

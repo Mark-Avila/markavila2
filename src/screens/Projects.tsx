@@ -8,6 +8,7 @@ import anilist from "../assets/anilist.png";
 import kikoo from "../assets/klima.png";
 import wordhaven from "../assets/wordhaven.png";
 import tupimage from "../assets/tup.png";
+import portfolio from "../assets/portfolio.png";
 
 interface ProjectItem {
   id: number;
@@ -32,14 +33,14 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
     setSwipeDirection("right");
 
     setTimeout(() => {
-      setcurrItemIndex((prev) => (prev < items.length - 1 ? prev + 1 : prev));
+      setcurrItemIndex((prev) => (prev < items.length - 1 ? prev + 1 : 0));
     }, 20);
   };
   const handleLeftClick = () => {
     setSwipeDirection("left");
 
     setTimeout(() => {
-      setcurrItemIndex((prev) => (prev > 0 ? prev - 1 : prev));
+      setcurrItemIndex((prev) => (prev > 0 ? prev - 1 : items.length - 1));
     }, 10);
   };
 
@@ -71,6 +72,13 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
       title: "Anilista",
       body: "Anime ang Manga information/watchlist tracker web application. It is my first real React project, so it can be very rough, but I am proud of it, as it made me learn a lot while developing it. I plan on remaking or updating it in the near future",
       tech: ["React", "Firebase", "SASS", "Kitsu API"]
+    },
+    {
+      id: 1922,
+      image: portfolio,
+      title: "Personal Website",
+      body: "My own personal profile website where I highlight my projects and experiences in web development. It features a clean and modern interface and design, complete with smooth animations that don't hinder user experience too much.",
+      tech: ["React", "Framer Motion"]
     }
   ];
 

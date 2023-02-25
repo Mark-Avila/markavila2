@@ -63,22 +63,25 @@ function Header(props: HeaderProps) {
                 variants={headerVariants.mbDropdown}
                 className="box-border w-full overflow-hidden md:hidden"
               >
-                {Object.keys(items).map((item: string, index) => (
-                  <motion.li
-                    variants={headerVariants.mbItem}
-                    key={index}
-                    className="box-border w-full overflow-hidden first:mt-8"
-                  >
-                    <button
-                      onClick={() => handleItemClick(item)}
-                      className={`nav-hover h-16 w-full rounded-sm px-10 text-left font-roboto text-lg text-gray-400 outline-none hover:border-b-gray-400 ${
-                        items[item] ? "nav-onclick" : ""
-                      }`}
-                    >
-                      {item.charAt(0).toUpperCase() + item.slice(1)}
-                    </button>
-                  </motion.li>
-                ))}
+                {Object.keys(items).map(
+                  (item: string, index) =>
+                    item !== "initial" && (
+                      <motion.li
+                        variants={headerVariants.mbItem}
+                        key={index}
+                        className="box-border w-full overflow-hidden first:mt-8"
+                      >
+                        <button
+                          onClick={() => handleItemClick(item)}
+                          className={`nav-hover h-16 w-full rounded-sm px-10 text-left font-roboto text-lg text-gray-400 outline-none hover:border-b-gray-400 ${
+                            items[item] ? "nav-onclick" : ""
+                          }`}
+                        >
+                          {item.charAt(0).toUpperCase() + item.slice(1)}
+                        </button>
+                      </motion.li>
+                    )
+                )}
                 <motion.li
                   variants={headerVariants.mbItem}
                   className="mt-8 w-full overflow-hidden"
