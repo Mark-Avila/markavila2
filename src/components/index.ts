@@ -6,6 +6,7 @@ import TechTabs from "./TechTabs";
 import TechItem from "./TechItem";
 import ToggleSwitch from "./ToggleSwitch";
 import StaticBackground from "./StaticBackground";
+import InitialStroke from "./initialStroke";
 
 export {
   Header,
@@ -15,5 +16,6 @@ export {
   ProjectItem,
   InitialLogo,
   AboutCard,
-  StaticBackground
+  StaticBackground,
+  InitialStroke
 };

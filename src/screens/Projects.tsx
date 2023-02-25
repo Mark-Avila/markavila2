@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import anilist from "../assets/anilist.png";
-import kikoo from "../assets/klima.png";
-import wordhaven from "../assets/wordhaven.png";
 import { ProjectItem } from "../components";
-import { useSwipeable } from "react-swipeable";
 import { AnimatePresence, motion } from "framer-motion";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { InitAnimProps } from "../App";
 import { global } from "../variants";
+import anilist from "../assets/anilist.png";
+import kikoo from "../assets/klima.png";
+import wordhaven from "../assets/wordhaven.png";
+import tupimage from "../assets/tup.png";
 
 interface ProjectItem {
   id: number;
@@ -40,7 +40,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
 
     setTimeout(() => {
       setcurrItemIndex((prev) => (prev > 0 ? prev - 1 : prev));
-    }, 20);
+    }, 10);
   };
 
   const items: ProjectItem[] = [
@@ -48,22 +48,29 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
       id: 8624,
       image: wordhaven,
       title: "Wordhaven",
-      body: lorem,
+      body: "This simple dictionary website crafted with React and Framer Motion provides a user-friendly interface for searching and discovering word meanings. With smooth and visually appealing animations, users can quickly access word definitions, synonyms, and example sentences",
       tech: ["React", "Styled Components", "Framer Motion"]
     },
     {
       id: 9566,
       image: kikoo,
       title: "Kikoo",
-      body: lorem,
+      body: "This website built with Vue and OpenWeatherMap API provides real-time weather information for any location around the world. With sleek and intuitive design, users can easily search for and view current weather conditions, as well as a 5-day weather forecast.",
       tech: ["Vue", "ParticleJS", "OpenWeatherMap API"]
+    },
+    {
+      id: 8173,
+      image: tupimage,
+      title: "TUP Website concept",
+      body: "This concept design website for the Technological University of the Philippines (TUP) showcases a modern and dynamic layout. I made this project to learn Tailwind CSS, a utility-first CSS framework, which today is now my go-to styling tool",
+      tech: ["HTML/CSS", "JavaScript", "Tailwind", "AnimeJS"]
     },
     {
       id: 5192,
       image: anilist,
-      title: "Anilist",
-      body: lorem,
-      tech: ["React", "Firebase", "Kitsu API"]
+      title: "Anilista",
+      body: "Anime ang Manga information/watchlist tracker web application. It is my first real React project, so it can be very rough, but I am proud of it, as it made me learn a lot while developing it. I plan on remaking or updating it in the near future",
+      tech: ["React", "Firebase", "SASS", "Kitsu API"]
     }
   ];
 
@@ -92,32 +99,43 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
             My Projects
           </motion.h1>
         </header>
-        <motion.div className="hidden lg:block">
-          <motion.button
+        <div className="flex items-center">
+          <motion.p
             initial="hidden"
             animate="show"
-            variants={initAnim ? {} : global.popScale}
-            transition={{
-              delay: 2.6
-            }}
-            onClick={handleLeftClick}
-            className="mr-8 text-3xl text-gray-500 transition ease-in-out hover:text-white active:-translate-x-1"
+            variants={global.fadeIn}
+            transition={initAnim ? {} : { delay: 2.6 }}
+            className="mr-8 hidden font-roboto font-bold text-gray-500 lg:block"
           >
-            <FaAngleLeft />
-          </motion.button>
-          <motion.button
-            initial="hidden"
-            animate="show"
-            variants={initAnim ? {} : global.popScale}
-            transition={{
-              delay: 2.8
-            }}
-            onClick={handleRightClick}
-            className="text-3xl text-gray-500 transition ease-in-out hover:text-white active:translate-x-1"
-          >
-            <FaAngleRight />
-          </motion.button>
-        </motion.div>
+            {currItemIndex + 1} / {items.length}
+          </motion.p>
+          <motion.div className="hidden lg:block">
+            <motion.button
+              initial="hidden"
+              animate="show"
+              variants={initAnim ? {} : global.popScale}
+              transition={{
+                delay: 2.6
+              }}
+              onClick={handleLeftClick}
+              className="mr-8 text-3xl text-gray-500 transition ease-in-out hover:text-white active:-translate-x-1"
+            >
+              <FaAngleLeft />
+            </motion.button>
+            <motion.button
+              initial="hidden"
+              animate="show"
+              variants={initAnim ? {} : global.popScale}
+              transition={{
+                delay: 2.8
+              }}
+              onClick={handleRightClick}
+              className="text-3xl text-gray-500 transition ease-in-out hover:text-white active:translate-x-1"
+            >
+              <FaAngleRight />
+            </motion.button>
+          </motion.div>
+        </div>
       </div>
       <p className="font-montserrat text-gray-500 lg:hidden">Swipe for more</p>
       <div className="container-snap mt-8 flex w-full snap-x snap-mandatory gap-4 overflow-visible overflow-x-auto lg:hidden">

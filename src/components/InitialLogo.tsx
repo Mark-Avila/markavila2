@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 function InitialLogo() {
   const [isHovering, setHovering] = useState(false);
@@ -8,7 +9,7 @@ function InitialLogo() {
   };
 
   return (
-    <svg
+    <motion.svg
       width="559"
       height="558"
       viewBox="0 0 559 558"
@@ -64,7 +65,7 @@ function InitialLogo() {
           />
         </linearGradient>
       </defs>
-    </svg>
+    </motion.svg>
   );
 }
 

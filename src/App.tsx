@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
-import { About, Contact, Home, Projects, Tech } from "./screens";
+import { About, Contact, Home, Initial, Projects, Tech } from "./screens";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 import particlesJson from "./assets/particlesjs-config.json";
 import { useMediaQuery } from "./hooks";
-import { AnimatePresence, motion, Variants } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { StaticBackground } from "./components";
 
 export interface InitAnimProps {
@@ -22,9 +22,10 @@ function App() {
   const [activePage, setActivePage] = useState({
     about: false,
     tech: false,
-    home: true,
+    home: false,
     project: false,
-    contact: false
+    contact: false,
+    initial: true
   });
 
   const [hasVisited, setVisited] = useState({
@@ -34,6 +35,21 @@ function App() {
     project: false,
     contact: false
   });
+
+  useEffect(() => {
+    setTimeout(() => {
+      const initialState: typeof activePage = {
+        about: false,
+        tech: false,
+        home: false,
+        project: false,
+        contact: false,
+        initial: false
+      };
+
+      return setActivePage({ ...initialState, home: true });
+    }, 4000);
+  }, []);
 
   const [particles, setParticles] = useState(true);
 
@@ -53,7 +69,8 @@ function App() {
       tech: false,
       home: false,
       project: false,
-      contact: false
+      contact: false,
+      initial: false
     };
 
     return setActivePage({ ...initialState, [key]: true });
@@ -71,7 +88,7 @@ function App() {
   frozenParticlesJson.particles.move.enable = false;
 
   return (
-    <div className="h-aut z-10 flex max-h-full min-h-full flex-1 flex-col">
+    <div className="z-10 box-border flex max-h-full min-h-full flex-1 flex-col">
       {notMobileScreen ? (
         particles ? (
           <Particles
@@ -96,8 +113,17 @@ function App() {
         />
       )}
 
-      <main className="z-10 mt-14 flex w-full flex-1 flex-grow flex-col overflow-y-auto overflow-x-hidden md:mt-24">
+      <main className="z-10 mt-24 flex w-full flex-1 flex-grow flex-col overflow-y-auto overflow-x-hidden">
         <AnimatePresence mode="wait">
+          {activePage.initial && (
+            <motion.div
+              key={3423423}
+              className="box-border grid flex-1 grid-cols-1 overflow-hidden"
+            >
+              <Initial />
+            </motion.div>
+          )}
+
           {activePage.home && (
             <motion.div
               key={712837}

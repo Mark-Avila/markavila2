@@ -102,7 +102,8 @@ function Header(props: HeaderProps) {
           >
             {Object.keys(items).map(
               (item: string, index) =>
-                item !== "home" && (
+                item !== "home" &&
+                item !== "initial" && (
                   <motion.li
                     variants={global.letterSlideUp}
                     transition={{

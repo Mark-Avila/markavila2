@@ -66,7 +66,7 @@ function ProjectItem(props: ProjectItemProps) {
             duration: 0.8,
             delay: 1.4
           }}
-          className="mt-3 hidden font-roboto text-xs text-gray-500 md:hidden lg:block lg:rounded-xl lg:bg-gray-900 lg:p-4 lg:text-gray-400 lg:shadow-thick"
+          className="mt-3 hidden font-roboto text-[0.8rem] text-gray-500 md:hidden lg:block lg:rounded-xl lg:bg-gray-900 lg:p-4 lg:text-gray-400 lg:shadow-thick"
         >
           {body}
         </motion.p>
@@ -87,7 +87,7 @@ function ProjectItem(props: ProjectItemProps) {
           initial="hidden"
           animate="show"
           variants={initAnim ? {} : projectVariants.projectsStagger}
-          className="mt-4 flex flex-wrap gap-2"
+          className="mt-4 flex flex-wrap gap-2 xl:w-3/4"
         >
           {tech.map((item) => (
             <motion.div
