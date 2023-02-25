@@ -184,7 +184,7 @@ function App() {
       </main>
       <footer className="flex h-12 items-center justify-end px-4">
         <p className="font-roboto text-xs text-gray-500 md:text-right">
-          Last updated DD/MM/YYYY
+          Last updated 02/25/2023
         </p>
       </footer>
     </div>
