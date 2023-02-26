@@ -81,12 +81,6 @@ function Tech({ onAnimDone, initAnim }: InitAnimProps) {
             preferably with <span className="font-bold text-white">React</span>
           </motion.p>
         </span>
-        {/* <p className="hidden w-3/4 font-roboto text-sm text-gray-400 lg:block">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur
-          necessitatibus est veritatis sequi debitis quibusdam, iure iusto.
-          Optio laudantium omnis excepturi, ipsum dolor eum mollitia maxime
-          corrupti voluptas. Vel, ad!
-        </p> */}
         <div className="w-full md:w-96 lg:w-72 xl:mt-8">
           <TechTabs
             activeTab={activeTab}
