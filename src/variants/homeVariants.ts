@@ -12,6 +12,9 @@ const h1Stagger = (stagger: number, delayC: number, delay: number) => {
         delayChildren: delayC,
         delay: delay
       }
+    },
+    exit: {
+      opacity: 0
     }
   };
 };

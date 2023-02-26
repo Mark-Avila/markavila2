@@ -1,12 +1,12 @@
 import { FiGithub, FiFacebook, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { InitAnimProps } from "../App";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { global, homeVariants as vars } from "../variants";
 
 function Home({ initAnim, onAnimDone }: InitAnimProps) {
   useEffect(() => {
-    setTimeout(onAnimDone, 3500);
+    setTimeout(onAnimDone, 2500);
   }, []);
 
   const [lettersDone, setLettersDone] = useState(false);
@@ -18,9 +18,9 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
   const delays = {
     top: 0,
     main: 1,
-    subt: 2.4,
-    parag: 2.8,
-    icons: 3.1
+    subt: 1.5,
+    parag: 1.7,
+    icons: 1.7
   };
 
   return (
@@ -39,36 +39,46 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
       >
         What's up! I am
       </motion.h5>
-      <motion.h1
-        initial="hidden"
-        animate="show"
-        variants={initAnim ? {} : vars.h1Stagger(0.1, delays.main, delays.main)}
-        onAnimationComplete={() => setLettersDone(true)}
-        className=" mt-2 overflow-hidden font-montserrat text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl"
-      >
-        {lettersDone || initAnim ? (
-          <motion.span
-            key={123523}
-            variants={global.fadeIn}
-            className="custom-gradient-blue"
-          >
-            Mark Avila
-          </motion.span>
-        ) : (
-          "MarkAvila".split("").map((letter, index) => (
-            <motion.span
-              key={78274 + index}
-              className="inline-block text-gray-500"
-              variants={global.letterSlideUp}
-              transition={{
-                ease: global.eases.slideUp
-              }}
+      <div className="relative mt-2 h-12 md:h-[3.75rem] lg:h-[4.75rem] xl:h-24">
+        <AnimatePresence>
+          {!initAnim && !lettersDone && (
+            <motion.h1
+              initial="hidden"
+              animate="show"
+              exit="exit"
+              variants={vars.h1Stagger(0.07, delays.main, delays.main)}
+              onAnimationComplete={() => setLettersDone(true)}
+              className="absolute left-0 w-fit overflow-hidden font-montserrat text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl"
             >
-              {letter === "k" ? "k\u00A0" : letter}
-            </motion.span>
-          ))
-        )}
-      </motion.h1>
+              {"MarkAvila".split("").map((letter, index) => (
+                <motion.span
+                  key={78274 + index}
+                  className="inline-block w-fit text-gray-500"
+                  variants={global.letterSlideUp}
+                  transition={{
+                    ease: global.eases.slideUp,
+                    duration: 0.8
+                  }}
+                >
+                  {letter === "k" ? "k\u00A0" : letter}
+                </motion.span>
+              ))}
+            </motion.h1>
+          )}
+          <motion.h1
+            key={371892}
+            initial="hidden"
+            animate="show"
+            variants={initAnim ? {} : global.fadeIn}
+            transition={{
+              delay: 2.2
+            }}
+            className="custom-gradient-blue absolute left-0 w-fit overflow-hidden font-montserrat text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl"
+          >
+            {"Mark\u00A0Avila"}
+          </motion.h1>
+        </AnimatePresence>
+      </div>
       <h2 className="mt-2 overflow-hidden font-montserrat text-xl font-bold text-white md:text-3xl xl:h-16 xl:text-6xl">
         <motion.span
           initial="hidden"

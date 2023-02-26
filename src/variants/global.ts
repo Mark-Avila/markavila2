@@ -21,6 +21,9 @@ const letterSlideUp: Variants = {
   },
   show: {
     y: 0
+  },
+  exit: {
+    opacity: 0
   }
 };
 
