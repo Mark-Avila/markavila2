@@ -80,7 +80,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           I like making websites
         </motion.span>
       </h2>
-      <p className="mt-4 overflow-hidden font-roboto text-sm text-gray-500 md:w-1/2 xl:w-1/3 xl:text-base">
+      <p className="mt-4 overflow-hidden font-roboto text-sm text-gray-500 md:w-1/2 xl:w-1/3 xl:text-sm">
         <motion.span
           initial="hidden"
           animate="show"
@@ -91,8 +91,9 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
             ease: global.eases.slideUp
           }}
         >
-          Student aspiring to be a guy that develops websites. Welcome to my
-          portfolio
+          Hey there! Welcome to my front-end portfolio site! Here you can check
+          out some of the cool stuff I've designed and developed. Come on in and
+          have a look around!
         </motion.span>
       </p>
       <motion.div

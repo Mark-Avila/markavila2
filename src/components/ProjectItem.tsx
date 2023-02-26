@@ -124,7 +124,10 @@ function ProjectItem(props: ProjectItemProps) {
             duration: 0.5,
             delay: 0.1
           }}
-          className="group relative aspect-video h-full w-full max-w-[360px] hover:cursor-pointer md:max-w-[480px] lg:-ml-8 lg:max-h-[480px] lg:max-w-[540px] xl:max-h-[480px] xl:max-w-[720px]"
+          className={`${
+            title === "Personal Website" &&
+            "rounded-lg border-2 border-gray-700"
+          } group relative aspect-video h-full w-full max-w-[360px] hover:cursor-pointer md:max-w-[480px] lg:-ml-8 lg:max-h-[480px] lg:max-w-[540px] xl:max-h-[480px] xl:max-w-[720px]`}
         >
           <div className="z-90 absolute top-0 left-0 hidden h-full w-full rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 opacity-30 transition ease-in-out group-hover:opacity-0 lg:block"></div>
           <img src={image} className="h-full w-full rounded-lg object-cover" />
