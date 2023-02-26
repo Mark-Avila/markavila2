@@ -160,6 +160,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
             className="box-border min-w-full snap-center overflow-visible"
           >
             <ProjectItem
+              link={item.link}
               initAnim={initAnim}
               image={item.image}
               title={item.title}
@@ -174,6 +175,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
         <AnimatePresence mode="wait">
           <ProjectItem
             initAnim={initAnim}
+            link={items[currItemIndex].link}
             image={items[currItemIndex].image}
             title={items[currItemIndex].title}
             body={items[currItemIndex].body}

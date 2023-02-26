@@ -9,10 +9,11 @@ interface ProjectItemProps {
   tech: string[];
   direction?: string;
   initAnim: boolean;
+  link: string;
 }
 
 function ProjectItem(props: ProjectItemProps) {
-  const { image, title, body, tech, direction, initAnim } = props;
+  const { image, title, link, body, tech, direction, initAnim } = props;
 
   const prevReset = {
     hidden: {
@@ -103,7 +104,7 @@ function ProjectItem(props: ProjectItemProps) {
           ))}
         </motion.div>
       </motion.div>
-      <motion.div
+      <motion.a
         initial="hidden"
         animate="show"
         variants={initAnim ? {} : global.popScale}
@@ -112,6 +113,8 @@ function ProjectItem(props: ProjectItemProps) {
           delay: initAnim ? 0 : 0.8,
           type: "spring"
         }}
+        href={link}
+        target="_blank"
         className="relative h-48 md:hidden lg:block lg:h-56 xl:h-80"
       >
         <motion.div
@@ -132,7 +135,7 @@ function ProjectItem(props: ProjectItemProps) {
           <div className="z-90 absolute top-0 left-0 hidden h-full w-full rounded-lg bg-gradient-to-r from-blue-500 to-cyan-500 opacity-30 transition ease-in-out group-hover:opacity-0 lg:block"></div>
           <img src={image} className="h-full w-full rounded-lg object-cover" />
         </motion.div>
-      </motion.div>
+      </motion.a>
     </motion.div>
   );
 }
