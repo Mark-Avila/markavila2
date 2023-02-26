@@ -141,9 +141,13 @@ function Header(props: HeaderProps) {
         >
           <ToggleSwitch onChange={handleParticles} />
 
-          <button className="border-1 resume h-10 w-20 rounded-md border border-white bg-transparent font-montserrat text-xs transition ease-in before:active:bg-slate-300">
+          <a
+            href="https://docs.google.com/document/d/1neQMpM5A0WQZ80hbbIhM3X2mBd1y8jDadRZH9NlbRKs/edit?usp=sharing"
+            target="_blank"
+            className="border-1 resume flex h-10 w-20 items-center justify-center rounded-md border border-white bg-transparent font-montserrat text-xs transition ease-in before:active:bg-slate-300"
+          >
             Resume
-          </button>
+          </a>
         </motion.li>
       </ul>
     </nav>
