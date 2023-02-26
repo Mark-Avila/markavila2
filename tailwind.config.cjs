@@ -14,7 +14,7 @@ module.exports = {
         thick: '5px 5px 5px 0px rgba(25,25,25,0.4)'
       },
       backgroundImage: {
-        'static-particles': "url('src/assets/background.png')"
+        'static-particles': "url('/background.png')"
       }
     },
   },

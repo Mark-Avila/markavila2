@@ -16,6 +16,7 @@ interface ProjectItem {
   title: string;
   body: string;
   tech: string[];
+  link: string;
 }
 
 const lorem =
@@ -50,35 +51,40 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
       image: wordhaven,
       title: "Wordhaven",
       body: "This simple dictionary website crafted with React and Framer Motion provides a user-friendly interface for searching and discovering word meanings. With smooth and visually appealing animations, users can quickly access word definitions, synonyms, and example sentences",
-      tech: ["React", "Styled Components", "Framer Motion"]
+      tech: ["React", "Styled Components", "Framer Motion"],
+      link: "https://wordhaven.netlify.app/"
     },
     {
       id: 9566,
       image: kikoo,
       title: "Kikoo",
       body: "This website built with Vue and OpenWeatherMap API provides real-time weather information for any location around the world. With sleek and intuitive design, users can easily search for and view current weather conditions, as well as a 5-day weather forecast.",
-      tech: ["Vue", "ParticleJS", "OpenWeatherMap API"]
+      tech: ["Vue", "ParticleJS", "OpenWeatherMap API"],
+      link: "https://kikoo.netlify.app/"
     },
     {
       id: 8173,
       image: tupimage,
       title: "TUP Website concept",
       body: "This concept design website for the Technological University of the Philippines (TUP) showcases a modern and dynamic layout. I made this project to learn Tailwind CSS, a utility-first CSS framework, which today is now my go-to styling tool",
-      tech: ["HTML/CSS", "JavaScript", "Tailwind", "AnimeJS"]
+      tech: ["HTML/CSS", "JavaScript", "Tailwind", "AnimeJS"],
+      link: "https://mark-avila.github.io/tup-concept/"
     },
     {
       id: 5192,
       image: anilist,
       title: "Anilista",
       body: "Anime ang Manga information/watchlist tracker web application. It is my first real React project, so it can be very rough, but I am proud of it, as it made me learn a lot while developing it. I plan on remaking or updating it in the near future",
-      tech: ["React", "Firebase", "SASS", "Kitsu API"]
+      tech: ["React", "Firebase", "SASS", "Kitsu API"],
+      link: "https://anilista-auth-prod.web.app/explore/anime"
     },
     {
       id: 1922,
       image: portfolio,
       title: "Personal Website",
       body: "My own personal profile website where I highlight my projects and experiences in web development. It features a clean and modern interface and design, complete with smooth animations that don't hinder user experience too much.",
-      tech: ["React", "Framer Motion"]
+      tech: ["React", "Framer Motion"],
+      link: "#"
     }
   ];
 

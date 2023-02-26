@@ -20,30 +20,30 @@ type ProjectPages = "about" | "tech" | "home" | "project" | "contact";
 
 function App() {
   const [activePage, setActivePage] = useState({
-    projects: false,
-    tech: false,
     about: false,
-    contact: false,
+    tech: false,
     home: false,
+    project: false,
+    contact: false,
     initial: true
   });
 
   const [hasVisited, setVisited] = useState({
+    about: false,
+    tech: false,
     home: false,
     project: false,
-    tech: false,
-    about: false,
     contact: false
   });
 
   useEffect(() => {
     setTimeout(() => {
       const initialState: typeof activePage = {
-        projects: false,
-        tech: false,
         about: false,
-        contact: false,
+        tech: false,
         home: false,
+        project: false,
+        contact: false,
         initial: false
       };
 
@@ -65,11 +65,11 @@ function App() {
 
   const onNavItemClick = (key: string) => {
     const initialState: typeof activePage = {
-      projects: false,
-      tech: false,
       about: false,
-      contact: false,
+      tech: false,
       home: false,
+      project: false,
+      contact: false,
       initial: false
     };
 
@@ -158,7 +158,7 @@ function App() {
               />
             </motion.span>
           )}
-          {activePage.projects && (
+          {activePage.project && (
             <motion.span
               key={7123681}
               className="ex w-full flex-1 lg:items-stretch lg:justify-center xl:overflow-hidden"
