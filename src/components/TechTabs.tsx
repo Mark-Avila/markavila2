@@ -25,7 +25,7 @@ function TechTabs({ initAnim, onClick, activeTab }: TechTabsProps) {
   return (
     <motion.div
       variants={initAnim ? prvnFadeOut : techVariants.techTabsStagger}
-      className="flex w-full gap-2"
+      className="flex h-10 w-full gap-2 xs:h-14"
     >
       <motion.button
         variants={global.fadeIn}
@@ -34,7 +34,7 @@ function TechTabs({ initAnim, onClick, activeTab }: TechTabsProps) {
           activeTab.all
             ? "purple-border--active text-white"
             : "purple-border text-gray-400"
-        } h-14 w-full rounded-l-xl  font-roboto text-[0.8rem] font-bold md:h-10 md:text-xs `}
+        } h-full w-full rounded-l-xl font-roboto text-[0.7rem] font-bold xs:text-[0.8rem] md:h-10 md:text-xs `}
       >
         ALL
       </motion.button>
@@ -45,7 +45,7 @@ function TechTabs({ initAnim, onClick, activeTab }: TechTabsProps) {
           activeTab.lang
             ? "purple-border--active text-white"
             : "purple-border text-gray-400"
-        } h-14 w-full font-roboto text-[0.8rem] font-bold md:h-10 md:text-xs `}
+        } h-full w-full font-roboto text-[0.7rem] font-bold xs:text-[0.8rem] md:h-10 md:text-xs `}
       >
         LANGUAGES
       </motion.button>
@@ -56,7 +56,7 @@ function TechTabs({ initAnim, onClick, activeTab }: TechTabsProps) {
           activeTab.tools
             ? "purple-border--active text-white"
             : "purple-border text-gray-400"
-        } h-14 w-full rounded-r-xl font-roboto text-[0.8rem] font-bold md:h-10 md:text-xs `}
+        } h-full w-full rounded-r-xl font-roboto text-[0.7rem] font-bold xs:text-[0.8rem] md:h-10 md:text-xs `}
       >
         TOOLS
       </motion.button>

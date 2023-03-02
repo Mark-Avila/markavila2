@@ -13,8 +13,6 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
     setTimeout(onAnimDone, 3000);
   }, []);
 
-  const notMobileScreen = useMediaQuery("(min-width: 768px)");
-
   const [activeInfo, setActiveInfo] = useState({
     responsive: true,
     experience: false,
@@ -41,7 +39,7 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
       variants={global.pageTransitions}
       className="h-full w-full md:flex md:items-start md:justify-center lg:items-center"
     >
-      <div className="flex flex-col p-8 lg:w-3/4 xl:w-1/2">
+      <div className="flex flex-col px-3 xs:p-8 lg:w-3/4 xl:w-1/2">
         <header className="overflow-hidden">
           <motion.h1
             variants={initAnim ? {} : vars.headerSlideUp}

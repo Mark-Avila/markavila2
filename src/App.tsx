@@ -182,7 +182,7 @@ function App() {
           )}
         </AnimatePresence>
       </main>
-      <footer className="flex h-12 items-center justify-end px-4">
+      <footer className="hidden h-12 items-center justify-end px-4 lg:flex">
         <p className="font-roboto text-xs text-gray-500 md:text-right">
           Last updated 02/25/2023
         </p>

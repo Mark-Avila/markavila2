@@ -15,6 +15,9 @@ module.exports = {
       },
       backgroundImage: {
         'static-particles': "url('/background.png')"
+      },
+      screens: {
+        xs: '390px'
       }
     },
   },

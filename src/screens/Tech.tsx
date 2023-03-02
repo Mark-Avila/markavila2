@@ -35,7 +35,7 @@ function Tech({ onAnimDone, initAnim }: InitAnimProps) {
       animate="show"
       exit="exit"
       variants={initAnim ? global.pageTransitions : {}}
-      className="flex h-full w-full flex-grow flex-col p-8 md:flex md:items-center lg:h-[initial] lg:flex-row lg:items-stretch lg:justify-between lg:px-24 xl:mx-auto xl:w-9/12 xl:max-w-[1200px] xl:px-0"
+      className="flex h-full w-full flex-grow flex-col px-3 pb-3 xs:p-8 md:flex md:items-center lg:h-[initial] lg:flex-row lg:items-stretch lg:justify-between lg:px-24 xl:mx-auto xl:w-9/12 xl:max-w-[1200px] xl:px-0"
     >
       <header className="h-fit snap-start md:pb-8 lg:w-full">
         <h1 className="overflow-hidden pb-4 text-5xl font-bold md:text-6xl xl:text-7xl">
@@ -49,7 +49,7 @@ function Tech({ onAnimDone, initAnim }: InitAnimProps) {
                 duration: 0.5,
                 delay: 0.3
               }}
-              className="custom-gradient-blue font-montserrat text-5xl font-bold md:text-6xl"
+              className="custom-gradient-blue font-montserrat text-4xl font-bold xs:text-5xl md:text-6xl"
             >
               Stuff I know
             </motion.h1>

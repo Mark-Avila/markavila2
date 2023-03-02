@@ -42,7 +42,7 @@ function Contact({ onAnimDone, initAnim }: InitAnimProps) {
               duration: 0.5,
               delay: 0.3
             }}
-            className="mt-4 font-montserrat text-2xl font-bold text-white lg:text-center"
+            className="mt-4 font-montserrat text-xl font-bold text-white xs:text-2xl lg:text-center"
           >
             Get in touch with me
           </motion.p>
@@ -55,7 +55,7 @@ function Contact({ onAnimDone, initAnim }: InitAnimProps) {
             ease: global.eases.slideUp,
             duration: 0.5
           }}
-          className="mt-4 font-roboto text-gray-500 md:text-sm lg:text-center xl:px-20"
+          className="mt-4 text-justify font-roboto text-sm text-gray-500 xs:text-left xs:text-base md:text-sm lg:text-center xl:px-20"
         >
           I am current a university student, which means I am not currently
           looking for full-time opportunities. However, I am looking for

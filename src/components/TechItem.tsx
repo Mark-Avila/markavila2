@@ -57,7 +57,7 @@ const TechItem = React.forwardRef<HTMLLIElement, TechItemProps>(
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           style={{ color: isHovering ? "white" : "rgb(156, 163, 175)" }}
-          className="mt-4 font-roboto text-sm transition ease-in-out xl:text-xs"
+          className="mt-4 font-roboto text-xs transition ease-in-out xs:text-sm xl:text-xs"
         >
           {title}
         </motion.p>

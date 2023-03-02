@@ -51,7 +51,7 @@ function AboutCard({ title, body }: AboutCardProps) {
       </motion.h1>
       <motion.p
         variants={AboutCardItemVariants}
-        className="mt-2 text-lg text-gray-300 sm:w-3/4 md:w-full lg:text-sm"
+        className="mt-2 text-base text-gray-300 xs:text-lg sm:w-3/4 md:w-full lg:text-sm"
       >
         {body}
       </motion.p>

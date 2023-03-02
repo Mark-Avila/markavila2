@@ -34,7 +34,7 @@ function Header(props: HeaderProps) {
   };
 
   return (
-    <nav className="fixed z-20 box-border h-fit w-full border-b border-b-gray-700 bg-[rgb(07,07,07)] pb-4 md:border-none md:bg-transparent md:py-4">
+    <nav className="fixed z-20 box-border h-fit w-full border-b border-b-gray-700 bg-[rgb(07,07,07)] pb-2 xs:pb-4 md:border-none md:bg-transparent md:py-4">
       <ul className="flex h-full flex-col items-start justify-center px-6 text-white md:flex-row md:items-center md:justify-between">
         <li className="mt-4 flex w-full items-center justify-between md:mt-0 md:w-48">
           <motion.button
@@ -73,7 +73,7 @@ function Header(props: HeaderProps) {
                       >
                         <button
                           onClick={() => handleItemClick(item)}
-                          className={`nav-hover h-16 w-full rounded-sm px-10 text-left font-roboto text-lg text-gray-400 outline-none hover:border-b-gray-400 ${
+                          className={`nav-hover h-12 w-full rounded-sm px-6 text-left font-roboto text-base text-gray-400 outline-none hover:border-b-gray-400 xs:h-16 xs:px-10 xs:text-lg ${
                             items[item] ? "nav-onclick" : ""
                           }`}
                         >
@@ -86,7 +86,7 @@ function Header(props: HeaderProps) {
                   variants={headerVariants.mbItem}
                   className="mt-8 w-full overflow-hidden"
                 >
-                  <button className="border-1 resume box-border h-16 w-full rounded-md border border-white bg-transparent px-10 text-left font-roboto text-lg transition ease-in before:active:bg-slate-300">
+                  <button className="border-1 resume box-border h-12 w-full rounded-md border border-white bg-transparent px-6 text-left font-roboto text-base transition ease-in before:active:bg-slate-300 xs:h-16 xs:px-10 xs:text-lg">
                     Resume
                   </button>
                 </motion.li>

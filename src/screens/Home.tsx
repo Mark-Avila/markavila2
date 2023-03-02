@@ -29,13 +29,13 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
       animate="show"
       exit="exit"
       variants={initAnim ? global.pageTransitions : {}}
-      className="flex flex-1 flex-col justify-start p-8 md:pl-12 md:pt-24 lg:pl-24 xl:pl-48"
+      className="flex flex-1 flex-col justify-start p-3 pt-0 xs:p-8 md:pl-12 md:pt-24 lg:pl-24 xl:pl-48"
     >
       <motion.h5
         initial="hidden"
         animate="show"
         variants={initAnim ? {} : vars.textPop}
-        className="font-montserrat text-sm text-gray-400 md:text-base lg:text-xl"
+        className="font-montserrat text-xl text-gray-400 sm:text-sm md:text-base lg:text-xl"
       >
         What's up! I am
       </motion.h5>
@@ -79,7 +79,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           </motion.h1>
         </AnimatePresence>
       </div>
-      <h2 className="mt-2 overflow-hidden font-montserrat text-xl font-bold text-white md:text-3xl xl:h-16 xl:text-6xl">
+      <h2 className="mt-2 overflow-hidden font-montserrat text-2xl font-bold text-white md:text-3xl xl:h-16 xl:text-6xl">
         <motion.span
           initial="hidden"
           animate="show"
@@ -90,7 +90,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           I like making websites
         </motion.span>
       </h2>
-      <p className="mt-4 overflow-hidden font-roboto text-sm text-gray-500 md:w-1/2 xl:w-1/3 xl:text-sm">
+      <p className="mt-4 overflow-hidden font-roboto text-sm text-gray-500 xs:text-base md:w-1/2 xl:w-1/3 xl:text-sm">
         <motion.span
           initial="hidden"
           animate="show"
@@ -110,13 +110,13 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
         initial="hidden"
         animate="show"
         variants={initAnim ? {} : vars.iconStagger(0.2, delays.icons)}
-        className="mt-8 flex flex-1 flex-col items-start justify-end md:flex-none md:flex-row md:items-center md:justify-start"
+        className="mt-8 flex flex-1 items-start justify-start gap-4 md:flex-none md:flex-row md:items-center md:justify-start"
       >
         <motion.a
           variants={initAnim ? prevReset : global.fadeIn}
           target="_blank"
           href="https://github.com/Mark-Avila"
-          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white md:mb-0 md:mr-8 md:text-2xl"
+          className="mb-10 text-3xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white sm:text-4xl md:mb-0 md:mr-8 md:text-2xl"
         >
           <FiGithub />
         </motion.a>
@@ -124,7 +124,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           variants={initAnim ? prevReset : global.fadeIn}
           target="_blank"
           href="https://www.facebook.com/profile.php?id=100076620788296"
-          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white md:mb-0 md:mr-8 md:text-2xl"
+          className="mb-10 text-3xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white sm:text-4xl md:mb-0 md:mr-8 md:text-2xl"
         >
           <FiFacebook />
         </motion.a>
@@ -132,7 +132,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           variants={initAnim ? prevReset : global.fadeIn}
           target="_blank"
           href="https://twitter.com/itsmarkavila"
-          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white md:mb-0 md:mr-8 md:text-2xl"
+          className="mb-10 text-3xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white sm:text-4xl md:mb-0 md:mr-8 md:text-2xl"
         >
           <FiTwitter />
         </motion.a>
@@ -140,7 +140,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
           variants={initAnim ? prevReset : global.fadeIn}
           target="_blank"
           href="https://www.linkedin.com/in/avilamark/"
-          className="mb-10 text-4xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white md:mb-0 md:mr-8 md:text-2xl"
+          className="mb-10 text-3xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white sm:text-4xl md:mb-0 md:mr-8 md:text-2xl"
         >
           <FiLinkedin />
         </motion.a>

@@ -12,7 +12,7 @@ function InitialLogo() {
     <motion.svg
       width="559"
       height="558"
-      viewBox="0 0 559 558"
+      viewBox="-80 -50 559 558"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className="h-12 w-12 transition ease-in-out active:scale-90"

@@ -94,9 +94,9 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
       animate="show"
       exit="exit"
       variants={initAnim ? global.pageTransitions : {}}
-      className="box-border h-full w-full p-8 xl:flex xl:flex-col xl:items-center xl:justify-start"
+      className="box-border h-full w-full px-3 xs:p-8 xl:flex xl:flex-col xl:items-center xl:justify-start"
     >
-      <div className="xl:max-w-8xl lg:flex lg:items-center lg:justify-between lg:px-12 xl:w-9/12">
+      <div className="lg:flex lg:items-center lg:justify-between lg:px-12 xl:w-9/12">
         <header className="overflow-hidden">
           <motion.h1
             variants={initAnim ? {} : global.letterSlideUp}
@@ -108,7 +108,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
               duration: 0.85,
               delay: 0.1
             }}
-            className="custom-gradient-blue pb-3 font-montserrat text-5xl font-bold text-white md:text-6xl xl:text-7xl"
+            className="custom-gradient-blue pb-3 font-montserrat text-4xl font-bold text-white xs:text-5xl md:text-6xl xl:text-7xl"
           >
             My Projects
           </motion.h1>
@@ -152,7 +152,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
         </div>
       </div>
       <p className="font-montserrat text-gray-500 lg:hidden">Swipe for more</p>
-      <div className="container-snap mt-8 flex w-full snap-x snap-mandatory gap-4 overflow-visible overflow-x-auto lg:hidden">
+      <div className="container-snap mt-3 flex w-full snap-x snap-mandatory gap-4 overflow-visible overflow-x-auto xs:mt-8 lg:hidden">
         {items.map((item) => (
           //TODO: Fix this
           <div
