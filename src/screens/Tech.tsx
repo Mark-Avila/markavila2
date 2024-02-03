@@ -97,7 +97,7 @@ function Tech({ onAnimDone, initAnim }: InitAnimProps) {
             animate="show"
             variants={initAnim ? {} : global.fadeIn}
             transition={{ delay: 1.4 }}
-            className="font-montserrat text-white md:mb-14 md:text-center md:text-xl md:font-bold lg:text-left"
+            className="font-montserrat text-white md:mb-6 md:text-center md:text-xl md:font-bold lg:text-left"
           >
             Most used
           </motion.h4>
@@ -141,13 +141,13 @@ function Tech({ onAnimDone, initAnim }: InitAnimProps) {
             </AnimatePresence>
           </motion.ul>
         </section>
-        <section className="mt-8 flex-1 snap-start md:mt-16 md:w-full">
+        <section className="mt-8 flex-1 snap-start md:mt-10 md:w-full">
           <motion.h4
             initial="hidden"
             animate="show"
             variants={initAnim ? {} : global.fadeIn}
             transition={{ delay: 1.8 }}
-            className="font-montserrat text-white md:mb-14 md:text-center md:text-xl md:font-bold lg:text-left"
+            className="font-montserrat text-white md:mb-6 md:text-center md:text-xl md:font-bold lg:text-left"
           >
             Experienced
           </motion.h4>

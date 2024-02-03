@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, Variants, motion } from "framer-motion";
 import { projectVariants } from "../variants/projectVariants";
 import { global } from "../variants";
+import { useEffect, useState } from "react";
 
 interface ProjectItemProps {
   image: string;
@@ -10,10 +11,20 @@ interface ProjectItemProps {
   direction?: string;
   initAnim: boolean;
   link: string;
+  early?: boolean;
 }
 
 function ProjectItem(props: ProjectItemProps) {
-  const { image, title, link, body, tech, direction, initAnim } = props;
+  const { image, title, link, body, tech, direction, initAnim, early } = props;
+
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseOver = () => setHovered(true);
+  const handleMouseLeave = () => setHovered(false);
+
+  useEffect(() => {
+    console.log(`${title}: ${early}`);
+  }, []);
 
   const prevReset = {
     hidden: {
@@ -23,6 +34,26 @@ function ProjectItem(props: ProjectItemProps) {
     show: {
       opacity: 1,
       scale: 1
+    }
+  };
+
+  const toolTipVariant: Variants = {
+    hidden: {
+      opacity: 0
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        ease: "linear",
+        delay: 0
+      }
+    },
+    exit: {
+      opacity: 0,
+      y: 0,
+      transition: {
+        ease: "linear"
+      }
     }
   };
 
@@ -45,19 +76,55 @@ function ProjectItem(props: ProjectItemProps) {
         variants={initAnim ? projectVariants.imageSlide(direction) : {}}
         className="z-50 mt-8 box-border md:mt-0 lg:-mr-14 lg:pl-14"
       >
-        <motion.h1
-          initial="hidden"
-          animate="show"
-          variants={initAnim ? {} : global.letterSlideRight}
-          transition={{
-            ease: global.eases.slideUp,
-            duration: 0.8,
-            delay: 1.2
-          }}
-          className="font-montserrat text-2xl font-bold text-white md:text-3xl"
-        >
-          {title}
-        </motion.h1>
+        <div className="mr-24 flex xs:flex-col xs:gap-2 lg:flex-row lg:justify-between">
+          <motion.h1
+            initial="hidden"
+            animate="show"
+            variants={initAnim ? {} : global.letterSlideRight}
+            transition={{
+              ease: global.eases.slideUp,
+              duration: 0.8,
+              delay: 1.2
+            }}
+            className="font-montserrat text-2xl font-bold text-white md:text-3xl"
+          >
+            {title}
+          </motion.h1>
+          {early && (
+            <motion.div
+              initial="hidden"
+              animate="show"
+              variants={initAnim ? {} : global.letterSlideRight}
+              transition={{
+                ease: global.eases.slideUp,
+                duration: 0.8,
+                delay: 1.2
+              }}
+              onMouseEnter={handleMouseOver}
+              onMouseLeave={handleMouseLeave}
+              className="relative z-[999]  flex w-fit items-center justify-center rounded-full border-2 border-orange-600 bg-orange-300 bg-opacity-50 px-3 py-1"
+            >
+              <p className=" w-fit cursor-pointer p-0 text-[12px] text-orange-200">
+                Early Project
+              </p>
+              <AnimatePresence>
+                {hovered && (
+                  <motion.div
+                    initial="hidden"
+                    animate="show"
+                    exit="exit"
+                    variants={toolTipVariant}
+                    className="absolute left-24 -top-1/2 mt-4 box-border w-52 -translate-y-0.5 rounded-lg bg-gray-900 p-3 shadow-lg transition ease-in-out"
+                  >
+                    <p className="text-xs text-gray-400">
+                      A project I developed earlier in my coding experience.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          )}
+        </div>
         <motion.p
           initial="hidden"
           animate="show"
@@ -67,7 +134,7 @@ function ProjectItem(props: ProjectItemProps) {
             duration: 0.8,
             delay: 1.4
           }}
-          className="mt-3 hidden font-roboto text-[0.8rem] text-gray-500 md:hidden lg:block lg:rounded-xl lg:bg-gray-900 lg:p-4 lg:text-gray-400 lg:shadow-thick"
+          className="z-40 mt-3 hidden font-roboto text-[0.8rem] text-gray-500 md:hidden lg:block lg:rounded-xl lg:bg-gray-900 lg:p-4 lg:text-gray-400 lg:shadow-thick"
         >
           {body}
         </motion.p>
@@ -82,13 +149,13 @@ function ProjectItem(props: ProjectItemProps) {
           }}
           className="mt-4 font-roboto font-bold text-gray-300 md:text-xs"
         >
-          Tech used:
+          Core Technologies:
         </motion.p>
         <motion.div
           initial="hidden"
           animate="show"
           variants={initAnim ? {} : projectVariants.projectsStagger}
-          className="mt-4 flex flex-wrap gap-2 xl:w-3/4"
+          className="hover mt-4 flex flex-wrap gap-2 xl:w-3/4"
         >
           {tech.map((item) => (
             <motion.div

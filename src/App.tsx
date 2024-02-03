@@ -184,7 +184,7 @@ function App() {
       </main>
       <footer className="hidden h-12 items-center justify-end px-4 lg:flex">
         <p className="font-roboto text-xs text-gray-500 md:text-right">
-          Last updated 02/25/2023
+          Last updated 03/02/2024
         </p>
       </footer>
     </div>

@@ -57,11 +57,10 @@ function Contact({ onAnimDone, initAnim }: InitAnimProps) {
           }}
           className="mt-4 text-justify font-roboto text-sm text-gray-500 xs:text-left xs:text-base md:text-sm lg:text-center xl:px-20"
         >
-          I am current a university student, which means I am not currently
-          looking for full-time opportunities. However, I am looking for
-          front-end internships so that I can learn the workings of the
-          industry. You can email me if you have a question and I'll try my best
-          to get back to you
+          I am currently in my fourth year at university, and as it is
+          internship season, I am actively seeking front-end internship
+          opportunities to gain insights into the industry. Feel free to email
+          me with any questions, and I will do my best to respond promptly.
         </motion.p>
         <motion.div
           initial="hidden"

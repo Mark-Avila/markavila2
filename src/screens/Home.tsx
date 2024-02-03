@@ -37,7 +37,7 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
         variants={initAnim ? {} : vars.textPop}
         className="font-montserrat text-xl text-gray-400 sm:text-sm md:text-base lg:text-xl"
       >
-        What's up! I am
+        What's up! I'm
       </motion.h5>
       <div className="relative mt-2 h-12 md:h-[3.75rem] lg:h-[4.75rem] xl:h-24">
         <AnimatePresence>
@@ -53,7 +53,9 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
               {"MarkAvila".split("").map((letter, index) => (
                 <motion.span
                   key={78274 + index}
-                  className="inline-block w-fit text-gray-500"
+                  className={`inline-block w-fit text-gray-500 ${
+                    letter === "A" ? "-mr-1" : ""
+                  }`}
                   variants={global.letterSlideUp}
                   transition={{
                     ease: global.eases.slideUp,

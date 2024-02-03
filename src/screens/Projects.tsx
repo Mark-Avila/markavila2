@@ -9,14 +9,19 @@ import kikoo from "../assets/klima.png";
 import wordhaven from "../assets/wordhaven.png";
 import tupimage from "../assets/tup.png";
 import portfolio from "../assets/portfolio.png";
+import mockster from "../assets/mockster.png";
+import occultus from "../assets/occultus.png";
+import swarmzzz from "../assets/swarmzzz.png";
+import identifruit from "../assets/identifruit.png";
 
-interface ProjectItem {
+interface ProjectItemType {
   id: number;
   image: string;
   title: string;
   body: string;
   tech: string[];
   link: string;
+  early?: boolean;
 }
 
 const lorem =
@@ -45,14 +50,14 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
     }, 10);
   };
 
-  const items: ProjectItem[] = [
+  const items: ProjectItemType[] = [
     {
-      id: 8624,
-      image: wordhaven,
-      title: "Wordhaven",
-      body: "This simple dictionary website crafted with React and Framer Motion provides a user-friendly interface for searching and discovering word meanings. With smooth and visually appealing animations, users can quickly access word definitions, synonyms, and example sentences",
-      tech: ["React", "Styled Components", "Framer Motion"],
-      link: "https://wordhaven.netlify.app/"
+      id: 2198,
+      image: mockster,
+      title: "Mockster",
+      body: "An interactive online quiz creation platform enabling users to create, customize, and share quizzes for collaborative learning and assessment.",
+      tech: ["React", "Express", "MongoDB"],
+      link: "https://mockster.netlify.app"
     },
     {
       id: 9566,
@@ -63,12 +68,51 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
       link: "https://kikoo.netlify.app/"
     },
     {
+      id: 8624,
+      image: wordhaven,
+      title: "Wordhaven",
+      body: "This simple dictionary website crafted with React and Framer Motion provides a user-friendly interface for searching and discovering word meanings. With smooth and visually appealing animations, users can quickly access word definitions, synonyms, and example sentences",
+      tech: ["React", "Styled Components", "Framer Motion"],
+      link: "https://wordhaven.netlify.app/",
+      early: true
+    },
+    {
+      id: 7335,
+      image: swarmzzz,
+      title: "Swarmzzz",
+      body: "Designed and implemented a game featuring adversaries employing particle swarm optimization algorithms to simulate dynamic and flocking movement patterns",
+      tech: ["C#", "Unity", "Particle Swarm Optimization (PSO) Algorithm"],
+      link: "https://github.com/Mark-Avila/swarmzzz"
+    },
+    {
+      id: 1237,
+      image: occultus,
+      title: "Occultus Library",
+      body: "Privacy-conscious face detection library offering features such as blurring, exclusion, and targeted face detection. Our ongoing capstone project is currently in development, although all core requirements and goals have already been achieved.",
+      tech: ["Python", "Object Detection", "Pytorch", "Tkinter"],
+      link: "https://github.com/Mark-Avila/swarmzzz"
+    },
+    {
+      id: 1233,
+      image: identifruit,
+      title: "Identifruit",
+      body: "An Android application equipped with a sophisticated image classification model, designed and implemented by me, enabling seamless identification and classification of various fruits based on visual input.",
+      tech: [
+        "Java",
+        "Android Development",
+        "Tensorflow",
+        "Image Classification"
+      ],
+      link: "https://github.com/Mark-Avila/swarmzzz"
+    },
+    {
       id: 8173,
       image: tupimage,
-      title: "TUP Website concept",
+      title: "TUP concept",
       body: "This concept design website for the Technological University of the Philippines (TUP) showcases a modern and dynamic layout. I made this project to learn Tailwind CSS, a utility-first CSS framework, which today is now my go-to styling tool",
       tech: ["HTML/CSS", "JavaScript", "Tailwind", "AnimeJS"],
-      link: "https://mark-avila.github.io/tup-concept/"
+      link: "https://mark-avila.github.io/tup-concept/",
+      early: true
     },
     {
       id: 5192,
@@ -76,7 +120,8 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
       title: "Anilista",
       body: "Anime ang Manga information/watchlist tracker web application. It is my first real React project, so it can be very rough, but I am proud of it, as it made me learn a lot while developing it. I plan on remaking or updating it in the near future",
       tech: ["React", "Firebase", "SASS", "Kitsu API"],
-      link: "https://anilista-auth-prod.web.app/explore/anime"
+      link: "https://anilista-auth-prod.web.app/explore/anime",
+      early: true
     },
     {
       id: 1922,
@@ -154,7 +199,6 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
       <p className="font-montserrat text-gray-500 lg:hidden">Swipe for more</p>
       <div className="container-snap mt-3 flex w-full snap-x snap-mandatory gap-4 overflow-visible overflow-x-auto xs:mt-8 lg:hidden">
         {items.map((item) => (
-          //TODO: Fix this
           <div
             key={item.id}
             className="box-border min-w-full snap-center overflow-visible"
@@ -166,6 +210,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
               title={item.title}
               body={item.body}
               tech={item.tech}
+              early={item.early}
             />
             <p className="mt-8  text-gray-400 lg:hidden">{item.body}</p>
           </div>
@@ -182,6 +227,7 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
             tech={items[currItemIndex].tech}
             direction={swipeDirection}
             key={currItemIndex}
+            early={items[currItemIndex].early}
           />
         </AnimatePresence>
       </div>

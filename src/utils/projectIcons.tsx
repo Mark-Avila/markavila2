@@ -10,18 +10,24 @@ import {
   SiHtml5,
   SiJava,
   SiJavascript,
+  SiJest,
+  SiMaterialui,
   SiMongodb,
   SiMysql,
   SiNextdotjs,
   SiNodedotjs,
   SiPhp,
+  SiPostgresql,
+  SiPostman,
   SiPython,
   SiReact,
+  SiRedux,
   SiSass,
   SiStyledcomponents,
   SiTailwindcss,
   SiTensorflow,
   SiTypescript,
+  SiUnity,
   SiVuedotjs
 } from "react-icons/si";
 
@@ -72,6 +78,13 @@ export const usedIcons: ProjectIcon[] = [
     color: "#FFFFFF"
   },
   {
+    id: 98193,
+    title: "Redux",
+    icon: <SiRedux />,
+    type: "tool",
+    color: "#9c24ff"
+  },
+  {
     id: 13832,
     title: "CSS3",
     icon: <SiCss3 />,
@@ -91,10 +104,7 @@ export const usedIcons: ProjectIcon[] = [
     icon: <SiGit />,
     type: "tool",
     color: "#fc832d"
-  }
-];
-
-export const expIcons: ProjectIcon[] = [
+  },
   {
     id: 13871,
     title: "NodeJS",
@@ -108,13 +118,16 @@ export const expIcons: ProjectIcon[] = [
     icon: <SiExpress />,
     type: "tool",
     color: "#2dfc4f"
-  },
+  }
+];
+
+export const expIcons: ProjectIcon[] = [
   {
-    id: 87391,
-    title: "MongoDB",
-    icon: <SiMongodb />,
+    id: 87912,
+    title: "MUI",
+    icon: <SiMaterialui />,
     type: "tool",
-    color: "#2dfc4f"
+    color: "#3dd5ff"
   },
   {
     id: 65252,
@@ -159,11 +172,32 @@ export const expIcons: ProjectIcon[] = [
     color: "#4c81fc"
   },
   {
+    id: 87391,
+    title: "MongoDB",
+    icon: <SiMongodb />,
+    type: "tool",
+    color: "#2dfc4f"
+  },
+  {
     id: 62453,
     title: "Firebase",
     icon: <SiFirebase />,
     type: "tool",
     color: "#fc9e4c"
+  },
+  {
+    id: 51342,
+    title: "Postman",
+    icon: <SiPostman />,
+    type: "tool",
+    color: "#fc924c"
+  },
+  {
+    id: 51342,
+    title: "Jest",
+    icon: <SiJest />,
+    type: "tool",
+    color: "#eb4034"
   },
   {
     id: 98932,
@@ -206,5 +240,19 @@ export const expIcons: ProjectIcon[] = [
     icon: <SiMysql />,
     type: "lang",
     color: "#4b50ad"
+  },
+  {
+    id: 51342,
+    title: "PostgreSQL",
+    icon: <SiPostgresql />,
+    type: "lang",
+    color: "#4b50ad"
+  },
+  {
+    id: 51342,
+    title: "Unity",
+    icon: <SiUnity />,
+    type: "tool",
+    color: "#FFFFFF"
   }
 ];
