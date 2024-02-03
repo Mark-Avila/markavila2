@@ -22,10 +22,6 @@ function ProjectItem(props: ProjectItemProps) {
   const handleMouseOver = () => setHovered(true);
   const handleMouseLeave = () => setHovered(false);
 
-  useEffect(() => {
-    console.log(`${title}: ${early}`);
-  }, []);
-
   const prevReset = {
     hidden: {
       opacity: 1,
