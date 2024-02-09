@@ -71,14 +71,14 @@ export const usedIcons: ProjectIcon[] = [
     color: "#2d72fc"
   },
   {
-    id: 98193,
+    id: 7643,
     title: "NextJS",
     icon: <SiNextdotjs />,
     type: "tool",
     color: "#FFFFFF"
   },
   {
-    id: 98193,
+    id: 21098,
     title: "Redux",
     icon: <SiRedux />,
     type: "tool",
@@ -123,7 +123,7 @@ export const usedIcons: ProjectIcon[] = [
 
 export const expIcons: ProjectIcon[] = [
   {
-    id: 87912,
+    id: 59872,
     title: "MUI",
     icon: <SiMaterialui />,
     type: "tool",
@@ -186,14 +186,14 @@ export const expIcons: ProjectIcon[] = [
     color: "#fc9e4c"
   },
   {
-    id: 51342,
+    id: 5622,
     title: "Postman",
     icon: <SiPostman />,
     type: "tool",
     color: "#fc924c"
   },
   {
-    id: 51342,
+    id: 8754,
     title: "Jest",
     icon: <SiJest />,
     type: "tool",
@@ -235,14 +235,14 @@ export const expIcons: ProjectIcon[] = [
     color: "#6b5eb8"
   },
   {
-    id: 51342,
+    id: 6533,
     title: "MySQL",
     icon: <SiMysql />,
     type: "lang",
     color: "#4b50ad"
   },
   {
-    id: 51342,
+    id: 2977,
     title: "PostgreSQL",
     icon: <SiPostgresql />,
     type: "lang",
