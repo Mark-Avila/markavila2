@@ -142,7 +142,7 @@ function Header(props: HeaderProps) {
           <ToggleSwitch onChange={handleParticles} />
 
           <a
-            href="https://docs.google.com/document/d/1neQMpM5A0WQZ80hbbIhM3X2mBd1y8jDadRZH9NlbRKs/edit?usp=sharing"
+            href="https://docs.google.com/document/d/1f5Lk-tfDHuAgncyBZSWjOCzy2xWW_l0xwmeGRzLTe5o/edit?usp=sharing"
             target="_blank"
             className="border-1 resume flex h-10 w-20 items-center justify-center rounded-md border border-white bg-transparent font-montserrat text-xs transition ease-in before:active:bg-slate-300"
           >

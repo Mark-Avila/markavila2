@@ -13,6 +13,7 @@ import mockster from "../assets/mockster.png";
 import occultus from "../assets/occultus.png";
 import swarmzzz from "../assets/swarmzzz.png";
 import identifruit from "../assets/identifruit.png";
+import bugherd from "../assets/bugherd.png";
 
 interface ProjectItemType {
   id: number;
@@ -51,6 +52,14 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
   };
 
   const items: ProjectItemType[] = [
+    {
+      id: 8594,
+      image: bugherd,
+      title: "Bugherd",
+      body: "Built a full-stack web application that allows users to streamline software issue tracking and management. Features React Redux, RTK Query Data Fetching, Cookie-Based JWT Authentication, RESTful API backend, and a PostgreSQL Database",
+      tech: ["Typescript", "React", "NodeJS", "Express", "PostgreSQL"],
+      link: "https://github.com/Mark-Avila/bugherd_frontend"
+    },
     {
       id: 2198,
       image: mockster,
