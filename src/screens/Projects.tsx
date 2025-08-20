@@ -14,6 +14,7 @@ import occultus from "../assets/occultus.png";
 import swarmzzz from "../assets/swarmzzz.png";
 import identifruit from "../assets/identifruit.png";
 import bugherd from "../assets/bugherd.png";
+import cvgrade from "../assets/cvgrade.jpg";
 
 interface ProjectItemType {
   id: number;
@@ -51,96 +52,104 @@ function Projects({ initAnim, onAnimDone }: InitAnimProps) {
     }, 10);
   };
 
-  const items: ProjectItemType[] = [
+const items: ProjectItemType[] = [
     {
-      id: 8594,
-      image: bugherd,
-      title: "Bugherd",
-      body: "Built a full-stack web application that allows users to streamline software issue tracking and management. Features React Redux, RTK Query Data Fetching, Cookie-Based JWT Authentication, RESTful API backend, and a PostgreSQL Database",
-      tech: ["Typescript", "React", "NodeJS", "Express", "PostgreSQL"],
-      link: "https://github.com/Mark-Avila/bugherd_frontend"
+        id: 12763,
+        image: cvgrade,
+        title: "CVGrade",
+        body: "A web application that leverages Large Language Models (LLMs) to automatically analyze and rate resumes or CVs based on their content, structure, and relevance. ",
+        tech: ["Typescript", "React", "FastAPI", "LLM"],
+        link: "https://cvgrade.netlify.app/"
     },
     {
-      id: 2198,
-      image: mockster,
-      title: "Mockster",
-      body: "An interactive online quiz creation platform enabling users to create, customize, and share quizzes for collaborative learning and assessment.",
-      tech: ["React", "Express", "MongoDB"],
-      link: "https://mockster.netlify.app"
+        id: 8594,
+        image: bugherd,
+        title: "Bugherd",
+        body: "Built a full-stack web application that allows users to streamline software issue tracking and management. Features React Redux, RTK Query Data Fetching, Cookie-Based JWT Authentication, RESTful API backend, and a PostgreSQL Database",
+        tech: ["Typescript", "React", "NodeJS", "Express", "PostgreSQL"],
+        link: "https://github.com/Mark-Avila/bugherd_frontend"
     },
     {
-      id: 9566,
-      image: kikoo,
-      title: "Kikoo",
-      body: "This website built with Vue and OpenWeatherMap API provides real-time weather information for any location around the world. With sleek and intuitive design, users can easily search for and view current weather conditions, as well as a 5-day weather forecast.",
-      tech: ["Vue", "ParticleJS", "OpenWeatherMap API"],
-      link: "https://kikoo.netlify.app/"
+        id: 2198,
+        image: mockster,
+        title: "Mockster",
+        body: "An interactive online quiz creation platform enabling users to create, customize, and share quizzes for collaborative learning and assessment.",
+        tech: ["React", "Express", "MongoDB"],
+        link: "https://mockster.netlify.app"
     },
     {
-      id: 8624,
-      image: wordhaven,
-      title: "Wordhaven",
-      body: "This simple dictionary website crafted with React and Framer Motion provides a user-friendly interface for searching and discovering word meanings. With smooth and visually appealing animations, users can quickly access word definitions, synonyms, and example sentences",
-      tech: ["React", "Styled Components", "Framer Motion"],
-      link: "https://wordhaven.netlify.app/",
-      early: true
+        id: 9566,
+        image: kikoo,
+        title: "Kikoo",
+        body: "This website built with Vue and OpenWeatherMap API provides real-time weather information for any location around the world. With sleek and intuitive design, users can easily search for and view current weather conditions, as well as a 5-day weather forecast.",
+        tech: ["Vue", "ParticleJS", "OpenWeatherMap API"],
+        link: "https://kikoo.netlify.app/"
     },
     {
-      id: 7335,
-      image: swarmzzz,
-      title: "Swarmzzz",
-      body: "Designed and implemented a game featuring adversaries employing particle swarm optimization algorithms to simulate dynamic and flocking movement patterns",
-      tech: ["C#", "Unity", "Particle Swarm Optimization (PSO) Algorithm"],
-      link: "https://github.com/Mark-Avila/swarmzzz"
+        id: 8624,
+        image: wordhaven,
+        title: "Wordhaven",
+        body: "This simple dictionary website crafted with React and Framer Motion provides a user-friendly interface for searching and discovering word meanings. With smooth and visually appealing animations, users can quickly access word definitions, synonyms, and example sentences",
+        tech: ["React", "Styled Components", "Framer Motion"],
+        link: "https://wordhaven.netlify.app/",
+        early: true
     },
     {
-      id: 1237,
-      image: occultus,
-      title: "Occultus Library",
-      body: "Privacy-conscious face detection library offering features such as blurring, exclusion, and targeted face detection. Our ongoing capstone project is currently in development, although all core requirements and goals have already been achieved.",
-      tech: ["Python", "Object Detection", "Pytorch", "Tkinter"],
-      link: "https://github.com/Mark-Avila/swarmzzz"
+        id: 7335,
+        image: swarmzzz,
+        title: "Swarmzzz",
+        body: "Designed and implemented a game featuring adversaries employing particle swarm optimization algorithms to simulate dynamic and flocking movement patterns",
+        tech: ["C#", "Unity", "Particle Swarm Optimization (PSO) Algorithm"],
+        link: "https://github.com/Mark-Avila/swarmzzz"
     },
     {
-      id: 1233,
-      image: identifruit,
-      title: "Identifruit",
-      body: "An Android application equipped with a sophisticated image classification model, designed and implemented by me, enabling seamless identification and classification of various fruits based on visual input.",
-      tech: [
-        "Java",
-        "Android Development",
-        "Tensorflow",
-        "Image Classification"
-      ],
-      link: "https://github.com/Mark-Avila/swarmzzz"
+        id: 1237,
+        image: occultus,
+        title: "Occultus Library",
+        body: "Privacy-conscious face detection library offering features such as blurring, exclusion, and targeted face detection. Our ongoing capstone project is currently in development, although all core requirements and goals have already been achieved.",
+        tech: ["Python", "Object Detection", "Pytorch", "Tkinter"],
+        link: "https://github.com/Mark-Avila/swarmzzz"
     },
     {
-      id: 8173,
-      image: tupimage,
-      title: "TUP concept",
-      body: "This concept design website for the Technological University of the Philippines (TUP) showcases a modern and dynamic layout. I made this project to learn Tailwind CSS, a utility-first CSS framework, which today is now my go-to styling tool",
-      tech: ["HTML/CSS", "JavaScript", "Tailwind", "AnimeJS"],
-      link: "https://mark-avila.github.io/tup-concept/",
-      early: true
+        id: 1233,
+        image: identifruit,
+        title: "Identifruit",
+        body: "An Android application equipped with a sophisticated image classification model, designed and implemented by me, enabling seamless identification and classification of various fruits based on visual input.",
+        tech: [
+            "Java",
+            "Android Development",
+            "Tensorflow",
+            "Image Classification"
+        ],
+        link: "https://github.com/Mark-Avila/swarmzzz"
     },
     {
-      id: 5192,
-      image: anilist,
-      title: "Anilista",
-      body: "Anime ang Manga information/watchlist tracker web application. It is my first real React project, so it can be very rough, but I am proud of it, as it made me learn a lot while developing it. I plan on remaking or updating it in the near future",
-      tech: ["React", "Firebase", "SASS", "Kitsu API"],
-      link: "https://anilista-auth-prod.web.app/explore/anime",
-      early: true
+        id: 8173,
+        image: tupimage,
+        title: "TUP concept",
+        body: "This concept design website for the Technological University of the Philippines (TUP) showcases a modern and dynamic layout. I made this project to learn Tailwind CSS, a utility-first CSS framework, which today is now my go-to styling tool",
+        tech: ["HTML/CSS", "JavaScript", "Tailwind", "AnimeJS"],
+        link: "https://mark-avila.github.io/tup-concept/",
+        early: true
     },
     {
-      id: 1922,
-      image: portfolio,
-      title: "Personal Website",
-      body: "My own personal profile website where I highlight my projects and experiences in web development. It features a clean and modern interface and design, complete with smooth animations that don't hinder user experience too much.",
-      tech: ["React", "Framer Motion"],
-      link: "#"
+        id: 5192,
+        image: anilist,
+        title: "Anilista",
+        body: "Anime ang Manga information/watchlist tracker web application. It is my first real React project, so it can be very rough, but I am proud of it, as it made me learn a lot while developing it. I plan on remaking or updating it in the near future",
+        tech: ["React", "Firebase", "SASS", "Kitsu API"],
+        link: "https://anilista-auth-prod.web.app/explore/anime",
+        early: true
+    },
+    {
+        id: 1922,
+        image: portfolio,
+        title: "Personal Website",
+        body: "My own personal profile website where I highlight my projects and experiences in web development. It features a clean and modern interface and design, complete with smooth animations that don't hinder user experience too much.",
+        tech: ["React", "Framer Motion"],
+        link: "#"
     }
-  ];
+];
 
   return (
     <motion.div

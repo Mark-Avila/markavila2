@@ -125,14 +125,6 @@ function Home({ initAnim, onAnimDone }: InitAnimProps) {
         <motion.a
           variants={initAnim ? prevReset : global.fadeIn}
           target="_blank"
-          href="https://www.facebook.com/profile.php?id=100076620788296"
-          className="mb-10 text-3xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white sm:text-4xl md:mb-0 md:mr-8 md:text-2xl"
-        >
-          <FiFacebook />
-        </motion.a>
-        <motion.a
-          variants={initAnim ? prevReset : global.fadeIn}
-          target="_blank"
           href="https://twitter.com/itsmarkavila"
           className="mb-10 text-3xl text-gray-700 transition ease-in-out hover:text-gray-200 active:text-white sm:text-4xl md:mb-0 md:mr-8 md:text-2xl"
         >

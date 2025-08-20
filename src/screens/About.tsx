@@ -70,14 +70,16 @@ function About({ initAnim, onAnimDone }: InitAnimProps) {
             exit="exit"
             className="text-clip font-roboto text-gray-400 md:text-sm xl:text-base"
           >
-            I am a dedicated and creative student with a focus on{" "}
+            I am a dedicated and creative software developer with 1 year of
+            experience, specializing in{" "}
             <span className="font-bold text-white">React development</span>. I
             have hands-on experience building dynamic user interfaces using{" "}
             <span className="font-bold text-white">React</span> and{" "}
             <span className="font-bold text-white">Redux</span>, and I am
             knowledgeable in modern front-end development tools and
             methodologies. I am eager to apply my skills and continue learning
-            in a immersive and collaborative work environment.
+            in an immersive and collaborative work environment. I am a dedicated
+            and creative student with a focus on{" "}
           </motion.p>
         </span>
 
